@@ -26,8 +26,8 @@ export DOMAIN=$a[2];
 if [ DOMAIN = 'intel' ]; then
 
 fi
-source $HOME/setup_repo/zsh/functions.zsh
-source $HOME/setup_repo/zsh/aliases.zsh
-source $HOME/setup_repo/zsh/exports.zsh
-source $HOME/setup_repo/zsh/setopt.zsh
-source $HOME/setup_repo/zsh/completion.zsh
+source $HOME/.zsh/functions.zsh
+source $HOME/.zsh/aliases.zsh
+source $HOME/.zsh/exports.zsh
+source $HOME/.zsh/setopt.zsh
+source $HOME/.zsh/completion.zsh
