@@ -1,0 +1,18 @@
+#compdef simbuild
+local context state line
+_arguments  \
+    '-dut[dut to run on]:dut:->dut'\
+    '-sched[type of scheduler]:sched:->sched'\
+    '-mail[email user]'\
+    '-popup[popup on end]'\
+    && return 0
+
+case $state in
+    (sched) compadd "$@" local netbatch fsm && return 0
+        ;;
+    (dut) compadd "$@" m2pcie m2iosf m2iosf_hlm m2iosf_hlm_iosf_bfm switch2iosf iitc iotc rlink_hn_shell rlink_hn_hlm basic_ll_bfm && return 0
+        ;;
+esac
+return 1 
+#simbuild "$@"
+
