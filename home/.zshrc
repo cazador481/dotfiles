@@ -30,7 +30,7 @@ fi
 #export LD_RUN_PATH=${LD_RUN_PATH}:/$HOME/local/lib
 #export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:$HOME/local/lib/pkgconfig:/usr/intel/pkgs/openssl/1.0.1c/lib64/
 
-source $HOME/.homeshick/repos/homeshick/homeshick.sh
+source $HOME/.homesick/repos/homeshick/homeshick.sh
 source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/exports.zsh
