@@ -1,3 +1,0 @@
-[submodule "home/.vim"]
-	path = home/.vim
-	url = http://github.com/cazador481/vim_setup

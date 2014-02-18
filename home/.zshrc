@@ -26,6 +26,10 @@ export DOMAIN=$a[2];
 if [ DOMAIN = 'intel' ]; then
 
 fi
+#export LD_LIBRARY_PATH=${LD_RUN_PATH}:$HOME/local/lib:/usr/intel/pkgs/openssl/1.0.1c/lib64
+#export LD_RUN_PATH=${LD_RUN_PATH}:/$HOME/local/lib
+#export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:$HOME/local/lib/pkgconfig:/usr/intel/pkgs/openssl/1.0.1c/lib64/
+
 source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/exports.zsh
