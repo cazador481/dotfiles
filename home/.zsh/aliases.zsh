@@ -16,7 +16,7 @@ alias dir='ls -la'
 alias g='gvim'
 alias dc='cd'
 
-alias -- vnc_setup='vncserver -geometry 5012x960 -randr 5012x980,1280x1024,1680x1050,1920x1200,1040x1050'
+alias -- vnc_setup='vncserver -geometry 5012x960 -randr 5012x980,3840x1080,1280x1024,1680x1050,1920x1200,1040x1050'
 alias s_zsh='source $HOME/.zshrc'
 # which () { alias | /usr/intel/00r1/bin/gwhich -i $* }
 
