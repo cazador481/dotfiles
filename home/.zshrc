@@ -19,7 +19,7 @@ prompt='$PROJECT:$STEPPING{%~}'
 
 setopt shwordsplit
 
-s=`domainname`
+s=`hostname`
 a=("${(s/./)s}")
 export DOMAIN=$a[2];
 
