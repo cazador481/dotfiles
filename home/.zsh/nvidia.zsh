@@ -57,6 +57,7 @@ export MCLIBDIR='/home/tools/synopsys/syn_2010.12-SP5/mc/tech'
 function vim ()
 {
     OLD_PERL=$PERLBREW_PERL 
+    OLD_LIB=$PERLBREW_LIB
     perlbrew use 5.16.2-nothreads-64@vim  >&/dev/null
     /home/utils/vim-7.4/bin/vim $*
     perlbrew use $OLD_PERL  >& /dev/null
