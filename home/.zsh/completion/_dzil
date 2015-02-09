@@ -1,0 +1,4 @@
+_arguments \
+    'build' {build} \
+    'release' {release}
+
