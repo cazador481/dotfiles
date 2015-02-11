@@ -24,7 +24,7 @@ export ZSH=$HOME/.oh-my-zsh
  DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+ #ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
  COMPLETION_WAITING_DOTS="true"
@@ -50,74 +50,14 @@ fpath=( /home/eash/.homesick/repos/zsh-completions/src /home/eash/.zsh/completio
 plugins=(brew git cpanm extract vi zsh-syntax-highlighting zsh-history-substring-search )
 
 source $ZSH/oh-my-zsh.sh
+
+
 bindkey -v
+
 
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Lines configured by zsh-newuser-install
-#
-#
-#
-#
-#
-#
-#
-#
-# HISTFILE=~/.histfile
-# HISTSIZE=1000
-# SAVEHIST=1000
-# setopt appendhistory autocd extendedglob nomatch
-# unsetopt beep
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-# autoload -Uz compinit
-# autoload -Uz vcs_info
-# compinit -u
 setopt prompt_subst
 
 
@@ -130,9 +70,6 @@ export DOMAIN=$a[1];
 if [ DOMAIN = 'intel' ]; then
 
 fi
-#export LD_LIBRARY_PATH=${LD_RUN_PATH}:$HOME/local/lib:/usr/intel/pkgs/openssl/1.0.1c/lib64
-#export LD_RUN_PATH=${LD_RUN_PATH}:/$HOME/local/lib
-#export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:$HOME/local/lib/pkgconfig:/usr/intel/pkgs/openssl/1.0.1c/lib64/
 
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 # source $HOME/.zsh/functions.zsh
