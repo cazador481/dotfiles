@@ -81,29 +81,33 @@ source $HOME/.zsh/nvidia.zsh
 source $HOME/perl5/perlbrew/etc/bashrc >&/dev/null
 
 
-# precmd() {
-#     psvar=()
-#     vcs_info
-# }
+precmd() {
+    if [[ -n $TMUX ]]; then
+        for name in `tmux ls -F '#{session_name}'`; do
+            tmux setenv -g -t $name DISPLAY $DISPLAY #set display for all sessions
+        done 
+        export `tmux show-environment DISPLAY`;
+    fi;
+}
 
 #  zstyle ':vcs_info:*' enable git p4
 #  zstyle ':vcs_info:*' use-server true 
 # RPROMPT='${vcs_info_msg_0_}%# '
 #
 # bind UP and DOWN arrow keys
- zmodload zsh/terminfo
- bindkey "$terminfo[kcuu1]" history-substring-search-up
- bindkey "$terminfo[kcud1]" history-substring-search-down
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 #
 # # bind P and N for EMACS mode
- bindkey -M emacs '^P' history-substring-search-up
- bindkey -M emacs '^N' history-substring-search-down
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
 #
 # # bind k and j for VI mode
- bindkey -M vicmd 'k' history-substring-search-up
- bindkey -M vicmd 'j' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
- compdef _gnu_generic automate_any.pl
+compdef _gnu_generic automate_any.pl
 
- #p4 completion
+#p4 completion
 zstyle ':completion:*p4-*:changes' changes -u $USER
