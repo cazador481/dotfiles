@@ -115,3 +115,4 @@ prompt3='CORRECT>%R (y|n|e|a)? '
 source $HOME/.zsh/aliases.zsh
 # source $HOME/.zsh/exports.zsh
 source $HOME/.zsh/nvidia.zsh
+export PATH=~/.vim/bundle/perlomni.vim/bin/:$PATH

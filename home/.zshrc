@@ -40,14 +40,15 @@ export ZSH=$HOME/.oh-my-zsh
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/.zsh/plugins/
 
+fpath=( /home/eash/.zsh/completion/ $fpath )
 fpath=( /home/eash/.homesick/repos/zsh-completions/src /home/eash/.zsh/completion/ $fpath )
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew git cpanm extract vi zsh-syntax-highlighting zsh-history-substring-search )
+plugins=(brew git cpanm extract vi mosh jira zsh-syntax-highlighting history-substring-search )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,7 +78,7 @@ source $HOME/.zsh/aliases.zsh
 # source $HOME/.zsh/exports.zsh
 # source $HOME/.zsh/setopt.zsh
 # source $HOME/.zsh/completion.zsh
-source $HOME/.zsh/nvidia.zsh
+# source $HOME/.zsh/nvidia.zsh
 source $HOME/perl5/perlbrew/etc/bashrc >&/dev/null
 
 
@@ -89,6 +90,18 @@ precmd() {
         export `tmux show-environment DISPLAY`;
     fi;
 }
+
+
+parts=(${(s:.:)HOST})
+for i in {${#parts}..1}; do
+    profile=${(j:.:)${parts[$i,${#parts}]}}
+    file=$ZSH_CUSTOM/profiles/$profile
+    if [ -f $file ]; then
+        source $file
+    fi
+done
+
+
 
 #  zstyle ':vcs_info:*' enable git p4
 #  zstyle ':vcs_info:*' use-server true 
