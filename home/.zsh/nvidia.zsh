@@ -70,4 +70,18 @@ tot() {cd `depth_ea`}
 #}}}
 
 unset SSH_ASKPASS
+
+compdef _gnu_generic automate_any.pl
+
+#p4 completion
+zstyle ':completion:*p4-*:changes' changes -u $USER
+
+
+alias dzil='PERL5LIB=`/home/eash/scripts/perlcustomlib` dzil'
+
+
+function hwmeth ()
+{
+    cd ~/scratch/script_dev/dev/inf/hwmeth/mainline
+}
 # vim: set fdm=marker:

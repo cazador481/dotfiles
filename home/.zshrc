@@ -48,7 +48,9 @@ fpath=( /home/eash/.homesick/repos/zsh-completions/src /home/eash/.zsh/completio
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew git cpanm extract vi mosh jira zsh-syntax-highlighting history-substring-search )
+
+# plugins=(brew git cpanm extract vi mosh jira zsh-syntax-highlighting history-substring-search )
+plugins=(brew git cpanm extract vi mosh zsh-syntax-highlighting history-substring-search )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,18 +69,14 @@ setopt shwordsplit
 s=`hostname -d`
 a=("${(s/./)s}")
 export DOMAIN=$a[1];
-
-if [ DOMAIN = 'intel' ]; then
-
+if [ $DOMAIN = 'nvidia' ]; then
+    source $HOME/.zsh/nvidia.zsh
 fi
 
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 # source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/aliases.zsh
-# source $HOME/.zsh/exports.zsh
-# source $HOME/.zsh/setopt.zsh
-# source $HOME/.zsh/completion.zsh
-# source $HOME/.zsh/nvidia.zsh
+
 source $HOME/perl5/perlbrew/etc/bashrc >&/dev/null
 
 
@@ -90,7 +88,6 @@ precmd() {
         export `tmux show-environment DISPLAY`;
     fi;
 }
-
 
 parts=(${(s:.:)HOST})
 for i in {${#parts}..1}; do
@@ -120,7 +117,3 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-compdef _gnu_generic automate_any.pl
-
-#p4 completion
-zstyle ':completion:*p4-*:changes' changes -u $USER
