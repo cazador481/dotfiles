@@ -28,7 +28,8 @@ rm_client ()
     p4 client -d $1 
 }
 
-PATH+=':/home/eash/scripts/:/home/utils/tmux-1.9a/bin/'
+PATH="$HOME/usr/local/bin:$PATH"
+PATH+=':/home/eash/scripts/:/home/utils/tmux-1.9a/bin/:/home/nv/utils/hwmeth/bin:/home/nv/utils/quasar/bin'
 # PATH='/home/eash/scripts/:/home/utils/tmux-1.9a/bin/:/home/utils/the_silver_searcher-20140422/bin/:/home/utils/git-1.9.2/bin:/home/utils/git-1.9.0/libexec:/home/utils/vim-7.4/bin/:/home/utils/cmake-2.8.12.2/bin/:/home/eash/bin:/home/utils/bin:/bin:/home/gnu/bin:/usr/bin:.:/sbin:/usr/sbin:/usr/ucb:/usr/ccs/bin:/usr/lib:/etc:/home/nv/bin:/usr/bin/X11:/usr/local/lsf/bin:/home/tools/td/td5303/linux/bin:/home/tools/synopsys/syn_2010.12-SP5/bin:/home/tools/synopsys/pt_2009.06-SP3/bin:/home/tools/synopsys/syn_2010.12-SP5/linux/mc/bin:/home/tools/synopsys/fm_2010.12-SP5/bin:/home/tools/verilint/2001.4.10-linux2.2:/home/tools/debussy/latest/bin:/home/tools/debussy/verdi_latest/bin'
 
 #{{{ perlbrew
@@ -84,4 +85,7 @@ function hwmeth ()
 {
     cd ~/scratch/script_dev/dev/inf/hwmeth/mainline
 }
+
+
+alias vim="vim -X"
 # vim: set fdm=marker:
