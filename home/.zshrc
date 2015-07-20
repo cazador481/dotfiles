@@ -1,4 +1,5 @@
 # Uncomment the following line to disable auto-setting terminal title.
+
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
@@ -24,7 +25,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle history-substring-search
 
-antigen theme gnzh
+# antigen theme gnzh
+    #TODO make match non dev version
+antigen theme $HOME/.zsh/custom gitster.zsh-theme
 
 antigen apply
 
@@ -174,3 +177,24 @@ fi
 zle -N rationalise-dot                                                                                                                                                   
 bindkey . rationalise-dot                                                                                                                                                
 bindkey -M isearch . self-insert                                                                                                                                         
+
+function path_remove {
+cleanpath=$(echo $PATH |
+tr ':' '\n' |
+awk '{a[$0]++;if (a[$0]==1){b[max+1]=$0;max++}}END{for (x = 1; x <= max; x++) { print b[x] } }' |
+grep -v $1 |
+tr '\n' ':' |
+sed -e 's/:$//')
+
+export PATH=$cleanpath
+}
+
+function path_append ()  {
+    path_remove $1
+    export PATH=$PATH:$1
+}
+
+function path_prepend {
+      path_remove $1
+      export PATH=$1:$PATH
+}
