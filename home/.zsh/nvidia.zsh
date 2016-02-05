@@ -1,3 +1,9 @@
+#allows use of modules  https://wiki.nvidia.com/engit/index.php/UnixSupport-Environment_Management:Modules
+# time to complete.
+#source /home/utils/modules-tcl/init/zsh
+unalias which 2&> /dev/null #remove the which alias that is an nvidia alias
+export EDITOR="nvim"
+
 #{{{ man pages shortcutes & settings
 alias -- fmman='man -M ${FM_ROOT}/doc/fm/man'
 alias -- synman='man -M $SYNOPSYS/doc/syn/man'
@@ -5,44 +11,55 @@ export MANPATH='/usr/local/lsf/man:/home/utils/man:/usr/man:/home/eash/man:/usr/
 #}}}
 alias perltidy='/home/utils/perl-5.16/5.16.2-nothreads-64/bin/perltidy'
 
-
 alias pwd='pwd -P'
 
-
-checkbuild () { egrep -i '(\*\*|error)' $* | grep -v ignore }
-en () { setenv FNAME $*; e -fn 8x13 -name `basename $FNAME` $* & }
-enscriptp () { print -p$*.ps $* }
-errgrep () { grep Error $* | egrep -v "msg =|Test-Compiler"|more }
-es () { setenv FNAME $*; e -fn 6x12 -name `basename $FNAME` $* & }
 p4_filelog () { p4 filelog -l $* | more }
-sh_path () { echo $* | sed 's/\/home\/eash/\\~/' }
 su () { /bin/su $*; tup }
-title () { echo -n '^[]2;$*^G' }
-
-get_best_cl () { bin/sync_tree -cl `bin/get_autofetch_cl` }
 
 rm_client ()
 {
+    /home/eash/scripts/unlock_client.pl --client $1
     p4 -c $1 revert -k //...
     p4 changes -c $1 -s pending | cut -d" " -f2 |xargs -n1 p4 -c $1 change -d
     p4 client -d $1 
 }
 
+#module load ruby
+#module load tmux
+#module load vim
+
+PATH="/home/utils/ruby-2.2.2/bin:$PATH";
 PATH="$HOME/usr/local/bin:$PATH"
-PATH+=':/home/eash/scripts/:/home/utils/tmux-1.9a/bin/:/home/nv/utils/hwmeth/bin:/home/nv/utils/quasar/bin'
-# PATH='/home/eash/scripts/:/home/utils/tmux-1.9a/bin/:/home/utils/the_silver_searcher-20140422/bin/:/home/utils/git-1.9.2/bin:/home/utils/git-1.9.0/libexec:/home/utils/vim-7.4/bin/:/home/utils/cmake-2.8.12.2/bin/:/home/eash/bin:/home/utils/bin:/bin:/home/gnu/bin:/usr/bin:.:/sbin:/usr/sbin:/usr/ucb:/usr/ccs/bin:/usr/lib:/etc:/home/nv/bin:/usr/bin/X11:/usr/local/lsf/bin:/home/tools/td/td5303/linux/bin:/home/tools/synopsys/syn_2010.12-SP5/bin:/home/tools/synopsys/pt_2009.06-SP3/bin:/home/tools/synopsys/syn_2010.12-SP5/linux/mc/bin:/home/tools/synopsys/fm_2010.12-SP5/bin:/home/tools/verilint/2001.4.10-linux2.2:/home/tools/debussy/latest/bin:/home/tools/debussy/verdi_latest/bin'
-
-#{{{ perlbrew
-#}}}
+PATH+=':/home/eash/scripts:/home/nv/utils/hwmeth/bin:/home/nv/utils/quasar/bin'
+path_prepend /home/utils/xdg-utils-1.0.2/bin
  export PATH
+path_prepend /home/utils/Python-3.4.2/bin
+path_prepend  /home/utils/xclip-0.11/bin
 # source ~/perl5/perlbrew/etc/bashrc
-#{{{perlforce w/ crucible wrapper 
-export P4DIFF='/home/utils/mgdiff-1.0-2/bin/mgdiff'
 
+#{{{perlforce w/ crucible wrapper 
 function p4() {
 PERL5LIB=''
-/home/nv/utils/crucible/1.0/bin/p4 -d `/bin/pwd` $@
+cmd=/home/nv/utils/crucible/1.0/bin/p4
 
+if [[ $1 == "sync" ]]
+then 
+    shift argv # remove the sync  command
+    cmd="$cmd -q sync"
+    # if [[ $1 != "-k" ]]
+    # then
+    #     cmd="$cmd --parallel=threads=10"
+    # fi
+elif [[ $1 == "commit" ]]
+then
+    shift argv # remove the sync  command
+    cmd="$cmd submit"
+elif [[ $1 == "flush" ]]
+then
+    cmd="$cmd -q"
+fi
+#echo Executing: $cmd $@
+$cmd $@
 }
 # alias -- p4='/home/nv/utils/crucible/1.0/bin/p4 -d `/bin/pwd`'
 alias -- p4_diff='p4_xdiff -d'
@@ -51,18 +68,20 @@ alias -- p4_log='p4_filelog'
 
 export P4PORT='p4hw:2001'
 export P4CONFIG='.p4config'
+export P4DIFF='nvim -d'
 
 
 export MCLIBDIR='/home/tools/synopsys/syn_2010.12-SP5/mc/tech'
 
-function vim ()
-{
-    OLD_PERL=$PERLBREW_PERL 
-    OLD_LIB=$PERLBREW_LIB
-    perlbrew use 5.16.2-nothreads-64@vim  >&/dev/null
-    /home/utils/vim-7.4/bin/vim $*
-    perlbrew use $OLD_PERL  >& /dev/null
-}
+# function vim ()
+# {
+#     nvim
+#     # OLD_PERL=$PERLBREW_PERL 
+#     # OLD_LIB=$PERLBREW_LIB
+#     # perlbrew use 5.16.2-nothreads-64@vim  >&/dev/null
+#     # /home/utils/vim-7.4/bin/vim $*
+#     # perlbrew use $OLD_PERL  >& /dev/null
+# }
 #
 #navigate nvidia tree {{{
 d_tests(){ cd `depth_ea`/diag/tests}
@@ -71,21 +90,42 @@ tot() {cd `depth_ea`}
 #}}}
 
 unset SSH_ASKPASS
-
-compdef _gnu_generic automate_any.pl
+# compdef _gnu_generic automate_any.pl
 
 #p4 completion
-zstyle ':completion:*p4-*:changes' changes -u $USER
-
+zstyle ':completion:*:p4-*:changes' changes -u $USER
+zstyle ':completion:*:p4-add:*:all-files' all-files
 
 alias dzil='PERL5LIB=`/home/eash/scripts/perlcustomlib` dzil'
 
+alias hwmeth="cd ~/scratch/script_dev/dev/inf/hwmeth/mainline"
+alias quasar="cd ~/scratch/script_dev/dev/inf/quasar/mainline"
 
-function hwmeth ()
+
+#alias vim="vim -X" # no x connections
+
+export SSL_CERT_FILE="$HOME/usr/local/etc/openssl/ca-cert.pem"
+# vim: set fdm=marker:
+
+# {{{Brew env 
+export HOMEBREW_CACHE='/tmp/homebrew_eash'
+export PYENV_ROOT=/home/eash/.linuxbrew/var/pyenv
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# source $HOME/scripts/hub-linux-386-2.2.1/etc/hub.zsh_completion
+
+#flexclone eval alias
+function make_flexclone()
 {
-    cd ~/scratch/script_dev/dev/inf/hwmeth/mainline
+    ssh build-test@fclone-test-svm "volume clone create -flexclone $1 -type RW -parent-volume build_master_test -junction-active true -foreground true -space-guarantee none -junction-path /vol/buildclone/$1"
 }
 
-
-alias vim="vim -X"
+function delete_flexclone
+{
+    ssh build-test@fclone-test-svm "volume unmount $1"
+    ssh build-test@fclone-test-svm "volume offline $1"
+    ssh build-test@fclone-test-svm "volume delete $1"
+}
+export PIP_CERT='/home/eash/DigiCertHighAssuranceEVRootCA.crt'
 # vim: set fdm=marker:
