@@ -93,15 +93,6 @@ setopt prompt_subst
 
 setopt shwordsplit
 
-s=`hostname -d`
-a=("${(s/./)s}")
-export DOMAIN=$a[1];
-if [ $DOMAIN = 'nvidia' ]; then
-    echo "sourcing nvidia"
-    source $HOME/.zsh/nvidia.zsh
-    echo "end sourcing nvidia"
-fi
-
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 # source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/aliases.zsh
@@ -184,4 +175,13 @@ unsetopt xtrace
 LINUX_BREW_PATH=`readlink -e /home/scratch.eash/.linuxbrew/bin`
 export PATH="$LINUX_BREW_PATH:$PATH"
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-# eval "$(fasd --init auto)"
+#s=`hostname -d`
+a=("${(s/./)s}")
+export DOMAIN=$a[1];
+if [ $DOMAIN = 'nvidia' ]; then
+    echo "sourcing nvidia"
+    source $HOME/.zsh/nvidia.zsh
+    echo "end sourcing nvidia"
+fi
+
+ eval "$(fasd --init auto)"
