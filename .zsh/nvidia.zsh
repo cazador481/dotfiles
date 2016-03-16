@@ -30,11 +30,11 @@ rm_client ()
 
 PATH="/home/utils/ruby-2.2.2/bin:$PATH";
 PATH="$HOME/usr/local/bin:$PATH"
-PATH+=':/home/eash/scripts:/home/nv/utils/hwmeth/bin:/home/nv/utils/quasar/bin'
+PATH+=':/home/nv/utils/hwmeth/bin:/home/nv/utils/quasar/bin'
 path_prepend /home/utils/xdg-utils-1.0.2/bin
- export PATH
 path_prepend /home/utils/Python-3.4.2/bin
 path_prepend  /home/utils/xclip-0.11/bin
+path_remove /home/gnu/bin
 # source ~/perl5/perlbrew/etc/bashrc
 
 #{{{perlforce w/ crucible wrapper 
@@ -109,7 +109,7 @@ export SSL_CERT_FILE="$HOME/usr/local/etc/openssl/ca-cert.pem"
 
 # {{{Brew env 
 export HOMEBREW_CACHE='/tmp/homebrew_eash'
-export PYENV_ROOT=/home/eash/.linuxbrew/var/pyenv
+# export PYENV_ROOT=/home/eash/.linuxbrew/var/pyenv
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
@@ -128,4 +128,6 @@ function delete_flexclone
     ssh build-test@fclone-test-svm "volume delete $1"
 }
 export PIP_CERT='/home/eash/DigiCertHighAssuranceEVRootCA.crt'
+path_prepend /home/eash/scripts
+ export PATH
 # vim: set fdm=marker:
