@@ -175,7 +175,7 @@ unsetopt xtrace
 LINUX_BREW_PATH=`readlink -e /home/scratch.eash/.linuxbrew/bin`
 export PATH="$LINUX_BREW_PATH:$PATH"
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-#s=`hostname -d`
+s=`hostname -d`
 a=("${(s/./)s}")
 export DOMAIN=$a[1];
 if [ $DOMAIN = 'nvidia' ]; then
@@ -183,5 +183,8 @@ if [ $DOMAIN = 'nvidia' ]; then
     source $HOME/.zsh/nvidia.zsh
     echo "end sourcing nvidia"
 fi
-
- eval "$(fasd --init auto)"
+if [ -e $HOME/.config/nvim/bundle/neoman.vim/scripts/neovim.zsh ]; then
+    source $HOME/.config/nvim/bundle/neoman.vim/scripts/neovim.zsh
+    alias man=nman
+fi
+eval "$(fasd --init auto)"
