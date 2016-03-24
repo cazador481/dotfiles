@@ -30,6 +30,7 @@ export PATH=$1:$PATH
 export HISTFILE=~/.histfile
 export HISTSIZE=1000
 export SAVEHIST=1000
+export MANPAGER=less
 setopt inc_append_history
 setopt share_history
 setopt hist_ignore_all_dups
