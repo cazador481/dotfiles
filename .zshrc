@@ -93,6 +93,7 @@ setopt prompt_subst
 
 setopt shwordsplit
 
+<<<<<<< HEAD
 s=`hostname -d`
 a=("${(s/./)s}")
 export DOMAIN=$a[1];
@@ -184,4 +185,16 @@ unsetopt xtrace
 LINUX_BREW_PATH=`readlink -e /home/scratch.eash/.linuxbrew/bin`
 export PATH="$LINUX_BREW_PATH:$PATH"
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-# eval "$(fasd --init auto)"
+s=`hostname -d`
+a=("${(s/./)s}")
+export DOMAIN=$a[1];
+if [ $DOMAIN = 'nvidia' ]; then
+    echo "sourcing nvidia"
+    source $HOME/.zsh/nvidia.zsh
+    echo "end sourcing nvidia"
+fi
+if [ -e $HOME/.config/nvim/bundle/neoman.vim/scripts/neovim.zsh ]; then
+    source $HOME/.config/nvim/bundle/neoman.vim/scripts/neovim.zsh
+    alias man=nman
+fi
+eval "$(fasd --init auto)"
