@@ -54,7 +54,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 GENCOMPL_FPATH=$HOME/.zsh/completion # zsh-competion-generator path
 
-source ~/.homesick/repos/zgen/zgen.zsh
+source ~/.zgen/zgen.zsh
 #check if there's no init script
 if ! zgen saved; then
     echo "Creating a zgen save"
@@ -102,7 +102,7 @@ if [ $DOMAIN = 'nvidia' ]; then
     echo "end sourcing nvidia"
 fi
 
-source $HOME/.homesick/repos/homeshick/homeshick.sh
+#source $HOME/.homesick/repos/homeshick/homeshick.sh
 # source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/aliases.zsh
 
