@@ -93,7 +93,6 @@ setopt prompt_subst
 
 setopt shwordsplit
 
-<<<<<<< HEAD
 s=`hostname -d`
 a=("${(s/./)s}")
 export DOMAIN=$a[1];
