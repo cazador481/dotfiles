@@ -76,7 +76,7 @@ if ! zgen saved; then
 
     # antigen theme gnzh
     #TODO make match non dev version
-    zgen load $HOME/.zsh/custom/gitster.zsh-theme
+    # zgen load $HOME/.zsh/custom/gitster.zsh-theme
 
     zgen save
 fi
