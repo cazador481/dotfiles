@@ -76,7 +76,7 @@ if ! zgen saved; then
 
     # antigen theme gnzh
     #TODO make match non dev version
-    # zgen load $HOME/.zsh/custom/gitster.zsh-theme
+    zgen load $HOME/.zsh/custom/gitster.zsh-theme
 
     zgen save
 fi
@@ -94,14 +94,6 @@ setopt prompt_subst
 
 setopt shwordsplit
 
-s=`hostname -d`
-a=("${(s/./)s}")
-export DOMAIN=$a[1];
-if [ $DOMAIN = 'nvidia' ]; then
-    echo "sourcing nvidia"
-    source $HOME/.zsh/nvidia.zsh
-    echo "end sourcing nvidia"
-fi
 
 #source $HOME/.homesick/repos/homeshick/homeshick.sh
 # source $HOME/.zsh/functions.zsh
