@@ -4,6 +4,9 @@
 unalias which 2&> /dev/null #remove the which alias that is an nvidia alias
 export EDITOR="nvim"
 
+REDHAT_RELEASE=`cut -d ' ' -f 3 /etc/redhat-release`
+
+
 #{{{ man pages shortcutes & settings
 alias -- fmman='man -M ${FM_ROOT}/doc/fm/man'
 alias -- synman='man -M $SYNOPSYS/doc/syn/man'
@@ -28,13 +31,23 @@ rm_client ()
 #module load tmux
 #module load vim
 
-PATH="/home/utils/ruby-2.2.2/bin:$PATH";
-PATH="$HOME/usr/local/bin:$PATH"
-PATH+=':/home/nv/utils/hwmeth/bin:/home/nv/utils/quasar/bin'
-path_prepend /home/utils/xdg-utils-1.0.2/bin
-path_prepend /home/utils/Python-3.4.2/bin
-path_prepend  /home/utils/xclip-0.11/bin
-path_remove /home/gnu/bin
+path=(/home/utils/ruby-2.2.2/bin
+/home/nv/utils/hwmeth/bin
+/home/nv/utils/quasar/bin
+/home/utils/Python-3.4.2/bin
+/home/utils/xclip-0.11/bin
+$path
+)
+# path_prepend /home/utils/Python-3.4.2/bin
+# path_prepend  /home/utils/xclip-0.11/bin
+#
+# PATH="/home/utils/ruby-2.2.2/bin:$PATH";
+# PATH="$HOME/usr/local/bin:$PATH"
+# PATH+=':/home/nv/utils/hwmeth/bin:/home/nv/utils/quasar/bin'
+# PATH='/home/utils/xdg-utils-1.0.2/bin
+# path_prepend /home/utils/Python-3.4.2/bin
+# path_prepend  /home/utils/xclip-0.11/bin
+# path_remove /home/gnu/bin
 # source ~/perl5/perlbrew/etc/bashrc
 
 #{{{perlforce w/ crucible wrapper 
@@ -109,6 +122,7 @@ export SSL_CERT_FILE="$HOME/usr/local/etc/openssl/ca-cert.pem"
 
 # {{{Brew env 
 export HOMEBREW_CACHE='/tmp/homebrew_eash'
+# }}}
 # export PYENV_ROOT=/home/eash/.linuxbrew/var/pyenv
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -129,5 +143,7 @@ function delete_flexclone
 }
 export PIP_CERT='/home/eash/DigiCertHighAssuranceEVRootCA.crt'
 path_prepend /home/eash/scripts
- export PATH
+LINUX_BREW_PATH=`/usr/bin/readlink -e $XDG_DATA_HOME/linuxbrew/$REDHAT_RELEASE/bin`
+PATH="$LINUX_BREW_PATH:$PATH"
+export PATH
 # vim: set fdm=marker:
