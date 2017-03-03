@@ -5,4 +5,5 @@ export XDG_CACHE_HOME=$XDG_BASE/.cache
 export XDG_RUNTIME_DIR="/tmp/runtime-$(whoami)"
 mkdir -p $XDG_RUNTIME_DIR
 chmod 0700 $XDG_RUNTIME_DIR
-export ZDOTDIR=$XDG_BASE/.config/zsh
+unset ZDOTDIR
+export ZDOTDIR=$XDG_BASE/.config/zsh/
