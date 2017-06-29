@@ -1,0 +1,1 @@
+/home/nv/utils/mini_env/env/.zshrc
