@@ -1,0 +1,30 @@
+Host *
+#	ControlMaster auto
+#	ControlPersist 1h
+#	ControlPath /tmp/ssh_mux_%h%p%r
+#	ServerAliveInterval 30
+#	ServerAliveCountMax 4
+	ForwardX11 yes
+	ForwardAgent yes
+
+host *-sim-???-???
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    ForwardAgent yes
+
+host sc-vpx-eash
+    UserKnownHostsFile /dev/null
+    StrictHostKeyChecking no
+    ForwardAgent yes
+
+Host gitlab-master.nvidia.com
+    User git
+    Port 12051
+    IdentityFile ~/.ssh/id_ed25519_work_gitlab
+
+Host *.nvidia.com
+    ForwardAgent yes
+
+host 192.168.1.244
+    User pi
+    UserKnownHostsFile /dev/null
