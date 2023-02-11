@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/scratch.eash/axl/axl.git/dev/inf/ci/Axl/mainline/t/system'
+let g:netrw_dirhist_7='/home/scratch.eash/axl/axl.git/dev/inf/ci/Axl/mainline/lib/Axl/Component'
+let g:netrw_dirhist_6='/home/nv/utils/perl-modules/RegressMisc/1.0.2/lib/perl5'
+let g:netrw_dirhist_5='/home/eash/scripts/scott_p4'
+let g:netrw_dirhist_4='/home/scratch.eash/cookie-cutter/{{cookiecutter.repo_name}}/{{cookiecutter.project_slug}}'
+let g:netrw_dirhist_3='/home/scratch.eash/cookie-cutter/{{cookiecutter.repo_name}}'
+let g:netrw_dirhist_2='/tmp/ea/my-project/tests'
+let g:netrw_dirhist_1='/tmp/ea/my-project/my-project'
+let g:netrw_dirhist_0='/tmp/ea/my-project/tests'
+let g:netrw_dirhist_9='/tmp/ea/my-project'

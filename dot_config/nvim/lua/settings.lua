@@ -71,7 +71,11 @@ vim.g.python3_host_prog='/home/eash/.cache/nvim/python3_venv/bin/python3'
 o.termguicolors = true
 
 -- COQ settings.  Must be here so that they are loaded before the coq is required
-vim.g.coq_settings = {['auto_start'] = true}
+vim.g.coq_settings = {
+    ['auto_start'] = "shut-up",
+    ["limits.completion_auto_timeout"]=2,
+    ["clients.lsp.resolve_timeout"]=0.07,
+}
 
 -- Diagnostics
 vim.diagnostic.config(
@@ -88,3 +92,6 @@ vim.diagnostic.config(
 
 -- Spell options
 o.spelloptions = "camel"
+
+-- Enable code action to show up on screen
+-- autocmd CursorHold,CursorHoldI * lua require('code_action_utils').code_action_listener()s

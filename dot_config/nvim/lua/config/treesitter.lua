@@ -1,4 +1,5 @@
 require('nvim-treesitter.configs').setup ({
+    parser_install_dir = "/home/scratch.eash/nvim-treesitter/",
     highlight = {
     enable = true,
     -- Automaticallyh install missing when entering buffer

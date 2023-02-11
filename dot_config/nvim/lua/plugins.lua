@@ -39,8 +39,8 @@ require('packer').startup(function()
     use {
         'nvim-telescope/telescope.nvim',
         tag  = '0.1.0',
-        -- config = function() require('config.telescope') end,
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+        config = function() require('config/telescope') end,
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'},{'nvim-telescope/telescope-ui-select.nvim'}},
 
     }
     use { 'nvim-telescope/telescope-packer.nvim', requires = {{'nvim-telescope/telescope.nvim'}}}
@@ -66,7 +66,25 @@ require('packer').startup(function()
     -- use {'onsails/lspkind-nvim', config = function() require('config.lspkind') end }
     use {'mfussenegger/nvim-lint'}
     use { "JASONews/glow-hover.nvim", requires = "charmbracelet/glow",config = function() require('glow-hover').setup() end }
+    use {
+        'kosayoda/nvim-lightbulb',
+        requires = 'antoinemadec/FixCursorHold.nvim',
+        config = function()
+            require('nvim-lightbulb').setup({autocmd = {enabled = true}})
+        end
+    }
 
+    -- lsp hover docs in side panel
+    use {
+    "amrbashir/nvim-docs-view",
+    opt = true,
+    cmd = { "DocsViewToggle" },
+    config = function()
+        require("docs-view").setup {
+        position = "bottom",
+        }
+    end
+    }
     -- Diagnostic
     use {
     "folke/trouble.nvim",

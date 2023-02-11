@@ -76,3 +76,8 @@ www
 github
 attr
 cli
+ui
+linter
+AutoSubmitBhandle
+symlinked
+isort

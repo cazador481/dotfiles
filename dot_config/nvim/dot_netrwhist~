@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/scratch.eash/mini_env/mini_env/lib/perl5/NV/Env/Config'
+let g:netrw_dirhist_2='/home/eash/.config/zsh'
+let g:netrw_dirhist_3='/home/eash/.config/zsh/.zcompcache'
