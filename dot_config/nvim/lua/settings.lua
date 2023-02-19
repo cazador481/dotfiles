@@ -69,7 +69,7 @@ local python3='/home/eash/.cache/nvim/python3_venv/bin/python3'
 if 1 == vim.fn.filereadable(python3) then
     vim.g.python3_host_prog=python3
 else 
-    vim.g.python3_host_prog="/home/eash/.pyenv/versions/3.10.10"
+    vim.g.python3_host_prog="/home/eash/.pyenv/versions/3.10.10/bin/python3"
 end
 
 -- Enable 24bit colors
