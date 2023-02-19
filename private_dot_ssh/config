@@ -12,10 +12,11 @@ host *-sim-???-???
     UserKnownHostsFile /dev/null
     ForwardAgent yes
 
-host sc-vpx-eash
+host eash.sc.vpx.nvidia.com
     UserKnownHostsFile /dev/null
     StrictHostKeyChecking no
     ForwardAgent yes
+    User eash
 
 Host gitlab-master.nvidia.com
     User git

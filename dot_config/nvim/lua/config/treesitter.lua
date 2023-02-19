@@ -1,5 +1,6 @@
 require('nvim-treesitter.configs').setup ({
-    parser_install_dir = "/home/scratch.eash/nvim-treesitter/",
+    --TODO:Fixme
+    -- parser_install_dir = "/home/scratch.eash/nvim-treesitter/",
     highlight = {
     enable = true,
     -- Automaticallyh install missing when entering buffer
@@ -16,4 +17,7 @@ require('nvim-treesitter.configs').setup ({
 })
 
 -- Needed so that treesitter components can build on a modern system.
-require 'nvim-treesitter.install'.compilers = { '/home/utils/llvm-14.0.0/bin/clang'}
+local clang='/home/utils/llvm-14.0.0/bin/clang'
+if vim.fn.filereadable(clang)== 1 then
+    require 'nvim-treesitter.install'.compilers = { '/home/utils/llvm-14.0.0/bin/clang'}
+end
