@@ -31,6 +31,7 @@ fish_add_path --path --prepend --move \
     /home/utils/tmux-3.2a/bin \
     /usr/local/lsf/bin \
     /home/nv/bin
+
 fish_add_path --path --append -- move /home/utils/bin /bin
     # /home/utils/the_silver_searcher-0.32.0/bin
     # /home/utils/mosh-1.3.2-90-g03087e7/bin
@@ -40,5 +41,8 @@ if test -f /home/nv/utils/ci/nvci_setup/nvci-setup.sh
 end
 # Enable vi keybindings
 fish_vi_key_bindings
+
 fish_add_path --path --prepend --move $HOME/.pyenv/bin/
-starship init fish |source
+pyenv init - | source
+
+starship ini:t fish |source
