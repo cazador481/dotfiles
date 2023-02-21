@@ -45,4 +45,4 @@ fish_vi_key_bindings
 fish_add_path --path --prepend --move $HOME/.pyenv/bin/
 pyenv init - | source
 
-starship ini:t fish |source
+starship init fish |source
