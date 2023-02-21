@@ -40,5 +40,5 @@ if test -f /home/nv/utils/ci/nvci_setup/nvci-setup.sh
 end
 # Enable vi keybindings
 fish_vi_key_bindings
-
-starship ini:t fish |source
+fish_add_path --path --prepend --move $HOME/.pyenv/bin/
+starship init fish |source
