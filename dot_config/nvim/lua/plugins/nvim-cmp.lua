@@ -1,6 +1,6 @@
 return {
     "hrsh7th/nvim-cmp",
-    dependencies = { "andersevenrud/cmp-tmux", "hrsh7th/cmp-nvim-lsp-signature-help" },
+    dependencies = { "andersevenrud/cmp-tmux", "hrsh7th/cmp-nvim-lsp-signature-help" , {"windwp/nvim-autopairs"}},
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
         local cmp = require("cmp")
@@ -38,5 +38,11 @@ return {
                 end
             end, { "i", "s" }),
         })
+
+        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+        cmp.event:on(
+            'confirm_done',
+            cmp_autopairs.on_confirm.done()
+        )
     end,
 }
