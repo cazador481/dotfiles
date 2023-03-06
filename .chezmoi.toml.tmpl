@@ -1,0 +1,10 @@
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $work := promptBoolOnce . "work" "at work?" -}}
+
+[data]
+    email = {{ $email | quote }}
+    work = {{ $work }}
+
+[merge]
+    command = "nvim"
+    {{`args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]`}}

@@ -1,0 +1,3 @@
+{{- if not .work }}
+_nvidia.fish
+{{- end }}
