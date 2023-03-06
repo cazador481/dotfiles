@@ -85,8 +85,7 @@ set -g status-left-length 20
 
 #set correct TERM, to make 256 colors work
 set -g default-terminal "tmux-256color"
-set-option -sa terminal-overrides ',xterm-256color:RGB'
-# set -g default-terminal "screen-256color"
+set-option -sa terminal-overrides ',*-256color:RGB'
 
 
 #on screen time for display-panes in ms

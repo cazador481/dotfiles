@@ -5,7 +5,22 @@ SETUVAR --export PIPX_DEFAULT_PYTHON:/home/eash/.pyenv/versions/3.10.10/bin/pyth
 SETUVAR --export PYENV_ROOT:/home/eash/.pyenv
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/scratch/eash/config/fish/functions/fisher/fish:/home/scratch/eash/config/fish/completions/fisher/fish
-SETUVAR _fisher_plugins:jorgebucaran/fisher
+SETUVAR --export PYTHONDONTWRITEBYTECODE:True
+SETUVAR --export _ZO_EXCLUDE_DIRS:/home/f_hwinf_ci_main/:/home/eash
+SETUVAR __fish_initialized:3400
+SETUVAR _fish_abbr_c:clear
+SETUVAR _fish_abbr_dir:ls\x20\x2dla
+SETUVAR _fish_abbr_qs:qsub\x20\x2dIs\x20\x2dn2\x20\x2dapp\x20affinity\x20\x2dq\x20o_cpu_16G_1H
+SETUVAR _fish_abbr_qs4:qsub\x20\x2dIs\x20\x2dn4\x20\x2dapp\x20affinity\x20\x2dq\x20o_cpu_16G_1H
+SETUVAR _fish_abbr_root:cd\x20\x28/home/eash/scripts/get_root\x2epl\x29
+SETUVAR _fish_abbr_tree:lsd\x20\x2d\x2dtree
+SETUVAR _fisher_edc_2F_bass_files:/home/scratch\x2eeash/\x2econfig/fish/functions/__bass\x2epy\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/bass\x2efish
+SETUVAR _fisher_halostatue_2F_fish_2D_direnv_files:/home/scratch\x2eeash/\x2econfig/fish/conf\x2ed/halostatue_fish_direnv\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/completions/direnv\x2efish
+SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:/home/scratch\x2eeash/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/conf\x2ed/autopair\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/scratch\x2eeash/\x2econfig/fish/functions/fisher\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_kidonng_2F_zoxide_2E_fish_files:/home/scratch\x2eeash/\x2econfig/fish/functions/__zoxide_cd\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/__zoxide_pwd\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/__zoxide_z\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/__zoxide_z_complete\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/__zoxide_zi\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/conf\x2ed/zoxide\x2efish
+SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/home/scratch\x2eeash/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/autopair\x2efish\x1ehalostatue/fish\x2ddirenv\x1eedc/bass\x1ekidonng/zoxide\x2efish\x1epatrickf1/fzf\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
@@ -29,3 +44,4 @@ SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_user_paths:~/bin:~/.cargo/bin:/home/utils/bin:~/.pyenv/bin
+SETUVAR --export zoxide_cmd:cd
