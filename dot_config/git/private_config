@@ -1,0 +1,142 @@
+[color]
+	ui = true
+[push]
+	default = simple
+[github]
+	user = cazador481
+[git-p4]
+	user = eash
+    #exportLabels = true
+	skipSubmitEdit = 1
+	detectCopies = true
+	detectRenames = true
+	port = p4proxy-sc:4101
+	importLabels = true
+	keepemptycommits = true
+	useclientspec = true
+[http]
+	sslVerify = false
+[core]
+    # pager = diff-so-fancy | less --tabs=4 -RFX
+	attributesfile = /home/eash/.config/git/.gitattributes
+	commentChar = ";"
+[alias] 
+    root = rev-parse --show-toplevel
+    info = nv info
+
+    pop = stash pop
+    push = stash push
+
+    name = "!git symbolic-ref --quiet --short HEAD || git rev-parse --short HEAD"  # name of current branch
+    # rename branch to done-branch
+    cb = checkout -b
+    co = "!git checkout `git branches | fzf --ansi |cut -f1 -d' '`"
+    desc = branch --edit-description
+    del-shelf = "!git update-ref -d refs/remotes/p4/unshelve/{}"
+
+    as2submit = nv as2-submit
+    # as2submit  = "!p4 unshelve -s `git get-shelf` -c `git get-shelf` && as2 --nosearch submit -c `git get-shelf` && p4 revert //..."
+    as2submit-p= "!p4 unshelve -s `git get-shelf` -c `git get-shelf` && as2 --nosearch submit -c `git get-shelf` -p && p4 revert //..."
+    as2submit-f= "!p4 unshelve -s `git get-shelf` -c `git get-shelf` && as2 --nosearch submit -c `git get-shelf` -f && p4 revert //..."
+    as2submit-t= "!p4 unshelve -s `git get-shelf` -c `git get-shelf` && as2 --nosearch submit -c `git get-shelf` -t && p4 revert //..."
+    as2submit-k= "!p4 unshelve -s `git get-shelf` -c `git get-shelf` && as2 --nosearch submit -c `git get-shelf` -k && p4 revert //..."
+
+    # parent p4 commit
+    parent-commit = "!git merge-base `git name` `git parent`"
+
+    parent = "!git config branch.`git name`.parent "
+
+
+    get-shelf = "!git config --get branch.`git name`.shelf"
+    set-shelf = "!git config branch.`git name`.shelf "
+    get-review = "!git config --get branch.`git name`.review"
+    set-review = "!git config branch.`git name`.review "
+    open-review ="!doitclient www https://cr.nvidia.com/ui#review:id=`git get-review`"
+
+    set-bundle = "!git config branch.`git name`.bundle "
+    get-bundle = "!git config branch.`git name`.bundle "
+
+
+# nvbugs commands
+    bug = "!git config branch.`git name`.bug "
+    open-bug ="!doitclient www http://nvbugs/`git bug`"
+
+
+    set-rebase-onto = "!git config branch.`git name`.rebase-onto- "
+    get-rebase-onto = "!git config --get branch.`git name`.rebase-onto-"
+
+# jira
+    get-jira = "!git config --get branch.`git name`.jira"
+    set-jira = "!git config branch.`git name`.jira "
+    jiracomponent= "!git config nv-git.jiraComponent " 
+    open-jira ="!doitclient www http://jirasw.nvidia.com/browse/`git get-jira`"
+
+
+    print-desc = "!git config --get branch.`git name`.description|head -n 1"
+
+    # remove squashed branches
+    rm-squash = "!git branch |grep -o '.*-squash$'|xargs -I{} git branch -D {};"
+
+    done=nv done
+    rm-done = "!git branch |grep -o '.*-done'|xargs -I{} git branch -D {};"
+    submit = "!f() { git name | grep -v submit | xargs -I{} git branch -m {} {}-submit; }; f"
+    rm-submit = "!git branch |grep -o '.*-submit'|xargs -I{} git branch -D {};"
+    #task warrior id
+    t-id = "!git config --get branch.`git name`.taskwarrior-id "
+    create-gitlab="!git push --set-upstream ssh://git@gitlab-master.nvidia.com:12051/eash/$(git rev-parse --show-toplevel | xargs basename|cut -d '.' -f1).git master"
+    my-clean = clean -e .vim -e .lvimrc -e .gitignore -e .p4config -e .crucible -e .libcustom -e TOT -e .perltidyrc -e .workspace -e .envrc
+
+##### ALIAS MANAGMENT####
+
+  # Show our defined alias list
+    aliases = "!git config --get-regexp '^alias\\.' | cut -c 7- | sed 's/ / = /'"
+
+    add-alias = "!f() { [ $# = 3 ] && git config $1 alias.\"$2\" \"$3\" && return 0 || echo \"Usage: git add-(local|global)-alias <new alias> <original command>\" >&2 && return 1; }; f"
+    add-global-alias = "!git add-alias --global"
+    add-local-alias = "!git add-alias --local"
+
+    # Rename an alias
+    rename-alias = "!f() { [ $# = 3 ] && [ $2 != $3 ] && [ ! -z \"$(git config $1 --get alias.$2)\" ] && [ -z \"$(git config $1 --get alias.$3)\" ] && git config $1 alias.$3 \"$(git config $1 --get alias.$2)\" && git config $1 --unset alias.$2 && return 0 || echo \"Usage: git rename-(local|global)-alias <alias existing name> <new alias name>\nThe alias you are going to rename must exist and new name must not exist.\" >&2 && return 1; };f"
+    rename-global-alias = "!git rename-alias --global"
+    rename-local-alias = "!git rename-alias --local"
+
+    # Rename branch
+    rename = "!f() { git branch -m $1 &&  git set-jira $1; }; f"
+    new = "!f() { git checkout -b $1 p4/master &&  git set-jira $1; }; f"
+	release = "!cd_hwinf && make release"
+	reset-p4master = reset p4/master --hard
+    
+[user]
+	name = Edward Ash
+	email = eash@nvidia.com
+[clean]
+	requireForce = true
+[init]
+	templatedir = ~/.config/git/templates/
+	defaultBranch = main
+[rebase]
+	autosquash = true
+	updateRefs = true
+[rerere]
+	enabled = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[diff]
+	algorithm = histogram
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[merge]
+	branchdesc = true
+	conflictStyle = zdiff3
+[credential]
+	helper = store

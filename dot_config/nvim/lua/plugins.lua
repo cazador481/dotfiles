@@ -14,6 +14,8 @@ require('packer').startup(function()
     -- key bindings
     use {'folke/which-key.nvim', config = function() require('config/which-key') end }
 
+    use {'alker0/chezmoi.vim'}
+
     use  {'svermeulen/vimpeccable'}
 
     -- Color scheme
