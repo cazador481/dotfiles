@@ -27,7 +27,7 @@ o.linebreak   = true -- Wrap on word boundary
 
 g.mapleader = '\\'
 
-local python3 = '/home/eash/.cache/nvim/python3_venv/bin/python3'
+local python3 = '/home/eash/.pyenv/versions/nvim-python/bin/python3'
 if 1 == vim.fn.filereadable(python3) then
   g.python3_host_prog = python3
 else

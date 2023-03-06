@@ -39,6 +39,11 @@ fish_add_path --path --append -- move /home/utils/bin /bin
 if test -f /home/nv/utils/ci/nvci_setup/nvci-setup.sh
     bass source /home/nv/utils/ci/nvci_setup/nvci-setup.sh
 end
+
+if test -f $HOME/bin/agent-bridge.sh
+    bass source $HOME/bin/agent-bridge.sh
+ end
+
 # Enable vi keybindings
 fish_vi_key_bindings
 
