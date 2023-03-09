@@ -3,8 +3,6 @@
 SETUVAR --export EDITOR:nvim
 SETUVAR --export PIPX_DEFAULT_PYTHON:/home/eash/.pyenv/versions/3.10.10/bin/python3
 SETUVAR --export PYENV_ROOT:/home/eash/.pyenv
-SETUVAR __fish_initialized:3400
-SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/scratch/eash/config/fish/functions/fisher/fish:/home/scratch/eash/config/fish/completions/fisher/fish
 SETUVAR --export PYTHONDONTWRITEBYTECODE:True
 SETUVAR --export _ZO_EXCLUDE_DIRS:/home/f_hwinf_ci_main/:/home/eash
 SETUVAR __fish_initialized:3400

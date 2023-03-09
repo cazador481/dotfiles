@@ -20,6 +20,10 @@ if test -f $HOME/bin/agent-bridge.sh
     bass source $HOME/bin/agent-bridge.sh
 end
 
+if test -f /home/nv/utils/ci/nvci_setup/nvci-setup.sh
+    bass source /home/nv/utils/ci/nvci_setup/nvci-setup.sh
+end
+
 fish_add_path --path --prepend --move $HOME/.pyenv/bin/
 pyenv init - | source
 
