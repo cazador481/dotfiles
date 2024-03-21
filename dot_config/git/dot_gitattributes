@@ -1,1 +1,2 @@
 *.py diff=python
+poetry.lock merge=poetrylock

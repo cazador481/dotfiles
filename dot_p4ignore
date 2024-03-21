@@ -1,0 +1,12 @@
+.git/*
+.crucible/*
+.p4config
+TOT
+*.egg-info/*
+lvimrc
+.mypy_cache/*
+.as/*
+.workspace/*
+TASK.*.log
+.ruff_cache
+del_me/*

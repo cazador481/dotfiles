@@ -1,12 +1,29 @@
 return {
     "hrsh7th/nvim-cmp",
-    dependencies = { "andersevenrud/cmp-tmux", "hrsh7th/cmp-nvim-lsp-signature-help" , {"windwp/nvim-autopairs"}},
+    -- keys = {":","/", "?"},  -- lazy load cmp on more keys along with insert mode
+    dependencies = { 
+        "andersevenrud/cmp-tmux",
+        "hrsh7th/cmp-nvim-lsp-signature-help" ,
+        "windwp/nvim-autopairs",
+        -- "hrsh7th/cmp-cmdline", # causes nvim to hang
+        'FelipeLema/cmp-async-path',
+        'hrsh7th/cmp-nvim-lsp',
+    },
+
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
         local cmp = require("cmp")
         local luasnip = require("luasnip")
-        opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "tmux" } }))
-        opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "nvim_lsp_signature_help" } }))
+        opts.performance = {fetching_timeout = 10}
+        opts.sources = {
+            {name = "tmux"},
+            { name = "nvim_lsp_signature_help" },
+            {name = 'async_path'},
+            {name = 'buffer'},
+            {name = 'luasnip'},
+            {name = 'nvim_lsp'},
+
+        }
 
         local has_words_before = function()
             unpack = unpack or table.unpack
@@ -37,7 +54,8 @@ return {
                     fallback()
                 end
             end, { "i", "s" }),
-        })
+        }
+        )
 
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')
         cmp.event:on(
@@ -45,4 +63,34 @@ return {
             cmp_autopairs.on_confirm_done()
         )
     end,
+
+    -- config = function(plugin, opts)
+    --     local cmp = require "cmp"
+    --     -- run cmp setup
+    --     cmp.setup(opts)
+    --
+    --     -- configure `cmp-cmdline` as described in their repo: https://github.com/hrsh7th/cmp-cmdline#setup
+    --     cmp.setup.cmdline("/", {
+    --         mapping = cmp.mapping.preset.cmdline(),
+    --         sources = {
+    --             { name = "buffer" },
+    --         },
+    --     })
+    --     cmp.setup.cmdline(":", {
+    --     mapping = cmp.mapping.preset.cmdline(),
+    --     sources = cmp.config.sources(
+    --         {
+    --             { name = "path" },
+    --         }, 
+    --         {
+    --             {
+    --                 name = "cmdline",
+    --                 option = {
+    --                     ignore_cmds = { "Man", "!" },
+    --                 },
+    --             },
+    --         }),
+    --     })
+    -- end,
+
 }

@@ -27,9 +27,34 @@ o.linebreak   = true -- Wrap on word boundary
 
 g.mapleader = '\\'
 
+o.relativenumber = false
+
 local python3 = '/home/eash/.pyenv/versions/nvim-python/bin/python3'
 if 1 == vim.fn.filereadable(python3) then
   g.python3_host_prog = python3
 else
   g.python3_host_prog = "/home/eash/.pyenv/versions/3.10.10/bin/python3"
 end
+
+-- Turn off json, and markdown conceal
+g.vim_markdown_conceal = 0
+g.vim_json_syntax_conceal = 0
+g.vim_json_conceal=0
+
+-- Set seperator color to white
+vim.api.nvim_set_hl(0,"WinSeparator",{bg="black",fg = "red"})
+
+-- Dissable autoformat
+vim.g.autoformat = false
+
+-- vim.g.clipboard = {
+--     name = 'OSC 52',
+--     copy = {
+--     ['+'] = require('vim.clipboard.osc52').copy,
+--     ['*'] = require('vim.clipboard.osc52').copy,
+--     },
+--     paste = {
+--     ['+'] = require('vim.clipboard.osc52').paste,
+--     ['*'] = require('vim.clipboard.osc52').paste,
+--     },
+-- }

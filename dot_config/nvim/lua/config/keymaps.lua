@@ -12,7 +12,9 @@ set("n",'<leader>w',':update<CR>',{silent=true})
 set("n",'<leader>d', "_d",{silent = true})
 
 -- Arrow key to buffef map
+set("n",'<C-LEFT>',':bp<CR>',{silent=true})
 -- vimp.nnoremap('<C-LEFT>',':bp<CR>')
+set("n",'<C-RIGHT>',':bn<CR>',{silent=true})
 -- vimp.nnoremap('<C-RIGHT>',':bn<CR>')
 
 

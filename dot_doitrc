@@ -1,0 +1,4 @@
+secret /home/eash/.doitsecrete
+host
+    map /home/scratch.eash/ \\dc2-cdot78-scr02.nvidia.com\scratch.eash\
+    map /home/eash/scratch/ \\dc2-cdot78-scr02.nvidia.com\scratch.eash\

@@ -7,11 +7,19 @@ if status is-interactive
     fish_vi_key_bindings
     bind --preset -M visual V edit_command_buffer
 end
+fish_add_path --path --prepend --move $HOME/.pyenv/bin
+$HOME/.pyenv/bin/pyenv init - | source
 
 fish_add_path --path --prepend --move \
     $HOME/.local/bin \
     $HOME/bin \
     $HOME/scripts
+
+function refresh_tmux_vars --on-event="fish_preexec"
+  if set -q TMUX
+    bass (tmux show-environment -s)
+  end
+end
 
 # The . must be at the front so that AS2 testing can work
 set -gx --path --prepend PATH .
@@ -20,14 +28,9 @@ if test -f $HOME/bin/agent-bridge.sh
     bass source $HOME/bin/agent-bridge.sh
 end
 
-if test -f /home/nv/utils/ci/nvci_setup/nvci-setup.sh
-    bass source /home/nv/utils/ci/nvci_setup/nvci-setup.sh
-end
-
-fish_add_path --path --prepend --move $HOME/.pyenv/bin/
-pyenv init - | source
 
 # Starship configuration  lives in ~/.config/starship.toml
 if status is-interactive
     starship init fish |source
+    enable_transience
 end

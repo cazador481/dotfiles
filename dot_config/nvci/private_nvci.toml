@@ -1,0 +1,5 @@
+[notify.email]
+enabled = false
+
+[notify.slack]
+enabled = true

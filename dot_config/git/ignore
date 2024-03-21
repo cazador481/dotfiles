@@ -35,3 +35,23 @@ nvci.*.log
 #direnv 
 .env
 .envrc
+
+
+#Neovim
+.null-ls*
+.neoconf.json
+
+# NVCI
+TASK.*.log
+waiver_manager.send.*.log
+
+# Directories to delete
+del_me/
+
+# Task
+Taskfile.yml
+
+package-lock.json
+
+# vim swap file
+*.swp

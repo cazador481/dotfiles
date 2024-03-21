@@ -20,6 +20,13 @@
     # pager = diff-so-fancy | less --tabs=4 -RFX
 	attributesfile = /home/eash/.config/git/.gitattributes
 	commentChar = ";"
+	fsmonitor = true
+	untrackedcahce = true
+
+[merge "poetrylock"]
+    name = Poetry lock merge driver
+    driver = /home/eash/.config/git/bin/poetry_lock_merge_driver.sh %P
+
 [alias] 
     root = rev-parse --show-toplevel
     info = nv info
@@ -51,7 +58,7 @@
     set-shelf = "!git config branch.`git name`.shelf "
     get-review = "!git config --get branch.`git name`.review"
     set-review = "!git config branch.`git name`.review "
-    open-review ="!doitclient www https://cr.nvidia.com/ui#review:id=`git get-review`"
+    open-review ="!doitclient www https://ccollab-prd.nvidia.com/ui#review:id=`git get-review`"
 
     set-bundle = "!git config branch.`git name`.bundle "
     get-bundle = "!git config branch.`git name`.bundle "
@@ -84,7 +91,7 @@
     #task warrior id
     t-id = "!git config --get branch.`git name`.taskwarrior-id "
     create-gitlab="!git push --set-upstream ssh://git@gitlab-master.nvidia.com:12051/eash/$(git rev-parse --show-toplevel | xargs basename|cut -d '.' -f1).git master"
-    my-clean = clean -e .vim -e .lvimrc -e .gitignore -e .p4config -e .crucible -e .libcustom -e TOT -e .perltidyrc -e .workspace -e .envrc
+    my-clean = clean -e .neoconf.json -e .vim -e .lvimrc -e .gitignore -e .p4config -e .crucible -e .libcustom -e TOT -e .perltidyrc -e .workspace -e .envrc
 
 ##### ALIAS MANAGMENT####
 
@@ -101,26 +108,38 @@
     rename-local-alias = "!git rename-alias --local"
 
     # Rename branch
-    rename = "!f() { git branch -m $1 &&  git set-jira $1; }; f"
-    new = "!f() { git checkout -b $1 p4/master &&  git set-jira $1; }; f"
+    rename = "!git nv rename"
+    new = "!git nv new"
 	release = "!cd_hwinf && make release"
 	reset-p4master = reset p4/master --hard
-    
+
+# worktree
+    wt-new = "!f() { git worktree add -b $1 `git root`/../$1 p4/master;}; f"
 [user]
 	name = Edward Ash
 	email = eash@nvidia.com
 [clean]
 	requireForce = true
 [init]
-	templatedir = ~/.config/git/templates/
+	; templatedir = ~/.config/git/templates/
 	defaultBranch = main
 [rebase]
 	autosquash = true
 	updateRefs = true
+	autoStash = true
 [rerere]
 	enabled = true
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+; [url "git@github.com:"]
+; 	insteadOf = https://github.com/
+# avoid issues where the cargo-edit tool tries to clone from a repo you do not have WRITE access to.
+# we already use SSH for every github repo, and so this puts the clone back to using HTTPS.
+[url "https://github.com/rust-lang/crates.io-index"]
+  insteadOf = https://github.com/rust-lang/crates.io-index
+
+# avoid issues where the `cargo audit` command tries to clone from a repo you do not have WRITE access to.
+# we already use SSH for every github repo, and so this puts the clone back to using HTTPS.
+[url "https://github.com/RustSec/advisory-db"]
+  insteadOf = https://github.com/RustSec/advisory-db
 [diff]
 	algorithm = histogram
 [color "diff-highlight"]
