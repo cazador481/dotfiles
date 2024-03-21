@@ -21,6 +21,8 @@ if status is-interactive
         /home/eash/.atuin/bin/atuin init --disable-up-arrow fish | source
     end
 end
+fish_add_path --path --prepend --move $HOME/.pyenv/bin
+$HOME/.pyenv/bin/pyenv init - | source
 
 fish_add_path --path --prepend --move $HOME/.cargo/bin
 # fish_add_path --path --prepend --move $HOME/.pyenv/bin

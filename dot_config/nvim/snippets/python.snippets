@@ -1,0 +1,6 @@
+snippet iserror "Returns on Error"
+    if isinstance($1, Error):
+        return $1
+
+snippet monkeypatch: "monkeypatch with type"
+	monkeypatch: pytest.MonkeyPatch
