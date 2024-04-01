@@ -159,3 +159,6 @@
 	conflictStyle = zdiff3
 [credential]
 	helper = store
+
+[includeIf "gitdir: /mnt/wsl"]
+    path = wsl-config
