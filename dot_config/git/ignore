@@ -32,7 +32,7 @@ nvci.*.log
 
 .ropeproject
 
-#direnv 
+# direnv 
 .env
 .envrc
 

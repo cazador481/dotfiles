@@ -1,4 +1,5 @@
 [color]
+
 	ui = true
 [push]
 	default = simple
@@ -21,7 +22,7 @@
 	attributesfile = /home/eash/.config/git/.gitattributes
 	commentChar = ";"
 	fsmonitor = true
-	untrackedcahce = true
+	untrackedcache = true
 
 [merge "poetrylock"]
     name = Poetry lock merge driver
@@ -86,12 +87,13 @@
 
     done=nv done
     rm-done = "!git branch |grep -o '.*-done'|xargs -I{} git branch -D {};"
-    submit = "!f() { git name | grep -v submit | xargs -I{} git branch -m {} {}-submit; }; f"
-    rm-submit = "!git branch |grep -o '.*-submit'|xargs -I{} git branch -D {};"
+    # Remove directories that no longer exist at origin
+    rm-prune = "!sh -c 'git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d'"
+
     #task warrior id
     t-id = "!git config --get branch.`git name`.taskwarrior-id "
     create-gitlab="!git push --set-upstream ssh://git@gitlab-master.nvidia.com:12051/eash/$(git rev-parse --show-toplevel | xargs basename|cut -d '.' -f1).git master"
-    my-clean = clean -e .neoconf.json -e .vim -e .lvimrc -e .gitignore -e .p4config -e .crucible -e .libcustom -e TOT -e .perltidyrc -e .workspace -e .envrc
+    my-clean = clean -e .neoconf.json -e .vim -e .lvimrc -e .gitignore -e .p4config -e .crucible -e .libcustom -e TOT -e .perltidyrc -e .workspace -e .envrc -e Taskfile.yml
 
 ##### ALIAS MANAGMENT####
 
