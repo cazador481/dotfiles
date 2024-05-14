@@ -1,0 +1,13 @@
+machine jirasw.nvidia.com
+login {{ onepasswordRead "op://Work/JIRA token work/username" }}
+password {{ onepasswordRead "op://Work/JIRA token work/credential" }}
+
+login {{ onepasswordRead "op://Work/JIRA token work/username" }}
+password {{ onepasswordRead "op://Work/JIRA token work/credential" }}
+
+machine confluence.nvidia.com
+login {{ onepasswordRead "op://Work/confluence.nvidia.com/username" }}
+password {{ onepasswordRead "op://Work/confluence.nvidia.com/credential" }}
+
+machine notify-slack-service
+password {{ onepasswordRead "op://Work/notify-slack-service/credential" }}
