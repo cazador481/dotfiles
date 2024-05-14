@@ -1,2 +1,5 @@
 [data]
     email = "eddie@ashfamily.net"
+
+[template]
+options = ["missingkey=zero"]
