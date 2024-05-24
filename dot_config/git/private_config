@@ -42,8 +42,8 @@
     desc = branch --edit-description
     del-shelf = "!git update-ref -d refs/remotes/p4/unshelve/{}"
 
+# as2 aliases
     as2submit = nv as2-submit
-    # as2submit  = "!p4 unshelve -s `git get-shelf` -c `git get-shelf` && as2 --nosearch submit -c `git get-shelf` && p4 revert //..."
     as2submit-p= "!p4 unshelve -s `git get-shelf` -c `git get-shelf` && as2 --nosearch submit -c `git get-shelf` -p && p4 revert //..."
     as2submit-f= "!p4 unshelve -s `git get-shelf` -c `git get-shelf` && as2 --nosearch submit -c `git get-shelf` -f && p4 revert //..."
     as2submit-t= "!p4 unshelve -s `git get-shelf` -c `git get-shelf` && as2 --nosearch submit -c `git get-shelf` -t && p4 revert //..."
@@ -79,7 +79,6 @@
     jiracomponent= "!git config nv-git.jiraComponent " 
     open-jira ="!doitclient www http://jirasw.nvidia.com/browse/`git get-jira`"
 
-
     print-desc = "!git config --get branch.`git name`.description|head -n 1"
 
     # remove squashed branches
@@ -109,14 +108,17 @@
     rename-global-alias = "!git rename-alias --global"
     rename-local-alias = "!git rename-alias --local"
 
-    # Rename branch
+##### Branch management ####
     rename = "!git nv rename"
     new = "!git nv new"
-	release = "!cd_hwinf && make release"
 	reset-p4master = reset p4/master --hard
+
+	release = "!cd_hwinf && make release"
 
 # worktree
     wt-new = "!f() { git worktree add -b $1 `git root`/../$1 p4/master;}; f"
+    
+    sb = "!git branches |fzf --ansi|cut -f1 -d' '| xargs -t -I {} pueue add git nv nvci-submit --branch {}"
 [user]
 	name = Edward Ash
 	email = eash@nvidia.com

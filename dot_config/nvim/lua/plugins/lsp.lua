@@ -1,6 +1,5 @@
 return {
     "neovim/nvim-lspconfig",
-    enabed=false,
     init = function()
         local keys = require("lazyvim.plugins.lsp.keymaps").get()
         keys[#keys + 1]= {"gd",false}
@@ -24,7 +23,14 @@ return {
                             autoImportCompletions = true,
                             autoSearchPaths = true,
                             exclude={".venv"},
-                            useLibraryCodeForTypes = true,
+                             diagnosticMode = "openFilesOnly",
+                            stubPath = "/home/scratch.eash_gpu/python-type-stubs/stubs:stubs",
+
+                            -- Checks that are caught by ruff
+                            diagnosticSeverityOverrides = {
+                                reportUnusedVariable = "none" -- Disable "is not accessed" error
+                            },
+                          useLibraryCodeForTypes = true,
                         }
                     },
                     pyright = {
@@ -36,5 +42,15 @@ return {
                 },
             },
         },
-    },
+     setup = {
+    ruff_lsp = function()
+      LazyVim.lsp.on_attach(function(client, _)
+        if client.name == "ruff_lsp" then
+          -- Disable hover in favor of Pyright
+          client.server_capabilities.hoverProvider = false
+        end
+      end)
+    end,
+    }
+   },
 }
