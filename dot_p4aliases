@@ -1,0 +1,14 @@
+# Restore a shelf to workspace
+restore $(cl) = -q unshelve -s $(cl) -c $(cl)
+# Submit a shelf
+ss $(cl) = shelve -d -c $(cl) && submit -c $(cl)
+move $(to) $(from) = integrate $(to) $(from) && delete $(to) 
+# List my shelves for current client
+shelved = changes -u $(P4USER) -s shelved -c $(P4CLIENT)
+checkout = sync
+# Restore and sheld submit a shelf
+submit-p4 $(cl) = -q unshelve -s $(cl) -c $(cl) && shelve -rc $(cl) && shelve -d -c $(cl) && submit -c $(cl)
+
+# Fix common issues
+rm = delete
+del = delete
