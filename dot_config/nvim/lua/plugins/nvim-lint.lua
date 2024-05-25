@@ -27,9 +27,11 @@ return {
                         return "mypy"
                 end
                 return {
-                    stdint = false,
+                    stdin = false,
                     ignore_exitcode = true,
-                    cmd = command(),
+                    # must be a path
+                    -- cmd = command(),
+                    cmd = ".venv/bin/mypy",
                     args = {
                         '--show-column-numbers',
                         '--show-error-end',
