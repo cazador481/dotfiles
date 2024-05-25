@@ -1,15 +1,11 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
-SETUVAR --export HWINFCI_OTEL_TOKEN:eyJhbGciOiJFUzUxMiIsInR5cCI6IkpXVCJ9\x2eeyJhdWQiOiI2MmU4MjM1NzIwYTJmMGQwMzk4MmM3NGEiLCJleHAiOjE2OTQwMjgyNzcsInN1YiI6IjYzMTc5ZGI1OWI1YTUyOTQ5NGMzMmZhZCIsInR5cCI6IlNFUlZJQ0UiLCJ1c2VySWQiOiJlYXNoIiwib3JpZ2luIjoiZWFzaCIsImp0aSI6IjYzMTc5ZTc3NDhjNzI3YTRjN2JlY2Y4MSIsImlhdCI6MTY2MjQ5MjI3OSwiaXNzIjoiNjI5NjMwZGQwYmE3Zjc0MTNhM2I2MzAxIn0\x2eALxS6IMrtwUOsK5QctMtBMEJt6Do_UAo26eNBibTxXcAVM9xtMTfSHynEHrjXorkXweV0UsrJzsggan0p98eL4HoAdPyTZIeiX5L0Pk3kp2DH28lXgvBxqonFJSuL1Znn2JAgzI2J84oC_4Q0CQBq\x2dfhuhPv3pZQoGQ6wsCLzLKMXED6
 SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
 SETUVAR --export P4ENVIRO:/dev/null
-SETUVAR --export P4IGNORE:\x2ep4ignore\x3b/home/eash/\x2ep4ignore
 SETUVAR --export PIPX_HOME:/home/eash/\x2elocal/pipx/
 SETUVAR --export PYTHONDONTWRITEBYTECODE:True
 SETUVAR --export PYTHONSTARTUP:/home/eash/\x2epythonrc
-SETUVAR --export XDG_CACHE_HOME:/home/eash/scratch/\x2ecache
-SETUVAR --export XDG_DATA_HOME:/home/eash/scratch/\x2elocal
 SETUVAR --export _ZO_EXCLUDE_DIRS:/home/f_hwinf_ci_main/\x2a\x3a/home/eash
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_c:clear
