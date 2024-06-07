@@ -1,0 +1,9 @@
+{{- if eq .chezmoi.os "linux" -}}
+{{- if (.chezmoi.kernel.osrelease |lower|contains "microsoft") -}}
+alias copy clip.exe
+alias paste 'powershell.exe Get-Clipboard'
+{{- else -}}
+alias copy 'doitclient wclip'
+alias paste 'doitclient wclip -r'
+{{- end -}}
+{{- end -}}
