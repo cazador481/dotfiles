@@ -35,7 +35,6 @@ return {
                     },
                     pyright = {
                         disableOrganizeImports = true,
-
                     },
                     diagnosticMode = "openFilesOnly",
                     indexing = true,
