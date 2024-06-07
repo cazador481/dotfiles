@@ -15,9 +15,6 @@ o.smartindent = true
 -- Makes it so when you copy the autoindent is disabled
 o.copyindent  = true
 
--- Sync system and nvim clipboard
--- o.clipboard   = 'unnamed,unnamedplus'
-
 -- Mouse support
 o.mousefocus  = true
 
@@ -32,7 +29,7 @@ o.relativenumber = false
 local python3 = '/home/eash/.pyenv/versions/nvim-python/bin/python3'
 if 1 == vim.fn.filereadable(python3) then
   g.python3_host_prog = python3
-else
+elseif 1 == vim.fn.filereadable("/home/eash/.pyenv/versions/3.10.10/bin/python3") then
   g.python3_host_prog = "/home/eash/.pyenv/versions/3.10.10/bin/python3"
 end
 
@@ -47,6 +44,9 @@ vim.api.nvim_set_hl(0,"WinSeparator",{bg="black",fg = "red"})
 -- Dissable autoformat
 vim.g.autoformat = false
 
+-- Sync system and nvim clipboard
+o.clipboard   = 'unnamed,unnamedplus'
+
 -- vim.g.clipboard = {
 --     name = 'OSC 52',
 --     copy = {
@@ -58,3 +58,17 @@ vim.g.autoformat = false
 --     ['*'] = require('vim.clipboard.osc52').paste,
 --     },
 -- }
+if vim.fn.has('wsl') == 1 and vim.fn.executable("win32yank-wsl.exe") ==1 then
+    vim.g.clipboard = {
+        name = "win32yank-wsl",
+        copy = {
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
+        },
+        cache_enabled = true,
+    }
+end
