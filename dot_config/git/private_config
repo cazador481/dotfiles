@@ -160,7 +160,7 @@
 	whitespace = red reverse
 [merge]
 	branchdesc = true
-	conflictStyle = zdiff3
+	; conflictStyle = zdiff3
 [credential]
 	helper = store
 
