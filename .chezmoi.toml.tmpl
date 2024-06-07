@@ -8,3 +8,6 @@
 [merge]
     command = "nvim"
     {{`args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]`}}
+
+[template]
+    options = ["missingkey=zero"]
