@@ -1,0 +1,82 @@
+board:
+    id: 24918
+    name: Eddie Sprint
+    type: scrum
+epic:
+    name: customfield_10006
+    link: customfield_10005
+installation: Local
+issue:
+    fields:
+        custom:
+            - name: Projected Fix Date
+              key: customfield_15516
+              schema:
+                datatype: date
+            - name: Test Plan
+              key: customfield_12726
+              schema:
+                datatype: string
+            - name: Sprint
+              key: customfield_10004
+              schema:
+                datatype: array
+                items: string
+            - name: Epic Link
+              key: customfield_10005
+              schema:
+                datatype: any
+            - name: Requirements Document
+              key: customfield_12724
+              schema:
+                datatype: string
+            - name: Design Document
+              key: customfield_12725
+              schema:
+                datatype: string
+            - name: NVBugs ID
+              key: customfield_12324
+              schema:
+                datatype: string
+            - name: Code Review
+              key: customfield_10622
+              schema:
+                datatype: string
+            - name: POR Milestone
+              key: customfield_19502
+              schema:
+                datatype: option
+            - name: Epic Name
+              key: customfield_10006
+              schema:
+                datatype: string
+    types:
+        - id: "4"
+          name: Improvement
+          handle: ""
+          subtask: false
+        - id: "3"
+          name: Task
+          handle: ""
+          subtask: false
+        - id: "5"
+          name: Sub-task
+          handle: ""
+          subtask: true
+        - id: "2"
+          name: New Feature
+          handle: ""
+          subtask: false
+        - id: "1"
+          name: Bug
+          handle: ""
+          subtask: false
+        - id: "10000"
+          name: Epic
+          handle: ""
+          subtask: false
+login: eash
+project:
+    key: HWINFCI
+    type: ""
+server: https://jirasw.nvidia.com
