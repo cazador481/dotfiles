@@ -1,9 +1,11 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $work := promptBoolOnce . "work" "at work?" -}}
+{{- $nvidia_farm := promptBoolOnce . "nvidia_farm" "Is this an nvidia farm machine?" -}}
 
 [data]
     email = {{ $email | quote }}
     work = {{ $work }}
+    nvidia_farm_machine = {{ $nvidia_farm }}
 
 [merge]
     command = "nvim"
