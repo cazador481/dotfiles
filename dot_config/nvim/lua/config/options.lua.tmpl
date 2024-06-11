@@ -58,6 +58,7 @@ o.clipboard   = 'unnamed,unnamedplus'
 --     ['*'] = require('vim.clipboard.osc52').paste,
 --     },
 -- }
+
 if vim.fn.has('wsl') == 1 and vim.fn.executable("win32yank-wsl.exe") ==1 then
     vim.g.clipboard = {
         name = "win32yank-wsl",
@@ -72,3 +73,20 @@ if vim.fn.has('wsl') == 1 and vim.fn.executable("win32yank-wsl.exe") ==1 then
         cache_enabled = true,
     }
 end
+
+-- LazyVim root dir detection
+-- Each entry can be:
+-- * the name of a detector function like `lsp` or `cwd`
+-- * a pattern or array of patterns like `.git` or `lua`.
+-- * a function with signature `function(buf) -> string|string[]`
+vim.g.root_spec = { "lsp", { ".git", "lua","Makefile","TOT","pyproject.toml" }, "cwd" }
+
+-- To disable root detection set to just "cwd"
+-- vim.g.root_spec = { "cwd" }
+
+{{ if .nvidia_farm_machine }}
+vim.g.using_nvidia_farm = true 
+{{ else }}
+vim.g.using_nvidia_farm = false
+vim.g.lazyvim_python_lsp = "pyright"
+{{ end }}
