@@ -12,6 +12,7 @@ test_run/
 *.egg-info/
 .mypy_cache/
 .venv/
+.nvci_task_manager
 
 .libcustom
 pyrightconfig.json
