@@ -8,13 +8,11 @@ set -xg P4IGNORE .p4ignore:/home/eash/.p4ignore
 
 set -xg CC gcc
 
-# set -xg -p LM_LICENSE_FILE /home/tools/admin/license_files
 
 # LSF Setup
 set -xg LSF_SERVERDIR /usr/local/lsf/etc
 
 fish_add_path --path --prepend --move \
-    /home/nv/utils/client_tool/4.2.1/bin \
     /home/utils/fzf-0.29.0/bin \
     /home/autosubmit/bin \
     /home/nv/utils/crucible/1.0/bin \
@@ -30,7 +28,6 @@ fish_add_path --path --prepend --move \
     /home/utils/llvm-14.0.0/bin \
     /home/utils/make-4.3/bin \
     /home/utils/neovim-0.8.0/bin \
-    # /home/utils/node-v14.5.0/bin \
     /home/utils/node-v16.16.0/bin \
     /home/utils/ruby-3.2.2/bin \
     /home/utils/rust-1.71.0/bin/ \
@@ -41,8 +38,6 @@ fish_add_path --path --prepend --move \
     /home/utils/ripgrep-13.0.0/bin \
     /home/nv/bin
 fish_add_path --path --append -- move /home/utils/bin /bin
-    # /home/utils/the_silver_searcher-0.32.0/bin
-    # /home/utils/mosh-1.3.2-90-g03087e7/bin
 
 if test -f /home/nv/utils/ci/nvci_setup/nvci-setup.sh
     bass source /home/nv/utils/ci/nvci_setup/nvci-setup.sh
