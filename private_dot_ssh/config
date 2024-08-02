@@ -12,6 +12,12 @@ host *-sim-???-???
     UserKnownHostsFile /dev/null
     ForwardAgent yes
 
+host io-xterm-*
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    ForwardAgent yes
+
+
 host eash.sc.vpx.nvidia.com
     UserKnownHostsFile /dev/null
     StrictHostKeyChecking no
