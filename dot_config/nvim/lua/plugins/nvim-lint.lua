@@ -20,7 +20,7 @@ return {
 		linters = {
 			mypy = function()
 				local command = function()
-					if vim.fn.execute(".venv/bin/mypy") == 1 then
+					if vim.fn.exists(".venv/bin/mypy") == 1 then
 						return ".venv/bin/mypy"
 					end
 					return "mypy"
@@ -28,7 +28,8 @@ return {
 				return {
 					stdint = false,
 					ignore_exitcode = true,
-					cmd = command(),
+					-- cmd = command(),
+					cmd = ".venv/bin/mypy",
 					args = {
 						"--show-column-numbers",
 						"--show-error-end",
