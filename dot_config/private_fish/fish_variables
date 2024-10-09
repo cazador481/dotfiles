@@ -12,7 +12,7 @@ SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_dir:ls\x20\x2dla
 SETUVAR _fish_abbr_pa:pueue\x20add
 SETUVAR _fish_abbr_qs:qsub\x20\x2dIs\x20\x2dn2\x20\x2dapp\x20affinity\x20\x2dq\x20o_cpu_16G_1H
-SETUVAR _fish_abbr_qs4:qsub\x20\x2dIs\x20\x2dn4\x20\x2dapp\x20affinity\x20\x2dq\x20o_cpu_16G_1H
+SETUVAR _fish_abbr_qs4:qsub\x20\x2dIs\x20\x2dn4\x20\x2dapp\x20affinity\x20\x2dq\x20o_cpu_16G_1H\x20\x2dR\x20\x22span\x5bhosts\x3d1\x5d\x22\x20\x2dm\x20rel7x
 SETUVAR _fish_abbr_root:cd\x20\x28/home/eash/scripts/get_root\x2epl\x29
 SETUVAR _fish_abbr_tree:lsd\x20\x2d\x2dtree
 SETUVAR _fisher_edc_2F_bass_files:\x7e/\x2econfig/fish/functions/__bass\x2epy\x1e\x7e/\x2econfig/fish/functions/bass\x2efish
