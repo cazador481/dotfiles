@@ -14,7 +14,7 @@
 	port = p4proxy-sc.nvidia.com:4101
 	importLabels = true
 	keepemptycommits = true
-	useclientspec = true
+	useclientspec = false
 [http]
 	sslVerify = false
 [core]
