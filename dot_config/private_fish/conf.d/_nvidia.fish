@@ -27,7 +27,7 @@ fish_add_path --path --prepend --move \
     /home/utils/jq-1.6/bin \
     /home/utils/llvm-14.0.0/bin \
     /home/utils/make-4.3/bin \
-    /home/utils/neovim-0.8.0/bin \
+    /home/utils/neovim-0.10.1/bin \
     /home/utils/node-v16.16.0/bin \
     /home/utils/ruby-3.2.2/bin \
     /home/utils/rust-1.71.0/bin/ \
@@ -36,6 +36,7 @@ fish_add_path --path --prepend --move \
     /usr/local/lsf/bin \
     /home/utils/fd-8.1.1/bin \
     /home/utils/ripgrep-13.0.0/bin \
+    /home/utils/luarocks-2.4.1/bin \
     /home/nv/bin
 fish_add_path --path --append -- move /home/utils/bin /bin
 
