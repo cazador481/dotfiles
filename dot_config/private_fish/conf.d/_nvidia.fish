@@ -27,7 +27,7 @@ fish_add_path --path --prepend --move \
     /home/utils/jq-1.6/bin \
     /home/utils/llvm-14.0.0/bin \
     /home/utils/make-4.3/bin \
-    /home/utils/neovim-0.10.1/bin \
+    /home/utils/neovim-0.10.2/bin \
     /home/utils/node-v16.16.0/bin \
     /home/utils/ruby-3.2.2/bin \
     /home/utils/rust-1.71.0/bin/ \
