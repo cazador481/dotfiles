@@ -9,10 +9,12 @@ return {
     opts = {
         --`@type lspconfig.options
         servers = {
-            ruff_lsp = {
+            ruff = {
                 settings = {
                     ruff = {
-                        args = {"--ignore=E201,E231,E227"},
+                        lint = {
+                            ignore = {"E201","E231","E227" },
+                        }
                     }
                 },
             },
@@ -54,12 +56,13 @@ return {
                     pylsp = {
                         configurationSources = { "flake8" },
                         plugins = {
+                            pylsp_mypy = {enabled = false},
                             black = { enabled = false },
-                            -- flake8 = {
-                            --     enabled = false,
-                            --     ignore = { "BLK100", "E1", "E2", "E3", "E5", "I", "W291" },
-                            --     executable = ".venv/bin/flake8",
-                            -- },
+                            flake8 = {
+                                enabled = false,
+                                ignore = { "BLK100", "E1", "E2", "E3", "E5", "I", "W291" },
+                                executable = ".venv/bin/flake8",
+                            },
                             jedi = { environment = ".venv/bin/python" },
                             mccabe = { enabled = false },
                             mypy = { enabled = false }, -- mypy does not use executable
@@ -86,15 +89,15 @@ return {
             },
         },
 
-     setup = {
-    ruff_lsp = function()
-      LazyVim.lsp.on_attach(function(client, _)
-        if client.name == "ruff_lsp" then
-          -- Disable hover in favor of Pyright
-          client.server_capabilities.hoverProvider = false
-        end
-      end)
-    end,
-    }
+    --  setup = {
+    -- ruff_lsp = function()
+    --   LazyVim.lsp.on_attach(function(client, _)
+    --     if client.name == "ruff_lsp" then
+    --       -- Disable hover in favor of Pyright
+    --       client.server_capabilities.hoverProvider = false
+    --     end
+    --   end)
+    -- end,
+    -- }
    },
 }

@@ -5,6 +5,7 @@ set -xg XDG_CACHE_HOME /home/eash/scratch/.cache
 # P4 Env variables
 set -xg P4CONFIG .p4config
 set -xg P4IGNORE .p4ignore:/home/eash/.p4ignore
+set -xg P4ENVIRO /dev/null
 
 set -xg CC gcc
 
@@ -37,6 +38,7 @@ fish_add_path --path --prepend --move \
     /home/utils/fd-8.1.1/bin \
     /home/utils/ripgrep-13.0.0/bin \
     /home/utils/luarocks-2.4.1/bin \
+    /home/utils/fish-3.6.1/bin \
     /home/nv/bin
 fish_add_path --path --append -- move /home/utils/bin /bin
 

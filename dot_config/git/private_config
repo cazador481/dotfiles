@@ -59,7 +59,7 @@
     set-shelf = "!git config branch.`git name`.shelf "
     get-review = "!git config --get branch.`git name`.review"
     set-review = "!git config branch.`git name`.review "
-    open-review ="!doitclient www https://ccollab-prd.nvidia.com/ui#review:id=`git get-review`"
+    open-review ="!timeout 5 doitclient www https://ccollab-prd.nvidia.com/ui#review:id=`git get-review`"
 
     set-bundle = "!git config branch.`git name`.bundle "
     get-bundle = "!git config branch.`git name`.bundle "

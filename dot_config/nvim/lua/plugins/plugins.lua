@@ -1,4 +1,3 @@
 return {
-    -- {'alker0/chezmoi.vim'},
-    { "JASONews/glow-hover.nvim"}
+    -- { "JASONews/glow-hover.nvim"}
 }

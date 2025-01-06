@@ -9,6 +9,7 @@ local severities = {
 return {
 	"mfussenegger/nvim-lint",
 	opts = {
+        events = {"BufWritePost","BufReadPost"},
 		linters_by_ft = {
 			fish = { "fish" },
 			python = { "mypy" },
@@ -26,14 +27,13 @@ return {
 					return "mypy"
 				end
 				return {
-					stdint = false,
+					stdin = false,
 					ignore_exitcode = true,
 					-- cmd = command(),
 					cmd = ".venv/bin/mypy",
 					args = {
 						"--show-column-numbers",
 						"--show-error-end",
-						--                    '--hide-error-codes',
 						"--hide-error-context",
 						"--no-color-output",
 						"--no-error-summary",

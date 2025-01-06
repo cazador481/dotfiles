@@ -1,6 +1,7 @@
 return {
     'akinsho/bufferline.nvim',
-    opts = {
+    opts_disable = {
+        -- Disabled in the hopes of figuring out what is causing the hang.  When I hit ctrl-c bufferline errored.
         options = {
             numbres = "buffer_id",
             groups = {

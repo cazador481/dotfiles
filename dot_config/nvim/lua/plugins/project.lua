@@ -2,8 +2,8 @@ return {
     "ahmedkhalf/project.nvim",
     name = "project_nvim",
     ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-        return {
+    opts = {
+        manual_mode = false,
         -- All the patterns used to detect root dir, when **"pattern"** is in
         -- detection_methods
         scope = "win",
@@ -12,5 +12,4 @@ return {
         patterns =
             { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "TOT", "^.config", "pyproject.toml" },
     }
-    end,
 }
