@@ -1,0 +1,263 @@
+# code-review
+
+## Purpose
+Performs a comprehensive multi-perspective code review focusing on security, performance, and maintainability.
+
+## Usage
+```
+/code-review [branch-name] [--base=branch] [--format=markdown|inline]
+```
+
+**Examples:**
+- `/code-review feature/auth` - Reviews feature/auth against main/master
+- `/code-review feature/api --base=develop` - Reviews against develop branch
+- `/code-review --format=inline` - Provides inline comments in current file
+
+## What it does
+
+Reviews code from three expert perspectives:
+
+### 1. Security Specialist
+- **OWASP Top 10** vulnerabilities (injection, XSS, broken auth, etc.)
+- **Authentication/Authorization** flaws
+- **Data exposure** risks (logging sensitive data, API keys in code)
+- **Input validation** gaps
+- **Dependency vulnerabilities** (outdated packages with known CVEs)
+
+### 2. Performance Engineer
+- **Algorithmic complexity** issues (O(n²) when O(n) is possible)
+- **Memory leaks** (unclosed connections, event listener accumulation)
+- **Unnecessary re-renders** (React) or re-computations
+- **Database query optimization** (N+1 queries, missing indexes)
+- **Bundle size** concerns (large dependencies, missing tree-shaking)
+
+### 3. Maintainability Expert
+- **Code clarity** (unclear naming, magic numbers, complex conditionals)
+- **Architectural concerns** (tight coupling, violations of SOLID principles)
+- **Testing gaps** (untestable code, missing edge cases)
+- **Documentation** needs
+- **Code duplication** and refactoring opportunities
+
+## Output Format
+markdown file named review-<branch>.md
+
+### Issue Structure
+Each issue includes:
+- **Severity**: Critical | High | Medium | Low
+- **Category**: Security | Performance | Maintainability
+- **Location**: File path and line numbers
+- **Problem**: Clear description of the issue
+- **Impact**: Why this matters
+- **Fix**: Concrete code suggestion or approach
+- **Effort**: Small | Medium | Large
+
+### Priority Matrix
+```
+Critical/High → Address immediately
+Medium       → Address before merge
+Low          → Consider for future refactor
+```
+
+## Review Output Template
+
+```markdown
+# Code Review: [branch-name]
+
+**Reviewer**: Claude (AI Assistant)
+**Date**: [Current Date]
+**Base Branch**: [main/master/develop]
+**Files Changed**: [count]
+
+---
+
+## Executive Summary
+[2-3 sentence overview of code quality and key concerns]
+
+**Risk Level**: 🔴 High | 🟡 Medium | 🟢 Low
+
+---
+
+## Index of Issues
+
+### Critical Issues
+- [ ] [Issue 1: SQL Injection vulnerability in user query](#issue-1)
+- [ ] [Issue 2: Unvalidated redirect in auth flow](#issue-2)
+
+### High Priority Issues
+- [ ] [Issue 3: Memory leak in event listeners](#issue-3)
+- [ ] [Issue 4: Missing error boundaries in React components](#issue-4)
+
+### Medium Priority Issues
+- [ ] [Issue 5: N+1 query pattern in data fetching](#issue-5)
+- [ ] [Issue 6: Inconsistent error handling](#issue-6)
+
+### Low Priority Issues
+- [ ] [Issue 7: Magic numbers in business logic](#issue-7)
+- [ ] [Issue 8: Missing JSDoc comments](#issue-8)
+
+**Legend**: `[ ]` Open | `[x]` Closed
+
+---
+
+## Detailed Findings
+
+### Critical Issues (Action Required)
+*Issues that must be fixed before deployment*
+
+<a id="issue-1"></a>
+#### 🔴 Issue 1: SQL Injection vulnerability in user query
+**Status**: [ ] Open | [x] Closed  
+**File**: `path/to/file.js:42`  
+**Category**: Security  
+**Severity**: Critical
+
+**Problem:**
+[Clear description of what's wrong]
+
+**Impact:**
+[Why this is critical - user impact, security risk, etc.]
+
+**Recommendation:**
+```javascript
+// Before (current code)
+[problematic code snippet]
+
+// After (suggested fix)
+[improved code snippet]
+```
+
+**Effort**: Small | Medium | Large
+
+---
+
+<a id="issue-2"></a>
+#### 🔴 Issue 2: [Title]
+**Status**: [ ] Open | [x] Closed  
+**File**: `path/to/file.js:42`  
+**Category**: Security | Performance | Maintainability  
+**Severity**: Critical
+
+[Same format as Issue 1]
+
+---
+
+### High Priority Issues
+*Should be addressed before merge*
+
+<a id="issue-3"></a>
+#### 🟠 Issue 3: [Title]
+**Status**: [ ] Open | [x] Closed  
+[Same format]
+
+---
+
+### Medium Priority Issues
+*Consider addressing soon*
+
+<a id="issue-5"></a>
+#### 🟡 Issue 5: [Title]
+**Status**: [ ] Open | [x] Closed  
+[Same format]
+
+---
+
+### Low Priority Issues
+*Nice-to-haves and future improvements*
+
+<a id="issue-7"></a>
+#### ⚪ Issue 7: [Title]
+**Status**: [ ] Open | [x] Closed  
+[Same format]
+
+---
+
+## Positive Observations
+*What's done well*
+- ✅ [Good practice or pattern observed]
+- ✅ [Another positive aspect]
+
+---
+
+## Recommendations
+
+### Immediate Actions (Before Merge)
+1. [Action item]
+2. [Action item]
+
+### Short-term (Next Sprint)
+1. [Action item]
+2. [Action item]
+
+### Long-term (Technical Debt)
+1. [Action item]
+2. [Action item]
+
+---
+
+## Next Steps
+- [ ] Address all Critical and High issues
+- [ ] Run security scan (npm audit / Snyk)
+- [ ] Add missing tests for edge cases
+- [ ] Update documentation if needed
+- [ ] Request re-review after fixes
+
+---
+
+*Generated by Claude Code Review Assistant*
+```
+
+## Configuration Options
+
+The command can be customized with these settings:
+
+```json
+{
+  "codeReview": {
+    "defaultBaseBranch": "main",
+    "includePassing": true,
+    "minSeverity": "medium",
+    "focusAreas": ["security", "performance", "maintainability"],
+    "excludePatterns": ["*.test.js", "*.spec.ts", "node_modules/"],
+    "includeAIContext": true
+  }
+}
+```
+
+## Smart Features
+
+### Context-Aware Analysis
+- **Framework Detection**: Applies React/Vue/Node-specific best practices
+- **Language-Specific**: TypeScript vs JavaScript considerations
+- **Project Type**: API vs frontend vs full-stack patterns
+
+### Automated Checks
+- Links to relevant documentation (MDN, OWASP, framework docs)
+- Suggests specific ESLint rules or tools to prevent issues
+- Estimates fix difficulty based on code complexity
+
+### Learning Mode
+Option to include educational context:
+- Why this is a problem
+- Links to articles/documentation
+- Common pitfalls in this area
+
+## Interactive Mode
+
+For inline reviews, Claude will:
+1. Show issues in order of severity
+2. Allow you to ask "Why is this a problem?"
+3. Provide alternative approaches when asked
+4. Generate fix commits with proper messages
+
+---
+
+## Tips for Best Results
+
+1. **Provide context**: Mention if it's a prototype, refactor, or production code
+2. **Specify concerns**: "Focus on security" or "I'm worried about performance"
+3. **Share constraints**: "We need to maintain backwards compatibility"
+4. **Ask questions**: "Is this pattern idiomatic?" or "How would you structure this?"
+
+---
+
+**Pro Tip**: Use `/code-review --quick` for a faster, high-level review focusing only on critical issues.
