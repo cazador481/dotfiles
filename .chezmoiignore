@@ -1,8 +1,10 @@
+# Don't install on non windows machines
 {{- if ne .chezmoi.os "windows" }}
 Documents/
 {{- end }}
-{{- if ne .chezmoi.os "windows" }}
-dot_config/**
-dot_config/
-private_dot_netrc.tmpl
+
+# Don't install on windows
+{{- if eq .chezmoi.os "windows" }}
+.config/**
+.config/
 {{- end }}
