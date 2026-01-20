@@ -5,6 +5,7 @@ set -xg XDG_CACHE_HOME /home/eash/scratch/.cache
 # P4 Env variables
 set -xg P4CONFIG .p4config
 set -xg P4IGNORE .p4ignore:/home/eash/.p4ignore
+# Set to null otherwise the P4ENVIRO file grows huge, and slows down every p4 command
 set -xg P4ENVIRO /dev/null
 
 set -xg CC gcc
@@ -31,7 +32,7 @@ fish_add_path --path --prepend --move \
     /home/utils/neovim-0.10.2/bin \
     /home/utils/node-v16.16.0/bin \
     /home/utils/ruby-3.2.2/bin \
-    /home/utils/rust-1.71.0/bin/ \
+    /home/utils/rust-1.85.1/bin \
     /home/utils/shellcheck-v0.7.1/ \
     /home/utils/tmux-3.2a/bin \
     /usr/local/lsf/bin \
@@ -46,5 +47,9 @@ if test -f /home/nv/utils/ci/nvci_setup/nvci-setup.sh
     bass source /home/nv/utils/ci/nvci_setup/nvci-setup.sh
 end
 
-#  alias nvim="CC=gcc CXX=g++ LDFLAGS='-static-libgcc -static-libstdc++' command nvim" */
+# Aliases
 alias nvim="CC=clang CXX=clang++ LDFLAGS='-static-libgcc -static-libstdc++' command nvim"
+
+# Abbreviations
+abbr qs4 qsub -Is -n4 -app affinity -app c75docker -q o_cpu_16G_1H -R '"span[hosts=1]"' -m rel7x
+abbr qs qsub -Is -n2 -app affinity -app c75docker -q o_cpu_16G_1H -R '"span[hosts=1]"' -m rel7x

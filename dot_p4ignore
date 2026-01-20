@@ -1,5 +1,5 @@
 .git/*
-.crucible/*
+.crucible/personal/*
 .p4config
 TOT
 *.egg-info/*

@@ -30,3 +30,32 @@ add_latest_nvci() {
 use_nvci() {
     path_add /home/nv/utils/ci/nvci/$1/bin
 }
+
+layout_uv() {
+    if [[ -d ".venv" ]]; then
+        VIRTUAL_ENV="$(pwd)/.venv"
+    fi
+
+    if [[ -z $VIRTUAL_ENV || ! -d $VIRTUAL_ENV ]]; then
+        log_status "No virtual environment exists. Executing \`uv venv\` to create one."
+        uv venv
+        VIRTUAL_ENV="$(pwd)/.venv"
+    fi
+
+    PATH_add "$VIRTUAL_ENV/bin"
+    export UV_ACTIVE=1  # or VENV_ACTIVE=1
+    export VIRTUAL_ENV
+}
+
+layout_cursor() {
+    echo layout $PWD
+    printenv | grep mainline
+    if [[ -f "pyproject.toml" ]]; then
+        echo pyproject exists
+        if [[ ! -e ".cursor/rules/global" ]]; then
+            echo "simlinking global cursor rules"
+            mkdir -p .cursor/rules
+            ln -s /home/scratch.eash/ci/ci.git/.cursor/rules .cursor/rules/global
+        fi
+    fi
+}

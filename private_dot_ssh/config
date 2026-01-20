@@ -38,3 +38,6 @@ host 192.168.1.244
 
 host localhost
     StrictHostKeyChecking no
+
+host dc2-autosubmit-6.nvidia.com
+    user autosubmit

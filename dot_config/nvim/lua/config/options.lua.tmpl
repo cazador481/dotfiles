@@ -53,14 +53,14 @@ o.clipboard   = 'unnamed,unnamedplus'
 vim.g.clipboard={
     name = 'my tmux',
     copy = {
-     ['+'] = require('vim.ui.clipboard.osc52').copy,
-     ['*'] = require('vim.ui.clipboard.osc52').copy,
---        ['+'] = 'timeout 2 doitclient wclip',
---        ['*'] = 'timeout 2 doitclient wclip'
+--      ['+'] = require('vim.ui.clipboard.osc52').copy,
+--      ['*'] = require('vim.ui.clipboard.osc52').copy,
+        ['+'] = 'timeout 2 doitclient wclip',
+        ['*'] = 'timeout 2 doitclient wclip',
     },
     paste = {
         ['+'] = 'timeout 2 doitclient wclip -r',
-        ['*'] = 'timeout 2 doitclient wclip -r'
+        ['*'] = 'timeout 2 doitclient wclip -r',
     },
 }
 {{ end }}

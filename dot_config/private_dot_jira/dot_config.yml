@@ -1,7 +1,7 @@
-auth_type: basic
+auth_type: bearer
 board:
-    id: 24918
-    name: Eddie Sprint
+    id: 30539
+    name: CI team Projects
     type: scrum
 epic:
     name: customfield_10006
@@ -14,14 +14,6 @@ issue:
               key: customfield_18111
               schema:
                 datatype: user
-            - name: Marketing
-              key: customfield_18112
-              schema:
-                datatype: user
-            - name: Session Impacted
-              key: customfield_18114
-              schema:
-                datatype: string
             - name: Estimated Go Live
               key: customfield_18110
               schema:
@@ -95,10 +87,6 @@ issue:
               key: customfield_18102
               schema:
                 datatype: number
-            - name: Duration of an incident  MTTR
-              key: customfield_18103
-              schema:
-                datatype: string
             - name: Category of an incident
               key: customfield_18108
               schema:
@@ -108,18 +96,6 @@ issue:
               key: customfield_18109
               schema:
                 datatype: date
-            - name: Session Yield
-              key: customfield_18104
-              schema:
-                datatype: string
-            - name: Founder Queuing
-              key: customfield_18105
-              schema:
-                datatype: string
-            - name: Service that is Root Cause
-              key: customfield_18106
-              schema:
-                datatype: string
             - name: Services Impacted
               key: customfield_18107
               schema:
@@ -245,6 +221,10 @@ issue:
               key: customfield_19400
               schema:
                 datatype: string
+            - name: FSD Planned Start Date
+              key: customfield_19401
+              schema:
+                datatype: date
             - name: Original Baseline
               key: customfield_19406
               schema:
@@ -342,14 +322,6 @@ issue:
               key: customfield_21700
               schema:
                 datatype: date
-            - name: Survey Map Creation Ticket
-              key: customfield_25700
-              schema:
-                datatype: string
-            - name: Review Protocol Filename
-              key: customfield_25701
-              schema:
-                datatype: string
             - name: PLC Activity Category
               key: customfield_25703
               schema:
@@ -358,16 +330,12 @@ issue:
               key: customfield_17201
               schema:
                 datatype: date
-            - name: Schema Type
+            - name: Data Source
               key: customfield_17200
               schema:
                 datatype: option
             - name: Wordsmith
               key: customfield_17204
-              schema:
-                datatype: user
-            - name: Post Production Assignee
-              key: customfield_17203
               schema:
                 datatype: user
             - name: Deployment Date
@@ -395,20 +363,12 @@ issue:
               key: customfield_27900
               schema:
                 datatype: string
-            - name: Program_Status (MIOPM)
-              key: customfield_19046
-              schema:
-                datatype: string
             - name: Date Resolved
               key: customfield_19047
               schema:
                 datatype: date
             - name: Task Type
               key: customfield_19048
-              schema:
-                datatype: option
-            - name: PM Assessment
-              key: customfield_19049
               schema:
                 datatype: option
             - name: Why is this change needed?
@@ -530,11 +490,6 @@ issue:
               key: customfield_15910
               schema:
                 datatype: string
-            - name: Vendor
-              key: customfield_19039
-              schema:
-                datatype: array
-                items: option
             - name: NVBugs - Devtech Status
               key: customfield_15911
               schema:
@@ -562,10 +517,6 @@ issue:
                 datatype: any
             - name: NVBugs - Bug Action
               key: customfield_15908
-              schema:
-                datatype: string
-            - name: NVBugs_Engineer
-              key: customfield_15905
               schema:
                 datatype: string
             - name: Purchase Reference
@@ -740,12 +691,12 @@ issue:
               key: customfield_27014
               schema:
                 datatype: string
-            - name: Requestor
-              key: customfield_20008
+            - name: Raised by Function
+              key: customfield_27017
               schema:
                 datatype: option
-            - name: Technical inspection needed?
-              key: customfield_27017
+            - name: Requestor
+              key: customfield_20008
               schema:
                 datatype: option
             - name: Job Title
@@ -812,6 +763,10 @@ issue:
               key: customfield_19016
               schema:
                 datatype: string
+            - name: Redmine Related Issues Count
+              key: customfield_39000
+              schema:
+                datatype: number
             - name: Complexity
               key: customfield_19010
               schema:
@@ -822,10 +777,6 @@ issue:
                 datatype: string
             - name: SQA Safety Plan review link
               key: customfield_19012
-              schema:
-                datatype: string
-            - name: Content Title
-              key: customfield_31511
               schema:
                 datatype: string
             - name: SQA Test Plan Name
@@ -878,14 +829,6 @@ issue:
               key: customfield_27025
               schema:
                 datatype: option
-            - name: PCIE-Speed
-              key: customfield_19002
-              schema:
-                datatype: string
-            - name: User
-              key: customfield_19003
-              schema:
-                datatype: string
             - name: Escalated PLC Component
               key: customfield_23900
               schema:
@@ -896,10 +839,6 @@ issue:
                 datatype: string
             - name: Escalations Notes
               key: customfield_23901
-              schema:
-                datatype: string
-            - name: Test-Script
-              key: customfield_19005
               schema:
                 datatype: string
             - name: Problem URL
@@ -914,24 +853,8 @@ issue:
               key: customfield_23903
               schema:
                 datatype: any
-            - name: MotherBoard
-              key: customfield_19000
-              schema:
-                datatype: string
             - name: Jobs Remaining
               key: customfield_19001
-              schema:
-                datatype: string
-            - name: HW-addr
-              key: customfield_19006
-              schema:
-                datatype: string
-            - name: IP-addr_Static
-              key: customfield_19007
-              schema:
-                datatype: string
-            - name: IP-addr_Dynamic
-              key: customfield_19008
               schema:
                 datatype: string
             - name: Restricted Bug Users
@@ -1014,6 +937,11 @@ issue:
               key: customfield_30203
               schema:
                 datatype: string
+            - name: NV PICs
+              key: customfield_21304
+              schema:
+                datatype: array
+                items: user
             - name: FS Link (Long URL)
               key: customfield_21303
               schema:
@@ -1022,10 +950,6 @@ issue:
               key: customfield_21302
               schema:
                 datatype: string
-            - name: Server Form Factor
-              key: customfield_18133
-              schema:
-                datatype: option
             - name: Rack Units
               key: customfield_18134
               schema:
@@ -1034,32 +958,12 @@ issue:
               key: customfield_21300
               schema:
                 datatype: string
-            - name: NGC Ready
-              key: customfield_18135
-              schema:
-                datatype: option
-            - name: RTX Server
-              key: customfield_18136
-              schema:
-                datatype: option
-            - name: Max GPU
-              key: customfield_18130
-              schema:
-                datatype: option
             - name: Technical CCB Comments
               key: customfield_35909
               schema:
                 datatype: string
-            - name: CPU Type
-              key: customfield_18131
-              schema:
-                datatype: string
             - name: Technical CCB approval status
               key: customfield_35908
-              schema:
-                datatype: option
-            - name: Max CPU
-              key: customfield_18132
               schema:
                 datatype: option
             - name: Product or tool that the data will be likely used for
@@ -1082,10 +986,6 @@ issue:
               key: customfield_35903
               schema:
                 datatype: string
-            - name: GRID Certified
-              key: customfield_18137
-              schema:
-                datatype: option
             - name: Manager to Contact
               key: customfield_35902
               schema:
@@ -1143,10 +1043,6 @@ issue:
               key: customfield_32402
               schema:
                 datatype: string
-            - name: OEM
-              key: customfield_18126
-              schema:
-                datatype: string
             - name: Model
               key: customfield_18127
               schema:
@@ -1163,10 +1059,6 @@ issue:
               key: customfield_32403
               schema:
                 datatype: option
-            - name: GPU Form Factor
-              key: customfield_18129
-              schema:
-                datatype: string
             - name: Impediment Category
               key: customfield_25207
               schema:
@@ -1199,16 +1091,8 @@ issue:
               key: customfield_15401
               schema:
                 datatype: string
-            - name: Chip Speedo
-              key: customfield_18913
-              schema:
-                datatype: string
             - name: QVS Command Line
               key: customfield_13223
-              schema:
-                datatype: string
-            - name: Chip IDDQ
-              key: customfield_18914
               schema:
                 datatype: string
             - name: Test Case Type
@@ -1227,11 +1111,15 @@ issue:
               key: customfield_15405
               schema:
                 datatype: option
+            - name: Command line
+              key: customfield_13227
+              schema:
+                datatype: string
             - name: Domain expertise requirement
               key: customfield_35008
               schema:
                 datatype: string
-            - name: Calibration Due
+            - name: Code Ready Date
               key: customfield_18910
               schema:
                 datatype: date
@@ -1247,15 +1135,11 @@ issue:
               key: customfield_13226
               schema:
                 datatype: string
-            - name: Date Purchased
-              key: customfield_18908
-              schema:
-                datatype: date
             - name: Test Case Id
               key: customfield_13218
               schema:
                 datatype: string
-            - name: Last Calibrated
+            - name: FUT Planned End Date
               key: customfield_18909
               schema:
                 datatype: date
@@ -1267,20 +1151,12 @@ issue:
               key: customfield_13219
               schema:
                 datatype: string
-            - name: ChipID
-              key: customfield_18904
-              schema:
-                datatype: string
             - name: Model Number
               key: customfield_18905
               schema:
                 datatype: string
             - name: Serial Number
               key: customfield_18906
-              schema:
-                datatype: string
-            - name: Warranty
-              key: customfield_18907
               schema:
                 datatype: string
             - name: Impact Description
@@ -1308,20 +1184,12 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: Board Number
-              key: customfield_18902
-              schema:
-                datatype: string
             - name: Master Module
               key: customfield_13212
               schema:
                 datatype: string
             - name: Business Unit
               key: customfield_13211
-              schema:
-                datatype: string
-            - name: ECID
-              key: customfield_18903
               schema:
                 datatype: string
             - name: Module
@@ -1340,7 +1208,7 @@ issue:
               key: customfield_13215
               schema:
                 datatype: string
-            - name: Definition of "done"
+            - name: Customfield1
               key: customfield_13206
               schema:
                 datatype: array
@@ -1373,10 +1241,6 @@ issue:
               key: customfield_31900
               schema:
                 datatype: number
-            - name: Learning Content Status
-              key: customfield_31902
-              schema:
-                datatype: option
             - name: Maximum Estimate
               key: customfield_31901
               schema:
@@ -1393,6 +1257,19 @@ issue:
               key: customfield_13205
               schema:
                 datatype: string
+            - name: Project Team
+              key: customfield_39400
+              schema:
+                datatype: any
+            - name: Upcoming Activities/Milestones
+              key: customfield_39401
+              schema:
+                datatype: string
+            - name: AI Used
+              key: customfield_39403
+              schema:
+                datatype: array
+                items: option
             - name: SLA Due Date
               key: customfield_16701
               schema:
@@ -1430,18 +1307,10 @@ issue:
               key: customfield_12328
               schema:
                 datatype: date
-            - name: Target Data Collection Quarter
-              key: customfield_26102
-              schema:
-                datatype: option
             - name: Regression ID
               key: customfield_26104
               schema:
                 datatype: string
-            - name: Actual Data Collection Quarter
-              key: customfield_26103
-              schema:
-                datatype: option
             - name: AV Product Stage
               key: customfield_26106
               schema:
@@ -1455,7 +1324,7 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: Hold Reason
+            - name: Integration Category
               key: customfield_26107
               schema:
                 datatype: array
@@ -1476,28 +1345,24 @@ issue:
               key: customfield_12320
               schema:
                 datatype: option
-            - name: SNOW_TaskNumber
-              key: customfield_14502
+            - name: Vendor Bug ID
+              key: customfield_12323
               schema:
                 datatype: string
             - name: Automation Status
               key: customfield_12322
               schema:
                 datatype: option
-            - name: SNOW_RequestedFor
-              key: customfield_14503
-              schema:
-                datatype: user
             - name: ATP Nightly Coverage Enabled Date
               key: customfield_12325
               schema:
                 datatype: date
-            - name: NVBugs ID
-              key: customfield_12324
+            - name: System Serial Number
+              key: customfield_14500
               schema:
                 datatype: string
-            - name: SNOW_RequestItem
-              key: customfield_14501
+            - name: NVBugs ID
+              key: customfield_12324
               schema:
                 datatype: string
             - name: Secondary PIC
@@ -1558,10 +1423,18 @@ issue:
               key: customfield_26118
               schema:
                 datatype: option
-            - name: Telemetry Implemented
-              key: customfield_12310
+            - name: External issue ID
+              key: customfield_38100
               schema:
-                datatype: option
+                datatype: string
+            - name: External issue ID
+              key: customfield_38101
+              schema:
+                datatype: string
+            - name: External issue ID
+              key: customfield_38102
+              schema:
+                datatype: string
             - name: KPIs Defined
               key: customfield_12312
               schema:
@@ -1648,6 +1521,10 @@ issue:
               key: customfield_12301
               schema:
                 datatype: string
+            - name: Cost Center
+              key: customfield_15812
+              schema:
+                datatype: number
             - name: POR ID
               key: customfield_12300
               schema:
@@ -1684,44 +1561,20 @@ issue:
               key: customfield_15809
               schema:
                 datatype: string
-            - name: Thumbnail Logos
-              key: customfield_15807
-              schema:
-                datatype: string
             - name: Requirements Pillar PLC Target
               key: customfield_18510
               schema:
                 datatype: number
-            - name: SNOW_Task_Type
+            - name: Event
               key: customfield_15000
-              schema:
-                datatype: option
-            - name: SNOW_Category
-              key: customfield_15001
-              schema:
-                datatype: option
-            - name: SNOW_Issue_Category
-              key: customfield_15004
-              schema:
-                datatype: option
-            - name: SNOW_Additional_Issue_Category
-              key: customfield_15005
               schema:
                 datatype: option
             - name: Requires Release Note
               key: customfield_35409
               schema:
                 datatype: option
-            - name: SNOW_Subcategory
-              key: customfield_15002
-              schema:
-                datatype: option
             - name: DS Product Area
               key: customfield_35408
-              schema:
-                datatype: option
-            - name: SNOW_Configuration_Item
-              key: customfield_15003
               schema:
                 datatype: option
             - name: Design Pillar PLC Target
@@ -1740,10 +1593,6 @@ issue:
               key: customfield_35406
               schema:
                 datatype: number
-            - name: SNOW_WE
-              key: customfield_15006
-              schema:
-                datatype: option
             - name: Verification Pillar PLC Target
               key: customfield_18513
               schema:
@@ -1756,10 +1605,6 @@ issue:
               key: customfield_18514
               schema:
                 datatype: number
-            - name: SNOW_Reporter
-              key: customfield_15007
-              schema:
-                datatype: string
             - name: OV Large Attachments
               key: customfield_35414
               schema:
@@ -1772,6 +1617,10 @@ issue:
               key: customfield_35412
               schema:
                 datatype: option
+            - name: Isaac Large Attachments
+              key: customfield_35411
+              schema:
+                datatype: string
             - name: Date Requested
               key: customfield_18508
               schema:
@@ -1788,14 +1637,6 @@ issue:
               key: customfield_20827
               schema:
                 datatype: any
-            - name: Affected Server
-              key: customfield_20824
-              schema:
-                datatype: any
-            - name: Related Server
-              key: customfield_20823
-              schema:
-                datatype: any
             - name: Time to approve normal change
               key: customfield_20820
               schema:
@@ -1804,12 +1645,12 @@ issue:
               key: customfield_20821
               schema:
                 datatype: option
-            - name: Item Code
-              key: customfield_18505
+            - name: Device Type
+              key: customfield_18504
               schema:
                 datatype: string
-            - name: Product Code
-              key: customfield_18506
+            - name: Item Code
+              key: customfield_18505
               schema:
                 datatype: string
             - name: Date Available
@@ -1907,7 +1748,7 @@ issue:
               key: customfield_20811
               schema:
                 datatype: option
-            - name: Investigation reason
+            - name: Ready for DRB
               key: customfield_20812
               schema:
                 datatype: option
@@ -1944,7 +1785,7 @@ issue:
               key: customfield_35436
               schema:
                 datatype: string
-            - name: Aha Master Release
+            - name: Planned Milestone
               key: customfield_35435
               schema:
                 datatype: version
@@ -1956,7 +1797,7 @@ issue:
               key: customfield_20808
               schema:
                 datatype: option
-            - name: Aha Feature
+            - name: Customer nvBugs ID
               key: customfield_35433
               schema:
                 datatype: string
@@ -2054,7 +1895,11 @@ issue:
               key: customfield_35439
               schema:
                 datatype: user
-            - name: Found In (e.g. Create-2021.1.0-rc.14)
+            - name: FSD Actual Review Complete Date
+              key: customfield_35438
+              schema:
+                datatype: date
+            - name: Build Found In
               key: customfield_35437
               schema:
                 datatype: array
@@ -2063,22 +1908,22 @@ issue:
               key: customfield_35447
               schema:
                 datatype: string
-            - name: Automation Decision Date
+            - name: Original Due Date
               key: customfield_35446
               schema:
                 datatype: date
-            - name: Aha URL
+            - name: SDD Link
               key: customfield_35445
               schema:
                 datatype: string
-            - name: Planned Team
-              key: customfield_35444
-              schema:
-                datatype: option-with-child
             - name: Planned Product
               key: customfield_35443
               schema:
                 datatype: option-with-child
+            - name: Documentation Needs Update
+              key: customfield_35442
+              schema:
+                datatype: option
             - name: Enabled In
               key: customfield_35441
               schema:
@@ -2104,7 +1949,7 @@ issue:
               key: customfield_24314
               schema:
                 datatype: string
-            - name: TECH Priority
+            - name: NDAS Impact (Class B1 - Internal to NDAS)
               key: customfield_24315
               schema:
                 datatype: option
@@ -2116,10 +1961,6 @@ issue:
               key: customfield_24317
               schema:
                 datatype: string
-            - name: Storage Needs
-              key: customfield_24318
-              schema:
-                datatype: string
             - name: Alert Time
               key: customfield_18950
               schema:
@@ -2128,27 +1969,14 @@ issue:
               key: customfield_24319
               schema:
                 datatype: string
-            - name: CR
-              key: customfield_18955
-              schema:
-                datatype: string
             - name: Risk probability
               key: customfield_19802
               schema:
                 datatype: option
-            - name: Chip Rev
-              key: customfield_18956
-              schema:
-                datatype: string
             - name: Top-N
               key: customfield_19803
               schema:
                 datatype: option
-            - name: Interface Name
-              key: customfield_19804
-              schema:
-                datatype: array
-                items: option
             - name: ID#
               key: customfield_19805
               schema:
@@ -2169,10 +1997,6 @@ issue:
               key: customfield_35449
               schema:
                 datatype: string
-            - name: Bin
-              key: customfield_18954
-              schema:
-                datatype: string
             - name: GDN Partner Expected Concurrent Capacity Per Region
               key: customfield_19801
               schema:
@@ -2181,7 +2005,7 @@ issue:
               key: customfield_35448
               schema:
                 datatype: string
-            - name: User Name
+            - name: NVBugs - Version Fixed After
               key: customfield_35457
               schema:
                 datatype: string
@@ -2189,13 +2013,8 @@ issue:
               key: customfield_14108
               schema:
                 datatype: string
-            - name: Developer Contact
-              key: customfield_35456
-              schema:
-                datatype: array
-                items: user
-            - name: Source Link
-              key: customfield_35455
+            - name: SWXI Important Information
+              key: customfield_36301
               schema:
                 datatype: string
             - name: Slack Link
@@ -2206,27 +2025,24 @@ issue:
               key: customfield_18948
               schema:
                 datatype: option
-            - name: Development Team (deprecated)
-              key: customfield_36300
-              schema:
-                datatype: option-with-child
             - name: Integration Links
               key: customfield_18949
               schema:
                 datatype: array
                 items: issuelinks
-            - name: Engineering Component
-              key: customfield_35452
+            - name: Watchers
+              key: customfield_35453
+              schema:
+                datatype: array
+                items: user
+            - name: Work Type
+              key: customfield_35451
               schema:
                 datatype: option
             - name: Change Risk
               key: customfield_26500
               schema:
                 datatype: option
-            - name: Peak GPUs requested
-              key: customfield_24321
-              schema:
-                datatype: string
             - name: Duration requested
               key: customfield_24322
               schema:
@@ -2305,10 +2121,6 @@ issue:
               key: customfield_14100
               schema:
                 datatype: string
-            - name: Affected VPCs
-              key: customfield_14101
-              schema:
-                datatype: string
             - name: Security Approved?
               key: customfield_18947
               schema:
@@ -2323,10 +2135,6 @@ issue:
                 datatype: option
             - name: Final Delivery (requestor) Approved?
               key: customfield_18941
-              schema:
-                datatype: option
-            - name: Incident impact
-              key: customfield_14107
               schema:
                 datatype: option
             - name: First Response Time
@@ -2357,11 +2165,6 @@ issue:
               key: customfield_18938
               schema:
                 datatype: user
-            - name: Support Projects
-              key: customfield_35464
-              schema:
-                datatype: array
-                items: option
             - name: SRE
               key: customfield_18939
               schema:
@@ -2421,6 +2224,10 @@ issue:
               key: customfield_18934
               schema:
                 datatype: user
+            - name: PLC Execution Status
+              key: customfield_38500
+              schema:
+                datatype: option-with-child
             - name: Provisioning
               key: customfield_18935
               schema:
@@ -2441,27 +2248,18 @@ issue:
               key: customfield_18932
               schema:
                 datatype: user
-            - name: Engineering Areas
-              key: customfield_35478
-              schema:
-                datatype: array
-                items: option
-            - name: Chip Delivered On
-              key: customfield_18926
-              schema:
-                datatype: date
-            - name: Chip Status
-              key: customfield_18927
+            - name: Preventive Steps
+              key: customfield_35477
               schema:
                 datatype: string
-            - name: Engineering Team
-              key: customfield_35474
-              schema:
-                datatype: option-with-child
-            - name: Incident Verified?
-              key: customfield_18928
+            - name: Customer Release
+              key: customfield_35476
               schema:
                 datatype: option
+            - name: Business Justification
+              key: customfield_35473
+              schema:
+                datatype: string
             - name: 'Stakeholders:'
               key: customfield_18929
               schema:
@@ -2476,6 +2274,10 @@ issue:
               schema:
                 datatype: array
                 items: option
+            - name: Eng Priority Rank
+              key: customfield_35471
+              schema:
+                datatype: string
             - name: Automation Script
               key: customfield_26522
               schema:
@@ -2501,11 +2303,6 @@ issue:
               key: customfield_28702
               schema:
                 datatype: string
-            - name: NRG Priority
-              key: customfield_26525
-              schema:
-                datatype: array
-                items: option
             - name: Testing Gap Data
               key: customfield_26527
               schema:
@@ -2514,22 +2311,10 @@ issue:
               key: customfield_13230
               schema:
                 datatype: string
-            - name: Chip Requester
-              key: customfield_18922
-              schema:
-                datatype: string
             - name: Blocker to Hardware Milestone
               key: customfield_13231
               schema:
                 datatype: option-with-child
-            - name: Chip Requested On
-              key: customfield_18924
-              schema:
-                datatype: date
-            - name: Chip Due Date
-              key: customfield_18925
-              schema:
-                datatype: date
             - name: Project Manager
               key: customfield_15410
               schema:
@@ -2544,53 +2329,37 @@ issue:
               schema:
                 datatype: array
                 items: string
-            - name: Chip Quantity
-              key: customfield_18920
-              schema:
-                datatype: string
-            - name: ChipReq Submitted By
-              key: customfield_18921
-              schema:
-                datatype: string
-            - name: Annotator Location
+            - name: Program Status
               key: customfield_35006
               schema:
                 datatype: array
                 items: option
-            - name: NVDA#
-              key: customfield_18919
-              schema:
-                datatype: string
             - name: Test Behavior
               key: customfield_13229
+              schema:
+                datatype: string
+            - name: Committed Demand
+              key: customfield_35007
               schema:
                 datatype: string
             - name: QVS Module
               key: customfield_13228
               schema:
                 datatype: string
-            - name: Specific Language requirement
-              key: customfield_35007
-              schema:
-                datatype: string
-            - name: Data repository
-              key: customfield_35004
-              schema:
-                datatype: string
             - name: Estimated End Date
               key: customfield_15406
               schema:
                 datatype: date
-            - name: How many annotators do you need?
-              key: customfield_35005
+            - name: Supply This Week
+              key: customfield_35004
               schema:
                 datatype: string
             - name: Issue Category (IPP)
               key: customfield_15407
               schema:
                 datatype: option
-            - name: Board/Chip SKU
-              key: customfield_18915
+            - name: Status Details
+              key: customfield_35005
               schema:
                 datatype: string
             - name: Request Area
@@ -2598,11 +2367,7 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: SKU Split
-              key: customfield_18916
-              schema:
-                datatype: string
-            - name: Tool for annotation
+            - name: Link to Super Annotate Project
               key: customfield_35003
               schema:
                 datatype: string
@@ -2610,10 +2375,6 @@ issue:
               key: customfield_35485
               schema:
                 datatype: option
-            - name: MSDV Number
-              key: customfield_18917
-              schema:
-                datatype: string
             - name: Project PIC
               key: customfield_35000
               schema:
@@ -2622,10 +2383,6 @@ issue:
               key: customfield_35484
               schema:
                 datatype: option
-            - name: Purchase Price
-              key: customfield_18918
-              schema:
-                datatype: string
             - name: Type of request
               key: customfield_35001
               schema:
@@ -2635,14 +2392,6 @@ issue:
               key: customfield_35483
               schema:
                 datatype: string
-            - name: '[CHART] Time in Status'
-              key: customfield_35482
-              schema:
-                datatype: any
-            - name: '[CHART] Date of First Response'
-              key: customfield_35481
-              schema:
-                datatype: datetime
             - name: Impacted Areas
               key: customfield_35480
               schema:
@@ -2677,6 +2426,11 @@ issue:
               key: customfield_20303
               schema:
                 datatype: option
+            - name: 'Dev Assignee:'
+              key: customfield_20304
+              schema:
+                datatype: array
+                items: user
             - name: GDN Hotkeys Conflicts
               key: customfield_20301
               schema:
@@ -2785,7 +2539,7 @@ issue:
               key: customfield_24703
               schema:
                 datatype: user
-            - name: Scenario path
+            - name: Tool owned by (Element/Component Name) (Text)
               key: customfield_24704
               schema:
                 datatype: string
@@ -2837,10 +2591,6 @@ issue:
               key: customfield_34507
               schema:
                 datatype: string
-            - name: Probability of Gap
-              key: customfield_34505
-              schema:
-                datatype: option
             - name: FAI image
               key: customfield_17119
               schema:
@@ -2849,30 +2599,14 @@ issue:
               key: customfield_17118
               schema:
                 datatype: string
-            - name: Probability (Effectiveness of mitigation)
-              key: customfield_34511
-              schema:
-                datatype: option
             - name: Source IP
               key: customfield_31001
               schema:
                 datatype: string
-            - name: Severity (Effectiveness of mitigation)
-              key: customfield_34512
-              schema:
-                datatype: option
             - name: Destination Port
               key: customfield_31003
               schema:
                 datatype: number
-            - name: Type of Data
-              key: customfield_11801
-              schema:
-                datatype: string
-            - name: DIScover Data Ingest Instructions
-              key: customfield_11800
-              schema:
-                datatype: string
             - name: Destination IP
               key: customfield_31002
               schema:
@@ -2886,10 +2620,6 @@ issue:
               key: customfield_11803
               schema:
                 datatype: string
-            - name: DIScover Enhancement Instruction
-              key: customfield_11802
-              schema:
-                datatype: string
             - name: Fixed in Build
               key: customfield_11805
               schema:
@@ -2898,10 +2628,6 @@ issue:
               key: customfield_11804
               schema:
                 datatype: string
-            - name: Standard Deviation
-              key: customfield_11807
-              schema:
-                datatype: number
             - name: Estimate
               key: customfield_11806
               schema:
@@ -2911,7 +2637,7 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: Windows Services
+            - name: L1 Process
               key: customfield_21602
               schema:
                 datatype: array
@@ -2953,15 +2679,11 @@ issue:
               key: customfield_17104
               schema:
                 datatype: option
-            - name: Risk Impact (NDAS)
-              key: customfield_34517
-              schema:
-                datatype: string
             - name: LB Service Port
               key: customfield_17103
               schema:
                 datatype: number
-            - name: NDAS Customer Impact
+            - name: Major Version
               key: customfield_34518
               schema:
                 datatype: string
@@ -2977,16 +2699,12 @@ issue:
               key: customfield_31004
               schema:
                 datatype: option
-            - name: Risk Rationale
-              key: customfield_34516
+            - name: Component Triage Category
+              key: customfield_34513
               schema:
                 datatype: string
             - name: IP address
               key: customfield_17108
-              schema:
-                datatype: string
-            - name: Justification for residual risk
-              key: customfield_34513
               schema:
                 datatype: string
             - name: Security Enhancement
@@ -3067,20 +2785,24 @@ issue:
               key: customfield_16236
               schema:
                 datatype: number
-            - name: SLT GPU Traces
+            - name: Did you modify the dataset?
               key: customfield_16235
               schema:
                 datatype: string
-            - name: SLT NVFlash
+            - name: Test Time
               key: customfield_16234
               schema:
                 datatype: string
-            - name: SLT MODS Type
+            - name: RCCA Recommendation
+              key: customfield_38900
+              schema:
+                datatype: string
+            - name: T2 SignOff Status
               key: customfield_16239
               schema:
                 datatype: array
                 items: option
-            - name: SLT HULK License
+            - name: Discovered in Version
               key: customfield_16238
               schema:
                 datatype: string
@@ -3088,7 +2810,7 @@ issue:
               key: customfield_18409
               schema:
                 datatype: datetime
-            - name: Product Requirements
+            - name: Requirements
               key: customfield_22900
               schema:
                 datatype: string
@@ -3164,7 +2886,7 @@ issue:
               key: customfield_18404
               schema:
                 datatype: string
-            - name: Fixed In (e.g. Create-2021.1.0-rc.19)
+            - name: 'Build Fixed In '
               key: customfield_35403
               schema:
                 datatype: array
@@ -3182,11 +2904,16 @@ issue:
               key: customfield_25601
               schema:
                 datatype: number
+            - name: Groups
+              key: customfield_38000
+              schema:
+                datatype: array
+                items: group
             - name: Component
               key: customfield_10104
               schema:
                 datatype: string
-            - name: Life Cycle
+            - name: Escalated To
               key: customfield_10105
               schema:
                 datatype: option
@@ -3231,7 +2958,7 @@ issue:
               schema:
                 datatype: array
                 items: user
-            - name: Alternate Creation Date
+            - name: Gather EY+IT
               key: customfield_10102
               schema:
                 datatype: date
@@ -3345,10 +3072,6 @@ issue:
               key: customfield_12742
               schema:
                 datatype: option
-            - name: DIScover Email Request Instructions
-              key: customfield_11403
-              schema:
-                datatype: string
             - name: End User Friendly Description
               key: customfield_12734
               schema:
@@ -3365,10 +3088,6 @@ issue:
               key: customfield_11405
               schema:
                 datatype: any
-            - name: DIScover Analysis Instructions
-              key: customfield_11404
-              schema:
-                datatype: string
             - name: Experimental Feature
               key: customfield_12735
               schema:
@@ -3602,11 +3321,7 @@ issue:
               key: customfield_31418
               schema:
                 datatype: string
-            - name: Task Category
-              key: customfield_31417
-              schema:
-                datatype: option
-            - name: Vehicle ID List
+            - name: Original FSD due in Iteration
               key: customfield_31412
               schema:
                 datatype: option
@@ -3647,14 +3362,14 @@ issue:
               key: customfield_12714
               schema:
                 datatype: string
-            - name: Auto Element Verif Sub-Type
-              key: customfield_12713
-              schema:
-                datatype: option
             - name: Parent Version Alignment
               key: customfield_31420
               schema:
                 datatype: string
+            - name: SW Element
+              key: customfield_12713
+              schema:
+                datatype: option
             - name: Consumer
               key: customfield_12718
               schema:
@@ -3686,16 +3401,12 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: Remediation Action Item 6
+            - name: ' Description2: Action Items'
               key: customfield_20334
               schema:
                 datatype: string
             - name: Remediation Action Item 5
               key: customfield_20332
-              schema:
-                datatype: string
-            - name: Bumper Info
-              key: customfield_23801
               schema:
                 datatype: string
             - name: Remediation Action Item 3
@@ -3726,16 +3437,12 @@ issue:
               key: customfield_23806
               schema:
                 datatype: option
-            - name: Labeling Guidelines Documentation
-              key: customfield_23807
-              schema:
-                datatype: string
-            - name: Modality
+            - name: Cross Program Name
               key: customfield_33606
               schema:
                 datatype: option
-            - name: New Baseline
-              key: customfield_33607
+            - name: Labeling Guidelines Documentation
+              key: customfield_23807
               schema:
                 datatype: string
             - name: Recipe Information
@@ -3750,15 +3457,6 @@ issue:
               key: customfield_33604
               schema:
                 datatype: string
-            - name: CRQ Closing Criteria
-              key: customfield_33605
-              schema:
-                datatype: array
-                items: option
-            - name: CRQ Security Reviewer
-              key: customfield_33602
-              schema:
-                datatype: user
             - name: CCB Justification
               key: customfield_33603
               schema:
@@ -3776,10 +3474,6 @@ issue:
               schema:
                 datatype: array
                 items: user
-            - name: CRQ Functional Safety Reviewer
-              key: customfield_33601
-              schema:
-                datatype: user
             - name: Automatable
               key: customfield_12701
               schema:
@@ -3859,14 +3553,14 @@ issue:
               key: customfield_20324
               schema:
                 datatype: option
+            - name: Affected scope
+              key: customfield_18001
+              schema:
+                datatype: option
             - name: DataOps Collection Quantity
               key: customfield_23810
               schema:
                 datatype: string
-            - name: Level of Effort
-              key: customfield_18001
-              schema:
-                datatype: option
             - name: Mission PIC
               key: customfield_22500
               schema:
@@ -3987,6 +3681,10 @@ issue:
               key: customfield_13100
               schema:
                 datatype: string
+            - name: Pixels Work Product
+              key: customfield_38400
+              schema:
+                datatype: option-with-child
             - name: Sign Off AV Security
               key: customfield_30910
               schema:
@@ -4057,14 +3755,18 @@ issue:
               key: customfield_14400
               schema:
                 datatype: option
-            - name: Response
-              key: customfield_14401
-              schema:
-                datatype: string
             - name: Action Plan
               key: customfield_14402
               schema:
                 datatype: string
+            - name: FSD Actual Complete Date
+              key: customfield_17906
+              schema:
+                datatype: date
+            - name: Staging Deployment Date
+              key: customfield_17905
+              schema:
+                datatype: date
             - name: ISA signoff (Mercury)
               key: customfield_17904
               schema:
@@ -4148,6 +3850,18 @@ issue:
               key: customfield_22000
               schema:
                 datatype: option
+            - name: Jira Align Program Name
+              key: customfield_39300
+              schema:
+                datatype: string
+            - name: Jira Align Planned Quarter
+              key: customfield_39301
+              schema:
+                datatype: string
+            - name: External issue ID
+              key: customfield_39302
+              schema:
+                datatype: string
             - name: Automation Test Status
               key: customfield_12200
               schema:
@@ -4156,6 +3870,10 @@ issue:
               key: customfield_12202
               schema:
                 datatype: option
+            - name: Jira Align Workstream Name
+              key: customfield_12201
+              schema:
+                datatype: string
             - name: Level of Effort
               key: customfield_15710
               schema:
@@ -4260,30 +3978,18 @@ issue:
               key: customfield_29510
               schema:
                 datatype: string
-            - name: Maps First Available
+            - name: Curation Mining Tool
               key: customfield_26001
               schema:
                 datatype: option
-            - name: Mission Average Priority
-              key: customfield_26000
-              schema:
-                datatype: number
             - name: Security Management Result
               key: customfield_29513
               schema:
                 datatype: option
-            - name: DAT Ticket
-              key: customfield_26002
-              schema:
-                datatype: string
             - name: Security Management Approval
               key: customfield_29514
               schema:
                 datatype: option
-            - name: Good to Drive
-              key: customfield_26005
-              schema:
-                datatype: string
             - name: SW Tool Criteria Evaluation Report (Text/URL)
               key: customfield_29511
               schema:
@@ -4292,18 +3998,10 @@ issue:
               key: customfield_29512
               schema:
                 datatype: option
-            - name: Verified Map UUID
-              key: customfield_26004
-              schema:
-                datatype: string
             - name: RAG Status
               key: customfield_26007
               schema:
                 datatype: option
-            - name: Segment Pass Rate
-              key: customfield_26006
-              schema:
-                datatype: string
             - name: Conditions for SP2 - Conditional Approval if applicable
               key: customfield_29515
               schema:
@@ -4387,7 +4085,7 @@ issue:
               key: customfield_18870
               schema:
                 datatype: option
-            - name: GDN Partner Estimated Concurrent Users
+            - name: Cross-function Analysis
               key: customfield_26813
               schema:
                 datatype: string
@@ -4397,6 +4095,10 @@ issue:
                 datatype: string
             - name: NVBugs - Customer External Status2
               key: customfield_16210
+              schema:
+                datatype: string
+            - name: NVBugs - Customer Severity2
+              key: customfield_16215
               schema:
                 datatype: string
             - name: Committed
@@ -4423,6 +4125,14 @@ issue:
               key: customfield_16218
               schema:
                 datatype: string
+            - name: Performance Gain
+              key: customfield_38800
+              schema:
+                datatype: option
+            - name: Differentiation
+              key: customfield_38801
+              schema:
+                datatype: option
             - name: NVBugs - Customer Visible2
               key: customfield_16217
               schema:
@@ -4439,10 +4149,10 @@ issue:
               key: customfield_33106
               schema:
                 datatype: any
-            - name: Parent nvbug
-              key: customfield_33112
+            - name: User Adoption
+              key: customfield_38802
               schema:
-                datatype: string
+                datatype: option
             - name: NVBugs - Customer Driver2
               key: customfield_16209
               schema:
@@ -4455,10 +4165,6 @@ issue:
               key: customfield_10900
               schema:
                 datatype: number
-            - name: TitleDB Link
-              key: customfield_33111
-              schema:
-                datatype: string
             - name: Satisfaction date
               key: customfield_20700
               schema:
@@ -4467,14 +4173,14 @@ issue:
               key: customfield_18860
               schema:
                 datatype: string
-            - name: Duration in Months
-              key: customfield_18861
-              schema:
-                datatype: number
             - name: Impacted work products links
               key: customfield_18862
               schema:
                 datatype: string
+            - name: Regression - Boolean
+              key: customfield_16200
+              schema:
+                datatype: option
             - name: Inventory Links
               key: customfield_18867
               schema:
@@ -4539,6 +4245,10 @@ issue:
               key: customfield_18866
               schema:
                 datatype: string
+            - name: Escalation
+              key: customfield_38803
+              schema:
+                datatype: option
             - name: Product Status
               key: customfield_35302
               schema:
@@ -4559,10 +4269,6 @@ issue:
               key: customfield_19708
               schema:
                 datatype: datetime
-            - name: Update Comments
-              key: customfield_25500
-              schema:
-                datatype: string
             - name: Storage Needs (Tb)
               key: customfield_25501
               schema:
@@ -4574,10 +4280,6 @@ issue:
                 items: option
             - name: OVX nodes
               key: customfield_25503
-              schema:
-                datatype: option
-            - name: Storage types
-              key: customfield_25504
               schema:
                 datatype: option
             - name: Extra Time
@@ -4596,6 +4298,10 @@ issue:
               key: customfield_18856
               schema:
                 datatype: string
+            - name: Efforts Saved (In Hours)
+              key: customfield_18857
+              schema:
+                datatype: number
             - name: ROI - Calculated !/$
               key: customfield_19704
               schema:
@@ -4608,6 +4314,10 @@ issue:
               key: customfield_18858
               schema:
                 datatype: string
+            - name: Bandwidth
+              key: customfield_18859
+              schema:
+                datatype: number
             - name: DevToolsETA - Feature Handoff
               key: customfield_19706
               schema:
@@ -4642,7 +4352,7 @@ issue:
               key: customfield_18849
               schema:
                 datatype: number
-            - name: Session entry#2 Session IDs
+            - name: Config Rational Doc
               key: customfield_18840
               schema:
                 datatype: string
@@ -4654,7 +4364,7 @@ issue:
               key: customfield_14003
               schema:
                 datatype: date
-            - name: Session entry#4 Session IDs
+            - name: Conditionally Approved By
               key: customfield_18845
               schema:
                 datatype: string
@@ -4666,7 +4376,7 @@ issue:
               key: customfield_18846
               schema:
                 datatype: string
-            - name: Session entry#5 Session IDs
+            - name: Approved By
               key: customfield_18847
               schema:
                 datatype: string
@@ -4694,7 +4404,7 @@ issue:
               key: customfield_14005
               schema:
                 datatype: date
-            - name: Session entry#3 Session IDs
+            - name: Unit Test Link
               key: customfield_18843
               schema:
                 datatype: string
@@ -4706,7 +4416,7 @@ issue:
               key: customfield_14006
               schema:
                 datatype: option
-            - name: Frequency per Release
+            - name: CR effort
               key: customfield_37502
               schema:
                 datatype: number
@@ -4718,7 +4428,7 @@ issue:
               key: customfield_37500
               schema:
                 datatype: number
-            - name: Session entry#2 - calibration ID
+            - name: Receiver Application
               key: customfield_18839
               schema:
                 datatype: string
@@ -4738,7 +4448,7 @@ issue:
               key: customfield_17500
               schema:
                 datatype: string
-            - name: Session entry#1 calibration ID
+            - name: Sender Application
               key: customfield_18836
               schema:
                 datatype: string
@@ -4746,8 +4456,12 @@ issue:
               key: customfield_18837
               schema:
                 datatype: string
-            - name: SQL Query
-              key: customfield_18830
+            - name: URL Link
+              key: customfield_18831
+              schema:
+                datatype: string
+            - name: Regression MR
+              key: customfield_18832
               schema:
                 datatype: string
             - name: Epics Count
@@ -4766,10 +4480,10 @@ issue:
               key: customfield_34001
               schema:
                 datatype: option
-            - name: Post Production Status
-              key: customfield_34002
+            - name: Downtime Duration (Min)
+              key: customfield_18828
               schema:
-                datatype: option
+                datatype: number
             - name: Change List URL
               key: customfield_18829
               schema:
@@ -4795,10 +4509,6 @@ issue:
               key: customfield_18823
               schema:
                 datatype: number
-            - name: CPU Milestone
-              key: customfield_13132
-              schema:
-                datatype: option
             - name: GFN QA Execution Estimate
               key: customfield_18824
               schema:
@@ -4807,19 +4517,35 @@ issue:
               key: customfield_18825
               schema:
                 datatype: string
+            - name: GPU Impact
+              key: customfield_18826
+              schema:
+                datatype: number
             - name: Project Started
               key: customfield_18820
               schema:
                 datatype: date
+            - name: RPR Link
+              key: customfield_39702
+              schema:
+                datatype: string
             - name: Custom Priority
               key: customfield_18821
               schema:
                 datatype: array
                 items: option
+            - name: RPD Link
+              key: customfield_39703
+              schema:
+                datatype: string
             - name: Additional Info
               key: customfield_18822
               schema:
                 datatype: string
+            - name: Safety PIC
+              key: customfield_39704
+              schema:
+                datatype: user
             - name: Virtual Build Availability Date for ATP
               key: customfield_13129
               schema:
@@ -4838,7 +4564,7 @@ issue:
               key: customfield_18818
               schema:
                 datatype: string
-            - name: Route length ( Miles)
+            - name: Playtime Rank
               key: customfield_18819
               schema:
                 datatype: number
@@ -4924,6 +4650,10 @@ issue:
               key: customfield_18810
               schema:
                 datatype: version
+            - name: Drive country
+              key: customfield_13128
+              schema:
+                datatype: string
             - name: Blocker
               key: customfield_18811
               schema:
@@ -4940,11 +4670,18 @@ issue:
               key: customfield_13118
               schema:
                 datatype: string
-            - name: Requesting Entity
-              key: customfield_18805
+            - name: Evidence Link
+              key: customfield_39706
               schema:
-                datatype: array
-                items: string
+                datatype: string
+            - name: Evidence Review Link
+              key: customfield_39707
+              schema:
+                datatype: string
+            - name: Additional Evidence
+              key: customfield_39708
+              schema:
+                datatype: string
             - name: SQA Status
               key: customfield_36202
               schema:
@@ -5036,11 +4773,6 @@ issue:
               schema:
                 datatype: array
                 items: string
-            - name: ASIL Rated
-              key: customfield_18803
-              schema:
-                datatype: array
-                items: option
             - name: Impact Summary
               key: customfield_30900
               schema:
@@ -5113,10 +4845,6 @@ issue:
               key: customfield_17021
               schema:
                 datatype: option
-            - name: Status - MSDV
-              key: customfield_19200
-              schema:
-                datatype: option
             - name: ctfindingid
               key: customfield_23700
               schema:
@@ -5125,12 +4853,12 @@ issue:
               key: customfield_19201
               schema:
                 datatype: string
-            - name: Review Decision
-              key: customfield_17020
+            - name: Final due in iteration
+              key: customfield_23701
               schema:
                 datatype: option
-            - name: Root Cause Type
-              key: customfield_23701
+            - name: Review Decision
+              key: customfield_17020
               schema:
                 datatype: option
             - name: Root Cause Category
@@ -5205,11 +4933,6 @@ issue:
               key: customfield_33502
               schema:
                 datatype: number
-            - name: Socket Type
-              key: customfield_19207
-              schema:
-                datatype: array
-                items: option
             - name: Node
               key: customfield_30000
               schema:
@@ -5230,15 +4953,7 @@ issue:
               key: customfield_17014
               schema:
                 datatype: string
-            - name: Requirements Review Report
-              key: customfield_17012
-              schema:
-                datatype: string
-            - name: Requirements Change Summary
-              key: customfield_17011
-              schema:
-                datatype: string
-            - name: Workflow Name
+            - name: Config Unit Test
               key: customfield_17018
               schema:
                 datatype: string
@@ -5262,10 +4977,6 @@ issue:
               key: customfield_30005
               schema:
                 datatype: string
-            - name: Requirement(s) Created or Updated?
-              key: customfield_17019
-              schema:
-                datatype: option
             - name: Business Justification Questionnaire
               key: customfield_35700
               schema:
@@ -5278,14 +4989,6 @@ issue:
               key: customfield_11702
               schema:
                 datatype: string
-            - name: Analysis Format
-              key: customfield_11701
-              schema:
-                datatype: string
-            - name: GRID Product
-              key: customfield_11704
-              schema:
-                datatype: option
             - name: Release Information
               key: customfield_11703
               schema:
@@ -5316,11 +5019,6 @@ issue:
               key: customfield_21506
               schema:
                 datatype: option
-            - name: Tester
-              key: customfield_11707
-              schema:
-                datatype: array
-                items: user
             - name: MS Word Migration Execution
               key: customfield_21505
               schema:
@@ -5364,10 +5062,6 @@ issue:
               key: customfield_17003
               schema:
                 datatype: user
-            - name: WP Version NVIDIA Released
-              key: customfield_25904
-              schema:
-                datatype: string
             - name: Early Access
               key: customfield_25905
               schema:
@@ -5488,20 +5182,24 @@ issue:
               key: customfield_32209
               schema:
                 datatype: date
-            - name: Vehicle Purpose
+            - name: IT Theme
               key: customfield_32204
               schema:
                 datatype: array
                 items: option
-            - name: Estimated Maintenance Time
+            - name: GPUs Used
               key: customfield_32206
               schema:
                 datatype: array
                 items: option
-            - name: Vehicle State
+            - name: Original Dev due in Iteration
               key: customfield_32205
               schema:
                 datatype: option
+            - name: External issue ID
+              key: customfield_37900
+              schema:
+                datatype: string
             - name: Loan Agreement Expiration
               key: customfield_32211
               schema:
@@ -5510,11 +5208,11 @@ issue:
               key: customfield_32210
               schema:
                 datatype: date
-            - name: Drive Type
+            - name: VIP
               key: customfield_32212
               schema:
                 datatype: option
-            - name: FS ID
+            - name: FSD/CRD Link
               key: customfield_22811
               schema:
                 datatype: string
@@ -5534,7 +5232,7 @@ issue:
               key: customfield_18312
               schema:
                 datatype: string
-            - name: Rear Axle Steering
+            - name: PI/PO Migration
               key: customfield_32219
               schema:
                 datatype: option
@@ -5574,7 +5272,7 @@ issue:
               key: customfield_32222
               schema:
                 datatype: option
-            - name: Raw data measurement equipment
+            - name: OEM Impact (Class B2 - Impact OEM)
               key: customfield_32221
               schema:
                 datatype: option
@@ -5675,7 +5373,7 @@ issue:
               key: customfield_18309
               schema:
                 datatype: string
-            - name: RFE Date
+            - name: DRB EY + IT + Biz + CLT
               key: customfield_18302
               schema:
                 datatype: date
@@ -5750,10 +5448,6 @@ issue:
               key: customfield_19610
               schema:
                 datatype: option
-            - name: Status - Linux
-              key: customfield_16101
-              schema:
-                datatype: option
             - name: T-Shirt size
               key: customfield_26807
               schema:
@@ -5792,10 +5486,6 @@ issue:
               key: customfield_36607
               schema:
                 datatype: date
-            - name: Status - QNX
-              key: customfield_16102
-              schema:
-                datatype: option
             - name: CtkTargetVersDevTools
               key: customfield_36606
               schema:
@@ -5821,7 +5511,7 @@ issue:
               key: customfield_33104
               schema:
                 datatype: any
-            - name: Top N Impact
+            - name: FSD due in Iteration
               key: customfield_33101
               schema:
                 datatype: option
@@ -5833,16 +5523,8 @@ issue:
               key: customfield_19609
               schema:
                 datatype: date
-            - name: IT PIC
-              key: customfield_33100
-              schema:
-                datatype: user
             - name: HL2 Link
               key: customfield_26810
-              schema:
-                datatype: string
-            - name: Content Abstract
-              key: customfield_26812
               schema:
                 datatype: string
             - name: Curation Reference Sensor
@@ -5943,16 +5625,16 @@ issue:
               key: customfield_21111
               schema:
                 datatype: string
+            - name: In-Car IFORV Test Dispatch Info
+              key: customfield_19273
+              schema:
+                datatype: string
             - name: L3 Process ID
               key: customfield_21110
               schema:
                 datatype: string
             - name: PBR Link
               key: customfield_30407
-              schema:
-                datatype: string
-            - name: RCCA for the Operations Phase
-              key: customfield_19273
               schema:
                 datatype: string
             - name: Report Finding ID
@@ -5972,7 +5654,7 @@ issue:
               key: customfield_30409
               schema:
                 datatype: string
-            - name: GND Partner Title Execution Command Parameters
+            - name: 'Work Package '
               key: customfield_19276
               schema:
                 datatype: string
@@ -6041,19 +5723,19 @@ issue:
               key: customfield_19270
               schema:
                 datatype: string
-            - name: L3 Process
-              key: customfield_21109
+            - name: IFORV Development Timeline & Type of Test Performed
+              key: customfield_19271
               schema:
                 datatype: string
-            - name: RCCA for the Coding Phase
-              key: customfield_19271
+            - name: L3 Process
+              key: customfield_21109
               schema:
                 datatype: string
             - name: L2 Process
               key: customfield_21108
               schema:
                 datatype: string
-            - name: RCCA for the Verification Phase
+            - name: Process or Test Gaps
               key: customfield_19272
               schema:
                 datatype: string
@@ -6085,7 +5767,7 @@ issue:
               key: customfield_19267
               schema:
                 datatype: string
-            - name: Source of PSIRT Bug
+            - name: HW Config
               key: customfield_19268
               schema:
                 datatype: option
@@ -6093,7 +5775,7 @@ issue:
               key: customfield_21101
               schema:
                 datatype: option
-            - name: RCCA for the Requirements Phase
+            - name: Fix Regression Test Plan
               key: customfield_19269
               schema:
                 datatype: string
@@ -6157,16 +5839,16 @@ issue:
               key: customfield_31743
               schema:
                 datatype: version
-            - name: SNOW_Assignment_Group
-              key: customfield_14804
+            - name: NRE Impact
+              key: customfield_14803
               schema:
-                datatype: option
+                datatype: number
             - name: P4 Links
               key: customfield_14801
               schema:
                 datatype: string
-            - name: SNOW_State
-              key: customfield_14805
+            - name: Product Team
+              key: customfield_14802
               schema:
                 datatype: option
             - name: ATTN and Ship-to Address
@@ -6253,11 +5935,6 @@ issue:
               key: customfield_19249
               schema:
                 datatype: number
-            - name: Configurations
-              key: customfield_12602
-              schema:
-                datatype: array
-                items: string
             - name: Platform
               key: customfield_12601
               schema:
@@ -6267,16 +5944,11 @@ issue:
               key: customfield_12604
               schema:
                 datatype: option
-            - name: ChipsDB Features
-              key: customfield_12603
-              schema:
-                datatype: array
-                items: string
             - name: Auto Implementation Sub-type
               key: customfield_12606
               schema:
                 datatype: option
-            - name: Auto Design Sub-type
+            - name: Reproducibility
               key: customfield_12605
               schema:
                 datatype: option
@@ -6324,14 +5996,14 @@ issue:
               key: customfield_19235
               schema:
                 datatype: option
-            - name: Item
-              key: customfield_20221
-              schema:
-                datatype: string
             - name: Manual Labeling Required
               key: customfield_19236
               schema:
                 datatype: option
+            - name: Security Tool Classification Report Checklist (Text/URL)
+              key: customfield_20221
+              schema:
+                datatype: string
             - name: Driving Scenarios
               key: customfield_19230
               schema:
@@ -6387,7 +6059,7 @@ issue:
               key: customfield_20217
               schema:
                 datatype: string
-            - name: Program POR Date
+            - name: Deferral Date
               key: customfield_20218
               schema:
                 datatype: date
@@ -6395,20 +6067,8 @@ issue:
               key: customfield_20215
               schema:
                 datatype: date
-            - name: Source File Reference
-              key: customfield_20213
-              schema:
-                datatype: string
-            - name: CR Review ID
-              key: customfield_20214
-              schema:
-                datatype: string
             - name: Dashboard
               key: customfield_19222
-              schema:
-                datatype: string
-            - name: Verification Grouping
-              key: customfield_20211
               schema:
                 datatype: string
             - name: Cannot Automate Reason
@@ -6456,12 +6116,12 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: E-mail Send Date
-              key: customfield_13910
-              schema:
-                datatype: date
             - name: Repeated Incident?
               key: customfield_10402
+              schema:
+                datatype: option
+            - name: Cross functional Impact (Class C)
+              key: customfield_10403
               schema:
                 datatype: option
             - name: External Release Date
@@ -6480,7 +6140,7 @@ issue:
               key: customfield_20208
               schema:
                 datatype: user
-            - name: Verification Report Reviewer 2
+            - name: Product PIC
               key: customfield_20209
               schema:
                 datatype: user
@@ -6496,10 +6156,6 @@ issue:
               key: customfield_20204
               schema:
                 datatype: any
-            - name: AI Owner
-              key: customfield_20205
-              schema:
-                datatype: user
             - name: Privacy Incident
               key: customfield_20202
               schema:
@@ -6513,27 +6169,10 @@ issue:
               key: customfield_20200
               schema:
                 datatype: date
-            - name: Codeathon Specific Tools / Repo / Hardware
-              key: customfield_19211
-              schema:
-                datatype: string
             - name: Actual End
               key: customfield_20201
               schema:
                 datatype: date
-            - name: Productized Idea
-              key: customfield_19212
-              schema:
-                datatype: array
-                items: issuelinks
-            - name: Codeathon Result
-              key: customfield_19213
-              schema:
-                datatype: option
-            - name: Productized Status
-              key: customfield_19214
-              schema:
-                datatype: option
             - name: Team Contributors
               key: customfield_19210
               schema:
@@ -6547,6 +6186,10 @@ issue:
               key: customfield_19216
               schema:
                 datatype: number
+            - name: Drive city
+              key: customfield_19217
+              schema:
+                datatype: string
             - name: Non-Driving Function
               key: customfield_19218
               schema:
@@ -6621,7 +6264,7 @@ issue:
               key: customfield_29807
               schema:
                 datatype: string
-            - name: ArchMODs on FMOD ETA
+            - name: FSD Planned IT Review Date
               key: customfield_29808
               schema:
                 datatype: date
@@ -6669,10 +6312,6 @@ issue:
               key: customfield_17818
               schema:
                 datatype: date
-            - name: Related Review Request
-              key: customfield_15639
-              schema:
-                datatype: issuelinks
             - name: Template
               key: customfield_14308
               schema:
@@ -6718,7 +6357,7 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: RTL/Unit DV ETA
+            - name: Prepare EY + IT + Biz + (CLT Optional)
               key: customfield_29810
               schema:
                 datatype: date
@@ -6759,10 +6398,6 @@ issue:
               key: customfield_29812
               schema:
                 datatype: string
-            - name: GPU hrs/wk or Total GPU hrs estimated
-              key: customfield_26305
-              schema:
-                datatype: number
             - name: Link to final copy
               key: customfield_29813
               schema:
@@ -6775,10 +6410,6 @@ issue:
               key: customfield_29818
               schema:
                 datatype: string
-            - name: CSA
-              key: customfield_29819
-              schema:
-                datatype: string
             - name: Origami URL
               key: customfield_26307
               schema:
@@ -6789,10 +6420,6 @@ issue:
                 datatype: string
             - name: OVX GPU
               key: customfield_26309
-              schema:
-                datatype: string
-            - name: Zone Name
-              key: customfield_29817
               schema:
                 datatype: string
             - name: ISA signoff (NVVM)
@@ -6845,12 +6472,12 @@ issue:
               schema:
                 datatype: array
                 items: option
+            - name: Most Likely Estimate
+              key: customfield_14305
+              schema:
+                datatype: number
             - name: ISA signoff bug
               key: customfield_17812
-              schema:
-                datatype: string
-            - name: Safety Report Name
-              key: customfield_15633
               schema:
                 datatype: string
             - name: Test Verification Status
@@ -6861,14 +6488,6 @@ issue:
               key: customfield_14303
               schema:
                 datatype: option
-            - name: WP Revision
-              key: customfield_15634
-              schema:
-                datatype: string
-            - name: Author/Speaker Name
-              key: customfield_15628
-              schema:
-                datatype: string
             - name: Interface
               key: customfield_17807
               schema:
@@ -6884,10 +6503,6 @@ issue:
                 datatype: string
             - name: Design Doc
               key: customfield_17804
-              schema:
-                datatype: string
-            - name: Element Name
-              key: customfield_15627
               schema:
                 datatype: string
             - name: ISA signoff (FE)
@@ -6924,7 +6539,7 @@ issue:
               key: customfield_29820
               schema:
                 datatype: string
-            - name: UID
+            - name: Thub ID
               key: customfield_29825
               schema:
                 datatype: string
@@ -6948,7 +6563,7 @@ issue:
               key: customfield_29827
               schema:
                 datatype: string
-            - name: Expected Results
+            - name: Work area
               key: customfield_29828
               schema:
                 datatype: string
@@ -6958,10 +6573,6 @@ issue:
                 datatype: string
             - name: Comments
               key: customfield_15621
-              schema:
-                datatype: string
-            - name: Open Items
-              key: customfield_15624
               schema:
                 datatype: string
             - name: Requirements Doc
@@ -6988,7 +6599,7 @@ issue:
               key: customfield_15617
               schema:
                 datatype: option
-            - name: Rating
+            - name: Dev due in Iteration
               key: customfield_15618
               schema:
                 datatype: option
@@ -7004,14 +6615,6 @@ issue:
               key: customfield_28501
               schema:
                 datatype: string
-            - name: Sessions Ids
-              key: customfield_29832
-              schema:
-                datatype: string
-            - name: User Feedback
-              key: customfield_29833
-              schema:
-                datatype: string
             - name: Transaction Code(s)
               key: customfield_29830
               schema:
@@ -7024,19 +6627,7 @@ issue:
               key: customfield_28500
               schema:
                 datatype: string
-            - name: Subscription type
-              key: customfield_29836
-              schema:
-                datatype: option
-            - name: Games
-              key: customfield_29837
-              schema:
-                datatype: string
-            - name: Feedback category
-              key: customfield_29834
-              schema:
-                datatype: string
-            - name: GSEC Service Type
+            - name: Security Service
               key: customfield_29838
               schema:
                 datatype: array
@@ -7057,19 +6648,10 @@ issue:
               key: customfield_12100
               schema:
                 datatype: string
-            - name: Safety Assessor
-              key: customfield_15613
-              schema:
-                datatype: array
-                items: user
             - name: Review Request
               key: customfield_15614
               schema:
                 datatype: option
-            - name: Report Revision
-              key: customfield_15611
-              schema:
-                datatype: date
             - name: Requested Date
               key: customfield_15612
               schema:
@@ -7295,15 +6877,27 @@ issue:
               key: customfield_31719
               schema:
                 datatype: string
+            - name: Total Effort
+              key: customfield_39200
+              schema:
+                datatype: number
+            - name: Development Effort
+              key: customfield_39201
+              schema:
+                datatype: number
             - name: Partial Ship
               key: customfield_31718
               schema:
                 datatype: option
+            - name: PLC Effort
+              key: customfield_39202
+              schema:
+                datatype: number
             - name: Requestor
               key: customfield_31713
               schema:
                 datatype: string
-            - name: Playlist(s)
+            - name: Vendor Contact
               key: customfield_31712
               schema:
                 datatype: string
@@ -7335,6 +6929,14 @@ issue:
               key: customfield_31710
               schema:
                 datatype: string
+            - name: Dataset Release Use Case
+              key: customfield_11204
+              schema:
+                datatype: option
+            - name: Security Management Approval Target Date
+              key: customfield_11205
+              schema:
+                datatype: date
             - name: Coupa PR Watchers
               key: customfield_11206
               schema:
@@ -7477,14 +7079,14 @@ issue:
               key: customfield_26705
               schema:
                 datatype: string
-            - name: Initial Reference Date
-              key: customfield_26708
-              schema:
-                datatype: date
             - name: PDF Sample
               key: customfield_17410
               schema:
                 datatype: string
+            - name: When did you first use the dataset?
+              key: customfield_26708
+              schema:
+                datatype: date
             - name: Delivery ID
               key: customfield_26707
               schema:
@@ -7495,10 +7097,6 @@ issue:
                 datatype: number
             - name: Data-center
               key: customfield_17414
-              schema:
-                datatype: string
-            - name: Highspot
-              key: customfield_17413
               schema:
                 datatype: string
             - name: Order
@@ -7529,10 +7127,6 @@ issue:
                 items: string
             - name: Last Comment
               key: customfield_17409
-              schema:
-                datatype: string
-            - name: PDF
-              key: customfield_17408
               schema:
                 datatype: string
             - name: Quantity
@@ -7585,7 +7179,7 @@ issue:
               key: customfield_26711
               schema:
                 datatype: option
-            - name: Current Reference Date
+            - name: When did you collect the dataset?
               key: customfield_26710
               schema:
                 datatype: date
@@ -7622,6 +7216,10 @@ issue:
               key: customfield_17407
               schema:
                 datatype: date
+            - name: SHR Technical Analysis
+              key: customfield_38700
+              schema:
+                datatype: option
             - name: Applicable to MSHybrid
               key: customfield_17404
               schema:
@@ -7685,14 +7283,6 @@ issue:
               key: customfield_25405
               schema:
                 datatype: string
-            - name: Business Value
-              key: customfield_18713
-              schema:
-                datatype: number
-            - name: Time Criticality
-              key: customfield_18714
-              schema:
-                datatype: number
             - name: Devtest Test Case ID
               key: customfield_15200
               schema:
@@ -7711,6 +7301,10 @@ issue:
                 datatype: number
             - name: NVBugs - Days Open
               key: customfield_18710
+              schema:
+                datatype: string
+            - name: NVBugs - Hardware
+              key: customfield_18711
               schema:
                 datatype: string
             - name: Person-Days
@@ -7800,39 +7394,15 @@ issue:
               key: customfield_37400
               schema:
                 datatype: string
-            - name: Findings-High
-              key: customfield_27600
-              schema:
-                datatype: number
-            - name: Findings-Low
-              key: customfield_27602
-              schema:
-                datatype: number
-            - name: Findings-Medium
-              key: customfield_27601
-              schema:
-                datatype: number
-            - name: Preventions-Medium
-              key: customfield_27604
-              schema:
-                datatype: number
-            - name: Preventions-High
-              key: customfield_27603
-              schema:
-                datatype: number
-            - name: Detections-High
+            - name: Curation Yield
               key: customfield_27606
               schema:
                 datatype: number
-            - name: Preventions-Low
-              key: customfield_27605
-              schema:
-                datatype: number
-            - name: Detections-Low
+            - name: Curation Precision
               key: customfield_27608
               schema:
                 datatype: number
-            - name: Detections-Medium
+            - name: NRE
               key: customfield_27607
               schema:
                 datatype: number
@@ -7916,6 +7486,16 @@ issue:
               key: customfield_16501
               schema:
                 datatype: user
+            - name: Accepted By
+              key: customfield_39600
+              schema:
+                datatype: array
+                items: user
+            - name: Deferred By
+              key: customfield_39601
+              schema:
+                datatype: array
+                items: user
             - name: Code Complete Actual Date
               key: customfield_16505
               schema:
@@ -8140,11 +7720,6 @@ issue:
               key: customfield_12908
               schema:
                 datatype: number
-            - name: Zone(s)
-              key: customfield_22702
-              schema:
-                datatype: array
-                items: string
             - name: Procurement required
               key: customfield_23610
               schema:
@@ -8165,7 +7740,7 @@ issue:
               key: customfield_18207
               schema:
                 datatype: date
-            - name: Test
+            - name: Dependency Upon
               key: customfield_18208
               schema:
                 datatype: array
@@ -8218,10 +7793,6 @@ issue:
               key: customfield_19522
               schema:
                 datatype: option
-            - name: QA/QC Instructions
-              key: customfield_16013
-              schema:
-                datatype: string
             - name: SLT ECO
               key: customfield_16012
               schema:
@@ -8236,6 +7807,10 @@ issue:
                 datatype: string
             - name: NVBugs - ARB
               key: customfield_16016
+              schema:
+                datatype: string
+            - name: Synopsis
+              key: customfield_16014
               schema:
                 datatype: string
             - name: Reviewers
@@ -8272,10 +7847,6 @@ issue:
               key: customfield_32100
               schema:
                 datatype: option
-            - name: External issue ID
-              key: customfield_10700
-              schema:
-                datatype: string
             - name: Function
               key: customfield_32103
               schema:
@@ -8288,10 +7859,6 @@ issue:
               key: customfield_20500
               schema:
                 datatype: sd-approvals
-            - name: 'Scenario: (explain scenario)'
-              key: customfield_19992
-              schema:
-                datatype: string
             - name: AV From team
               key: customfield_19510
               schema:
@@ -8306,6 +7873,10 @@ issue:
               schema:
                 datatype: array
                 items: option
+            - name: FSD Name
+              key: customfield_19995
+              schema:
+                datatype: string
             - name: Blocked by Hardware Milestone
               key: customfield_16001
               schema:
@@ -8341,7 +7912,7 @@ issue:
               schema:
                 datatype: array
                 items: issuelinks
-            - name: SLT MODS
+            - name: Partner ID
               key: customfield_16004
               schema:
                 datatype: string
@@ -8350,7 +7921,7 @@ issue:
               schema:
                 datatype: array
                 items: issuelinks
-            - name: SLT VBIOS
+            - name: Meeting name/forum
               key: customfield_16003
               schema:
                 datatype: string
@@ -8469,12 +8040,12 @@ issue:
               key: customfield_19501
               schema:
                 datatype: option
-            - name: POR Milestone
-              key: customfield_19502
+            - name: Build Pool
+              key: customfield_32115
               schema:
                 datatype: option
-            - name: SIM Card
-              key: customfield_32115
+            - name: POR Milestone
+              key: customfield_19502
               schema:
                 datatype: option
             - name: User Story Readiness
@@ -8528,12 +8099,32 @@ issue:
               key: customfield_19972
               schema:
                 datatype: option
+            - name: SWXI Task Type
+              key: customfield_19973
+              schema:
+                datatype: option
+            - name: Internal Procurement System
+              key: customfield_19978
+              schema:
+                datatype: option
+            - name: Responsible Function
+              key: customfield_19979
+              schema:
+                datatype: option
             - name: NVBugs - Set SW Bug Action to
               key: customfield_19974
               schema:
                 datatype: option
             - name: NVBugs - Set SW Disposition to
               key: customfield_19975
+              schema:
+                datatype: option
+            - name: Mode of Delivery
+              key: customfield_19976
+              schema:
+                datatype: option
+            - name: SWX Initiation Group
+              key: customfield_19977
               schema:
                 datatype: option
             - name: RCCA link
@@ -8594,6 +8185,10 @@ issue:
               key: customfield_31604
               schema:
                 datatype: option
+            - name: Release State
+              key: customfield_11200
+              schema:
+                datatype: option
             - name: Release Status
               key: customfield_11201
               schema:
@@ -8602,6 +8197,14 @@ issue:
               key: customfield_31601
               schema:
                 datatype: option
+            - name: Security Management Result Target Date
+              key: customfield_11202
+              schema:
+                datatype: date
+            - name: Security Classification Result Target Date
+              key: customfield_11203
+              schema:
+                datatype: date
             - name: TAT Categories
               key: customfield_14705
               schema:
@@ -8625,6 +8228,10 @@ issue:
               key: customfield_31617
               schema:
                 datatype: string
+            - name: SW ARCH PIC
+              key: customfield_39100
+              schema:
+                datatype: user
             - name: DMO Ticket
               key: customfield_31619
               schema:
@@ -8643,10 +8250,6 @@ issue:
                 datatype: string
             - name: Fix Date
               key: customfield_31615
-              schema:
-                datatype: string
-            - name: Domain
-              key: customfield_14700
               schema:
                 datatype: string
             - name: QA Feedback
@@ -8697,6 +8300,10 @@ issue:
               key: customfield_29307
               schema:
                 datatype: string
+            - name: External issue ID
+              key: customfield_40100
+              schema:
+                datatype: string
             - name: External blocks
               key: customfield_31625
               schema:
@@ -8705,7 +8312,7 @@ issue:
               key: customfield_31624
               schema:
                 datatype: string
-            - name: Sprint Team
+            - name: SW Config
               key: customfield_33802
               schema:
                 datatype: option
@@ -8737,10 +8344,6 @@ issue:
               key: customfield_31622
               schema:
                 datatype: option
-            - name: Runner
-              key: customfield_12503
-              schema:
-                datatype: option
             - name: Level
               key: customfield_12502
               schema:
@@ -8766,10 +8369,6 @@ issue:
               key: customfield_22306
               schema:
                 datatype: user
-            - name: Sub Project
-              key: customfield_22305
-              schema:
-                datatype: option
             - name: Requirement
               key: customfield_22304
               schema:
@@ -8810,7 +8409,7 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: 'Approved By:'
+            - name: EY Primary Owner
               key: customfield_30301
               schema:
                 datatype: array
@@ -8870,14 +8469,6 @@ issue:
               key: customfield_20102
               schema:
                 datatype: string
-            - name: Source Video
-              key: customfield_19113
-              schema:
-                datatype: string
-            - name: Source Thumbnail
-              key: customfield_19114
-              schema:
-                datatype: string
             - name: Decomposition Type
               key: customfield_20100
               schema:
@@ -8890,14 +8481,6 @@ issue:
               key: customfield_32508
               schema:
                 datatype: option
-            - name: Security
-              key: customfield_19110
-              schema:
-                datatype: user
-            - name: Legal
-              key: customfield_19111
-              schema:
-                datatype: user
             - name: CR accepted by NV?
               key: customfield_32505
               schema:
@@ -8910,10 +8493,6 @@ issue:
               key: customfield_32507
               schema:
                 datatype: option
-            - name: Command Post
-              key: customfield_19116
-              schema:
-                datatype: string
             - name: Stages Origin Element URL
               key: customfield_32501
               schema:
@@ -8984,22 +8563,14 @@ issue:
               key: customfield_13808
               schema:
                 datatype: option
-            - name: Cause 1
+            - name: Integration Pattern
               key: customfield_19101
               schema:
                 datatype: string
-            - name: Cause 2
-              key: customfield_19102
+            - name: NVBugs - Regression
+              key: customfield_19100
               schema:
                 datatype: string
-            - name: Cause 3
-              key: customfield_19103
-              schema:
-                datatype: string
-            - name: First Responder
-              key: customfield_19104
-              schema:
-                datatype: user
             - name: Process Owner
               key: customfield_19109
               schema:
@@ -9012,11 +8583,6 @@ issue:
               key: customfield_19106
               schema:
                 datatype: user
-            - name: Resolution Team
-              key: customfield_19108
-              schema:
-                datatype: array
-                items: user
             - name: SIT Cycle Testing
               key: customfield_21414
               schema:
@@ -9155,6 +8721,16 @@ issue:
               key: customfield_12002
               schema:
                 datatype: string
+            - name: Rejected By
+              key: customfield_39501
+              schema:
+                datatype: array
+                items: user
+            - name: Abstained By
+              key: customfield_39502
+              schema:
+                datatype: array
+                items: user
             - name: GDN Partner Forecasted Capacity Requirements
               key: customfield_12001
               schema:
@@ -9163,10 +8739,23 @@ issue:
               key: customfield_15514
               schema:
                 datatype: string
+            - name: Info Requested By
+              key: customfield_39503
+              schema:
+                datatype: array
+                items: user
+            - name: Worst Case Estimate
+              key: customfield_12004
+              schema:
+                datatype: number
             - name: CUDA Review Stage
               key: customfield_15515
               schema:
                 datatype: option
+            - name: Commands
+              key: customfield_12003
+              schema:
+                datatype: string
             - name: Daily Utilization Estimate
               key: customfield_12006
               schema:
@@ -9180,6 +8769,10 @@ issue:
               key: customfield_15513
               schema:
                 datatype: option
+            - name: Logs
+              key: customfield_12005
+              schema:
+                datatype: string
             - name: Scope
               key: customfield_15507
               schema:
@@ -9204,7 +8797,7 @@ issue:
               key: customfield_15500
               schema:
                 datatype: number
-            - name: IxD sign-off
+            - name: Refine EY + IT + Biz + (CLT Optional)
               key: customfield_15503
               schema:
                 datatype: date
@@ -9254,26 +8847,10 @@ issue:
               key: customfield_26205
               schema:
                 datatype: option
-            - name: Actual Difficulty (0 - 100)
+            - name: Interface Objects
               key: customfield_26204
               schema:
                 datatype: number
-            - name: City
-              key: customfield_26207
-              schema:
-                datatype: string
-            - name: Region
-              key: customfield_26206
-              schema:
-                datatype: option
-            - name: Map UUID
-              key: customfield_26209
-              schema:
-                datatype: string
-            - name: MB Name
-              key: customfield_26208
-              schema:
-                datatype: string
             - name: Feature Lead Display Name
               key: customfield_23111
               schema:
@@ -9282,12 +8859,8 @@ issue:
               key: customfield_23110
               schema:
                 datatype: string
-            - name: requires SQA?
+            - name: Product Priority Rank
               key: customfield_30700
-              schema:
-                datatype: string
-            - name: World ID
-              key: customfield_26210
               schema:
                 datatype: string
             - name: Procurement
@@ -9298,7 +8871,7 @@ issue:
               key: customfield_26213
               schema:
                 datatype: string
-            - name: GDN User Content Access Method
+            - name: Dataset Release Use Cases
               key: customfield_26216
               schema:
                 datatype: array
@@ -9328,10 +8901,6 @@ issue:
               key: customfield_23107
               schema:
                 datatype: option
-            - name: Root Cause Validation?
-              key: customfield_19091
-              schema:
-                datatype: string
             - name: Project Finished
               key: customfield_26217
               schema:
@@ -9372,23 +8941,44 @@ issue:
               key: customfield_23100
               schema:
                 datatype: number
-            - name: 'Root Cause Identification:'
-              key: customfield_19088
-              schema:
-                datatype: string
             - name: Root Cause Resolution
               key: customfield_19089
+              schema:
+                datatype: string
+            - name: Soul
+              key: customfield_38202
+              schema:
+                datatype: string
+            - name: CUDA Version
+              key: customfield_38203
               schema:
                 datatype: string
             - name: Original story points
               key: customfield_13300
               schema:
                 datatype: number
+            - name: CUDA SoT
+              key: customfield_38204
+              schema:
+                datatype: string
+            - name: SoT
+              key: customfield_38205
+              schema:
+                datatype: string
+            - name: Target Release
+              key: customfield_38206
+              schema:
+                datatype: array
+                items: option
+            - name: External issue ID
+              key: customfield_38207
+              schema:
+                datatype: string
             - name: Missed Patch
               key: customfield_26221
               schema:
                 datatype: option
-            - name: close time
+            - name: Mitigation Time
               key: customfield_26220
               schema:
                 datatype: datetime
@@ -9404,10 +8994,6 @@ issue:
               key: customfield_19082
               schema:
                 datatype: option
-            - name: Additional Information & Incident Background
-              key: customfield_19083
-              schema:
-                datatype: string
             - name: Support Type
               key: customfield_28403
               schema:
@@ -9420,10 +9006,6 @@ issue:
               key: customfield_28401
               schema:
                 datatype: string
-            - name: Start Qtr
-              key: customfield_26224
-              schema:
-                datatype: option
             - name: External Assignee
               key: customfield_26227
               schema:
@@ -9444,16 +9026,16 @@ issue:
               key: customfield_28404
               schema:
                 datatype: option
+            - name: NVBugs - Version
+              key: customfield_19080
+              schema:
+                datatype: string
             - name: GeForce QA Execution Estimate
               key: customfield_28405
               schema:
                 datatype: number
             - name: 'Release Note: Publish'
               key: customfield_19081
-              schema:
-                datatype: option
-            - name: Class
-              key: customfield_19079
               schema:
                 datatype: option
             - name: DevTools QA Planning and Execution Estimate
@@ -9472,14 +9054,6 @@ issue:
               key: customfield_19076
               schema:
                 datatype: string
-            - name: Under devlopment
-              key: customfield_19077
-              schema:
-                datatype: string
-            - name: Chip Package
-              key: customfield_19078
-              schema:
-                datatype: string
             - name: Actual Measurement
               key: customfield_32901
               schema:
@@ -9488,10 +9062,6 @@ issue:
               key: customfield_32900
               schema:
                 datatype: number
-            - name: Time In Status
-              key: customfield_11110
-              schema:
-                datatype: any
             - name: Test Plan Links
               key: customfield_11111
               schema:
@@ -9516,14 +9086,6 @@ issue:
               key: customfield_19071
               schema:
                 datatype: string
-            - name: Validation Pending
-              key: customfield_19072
-              schema:
-                datatype: string
-            - name: Monitoring Plan
-              key: customfield_19073
-              schema:
-                datatype: string
             - name: Omniverse QA Planning and Execution Estimate
               key: customfield_28411
               schema:
@@ -9536,7 +9098,7 @@ issue:
               key: customfield_19070
               schema:
                 datatype: string
-            - name: Services Categorization
+            - name: Chip Name
               key: customfield_19068
               schema:
                 datatype: array
@@ -9558,7 +9120,7 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: Services
+            - name: Workload
               key: customfield_19067
               schema:
                 datatype: array
@@ -9620,6 +9182,16 @@ issue:
               key: customfield_19063
               schema:
                 datatype: option
+            - name: Staging Approver
+              key: customfield_19058
+              schema:
+                datatype: array
+                items: user
+            - name: Supporting Members
+              key: customfield_19059
+              schema:
+                datatype: array
+                items: user
             - name: Customer Approver
               key: customfield_19053
               schema:
@@ -9671,12 +9243,16 @@ issue:
               key: customfield_27102
               schema:
                 datatype: string
-            - name: Learning Content Approver
-              key: customfield_19052
+            - name: NV Primary Owner
+              key: customfield_19051
               schema:
                 datatype: array
                 items: user
-            - name: Solution Design approved date
+            - name: FSD Planned Approval Date
+              key: customfield_19960
+              schema:
+                datatype: date
+            - name: Revised due date
               key: customfield_19961
               schema:
                 datatype: date
@@ -9731,10 +9307,6 @@ issue:
               schema:
                 datatype: array
                 items: option
-            - name: Route length (km)
-              key: customfield_24400
-              schema:
-                datatype: number
             - name: Solution Design Approved?
               key: customfield_19950
               schema:
@@ -9847,19 +9419,11 @@ issue:
               key: customfield_19939
               schema:
                 datatype: string
-            - name: Deployment Type
-              key: customfield_26601
-              schema:
-                datatype: option
             - name: Requested Information
               key: customfield_26600
               schema:
                 datatype: string
-            - name: Rollout Plan
-              key: customfield_26603
-              schema:
-                datatype: option
-            - name: Release Type
+            - name: Release Label
               key: customfield_26602
               schema:
                 datatype: option
@@ -9867,14 +9431,6 @@ issue:
               key: customfield_26605
               schema:
                 datatype: option
-            - name: SRE Exception
-              key: customfield_26604
-              schema:
-                datatype: option
-            - name: Configuration Version
-              key: customfield_26607
-              schema:
-                datatype: string
             - name: Release Version
               key: customfield_26606
               schema:
@@ -9957,7 +9513,7 @@ issue:
               key: customfield_36411
               schema:
                 datatype: string
-            - name: Insight Sample Test field
+            - name: Business Area
               key: customfield_36410
               schema:
                 datatype: any
@@ -9965,12 +9521,12 @@ issue:
               key: customfield_19923
               schema:
                 datatype: string
-            - name: GDN Portal Admin Email
+            - name: Culprit CL/Root Cause
               key: customfield_19924
               schema:
                 datatype: string
-            - name: Content Relates To
-              key: customfield_19926
+            - name: NVBugs - Additional Customers
+              key: customfield_19925
               schema:
                 datatype: string
             - name: What is Priorty?
@@ -9989,7 +9545,7 @@ issue:
               key: customfield_19916
               schema:
                 datatype: string
-            - name: GDN Partner Application Access Credentials
+            - name: Build Impact Analysis
               key: customfield_19917
               schema:
                 datatype: string
@@ -10009,7 +9565,7 @@ issue:
               key: customfield_20900
               schema:
                 datatype: option
-            - name: GDN Partner Expected Peak Usage Time
+            - name: Technical Analysis
               key: customfield_28801
               schema:
                 datatype: string
@@ -10041,6 +9597,10 @@ issue:
               key: customfield_16400
               schema:
                 datatype: option
+            - name: Parent Summary
+              key: customfield_19914
+              schema:
+                datatype: string
             - name: Tool Version
               key: customfield_15552
               schema:
@@ -10117,10 +9677,6 @@ issue:
               key: customfield_19908
               schema:
                 datatype: string
-            - name: WP Version TUEV Approved
-              key: customfield_25300
-              schema:
-                datatype: string
             - name: SW Tool Qualification Checklist (URL)
               key: customfield_15540
               schema:
@@ -10137,20 +9693,12 @@ issue:
               key: customfield_15543
               schema:
                 datatype: string
-            - name: External issue ID
+            - name: SWXI Escalation Justification
               key: customfield_19902
               schema:
                 datatype: string
-            - name: First review
-              key: customfield_14213
-              schema:
-                datatype: date
             - name: Use case(s) (Text/URL)
               key: customfield_15544
-              schema:
-                datatype: string
-            - name: Kaltura ID
-              key: customfield_19903
               schema:
                 datatype: string
             - name: Link to Requirements field (URL pasted in)
@@ -10189,18 +9737,10 @@ issue:
               key: customfield_15548
               schema:
                 datatype: string
-            - name: 2nd Draft
-              key: customfield_14214
-              schema:
-                datatype: date
             - name: Configuration
               key: customfield_15545
               schema:
                 datatype: string
-            - name: 2nd review
-              key: customfield_14215
-              schema:
-                datatype: date
             - name: Environment
               key: customfield_15546
               schema:
@@ -10209,18 +9749,18 @@ issue:
               key: customfield_19900
               schema:
                 datatype: string
-            - name: When is next phase due?
+            - name: FUT Actual End Date
               key: customfield_14209
-              schema:
-                datatype: date
-            - name: 2nd review
-              key: customfield_14207
               schema:
                 datatype: date
             - name: SW Tool Criteria Evaluation Checklist (URL)
               key: customfield_15538
               schema:
                 datatype: string
+            - name: Security Classification Approval Target Date
+              key: customfield_14207
+              schema:
+                datatype: date
             - name: SW Tool Criteria Evaluation Report (URL)
               key: customfield_15539
               schema:
@@ -10261,7 +9801,7 @@ issue:
               key: customfield_14205
               schema:
                 datatype: date
-            - name: 2nd Draft
+            - name: FSD Actual Approval Date
               key: customfield_14206
               schema:
                 datatype: date
@@ -10273,10 +9813,6 @@ issue:
               key: customfield_15534
               schema:
                 datatype: option
-            - name: 1st Draft
-              key: customfield_14204
-              schema:
-                datatype: date
             - name: Tool Qualification Method (Only for TCL2 or TCL3)
               key: customfield_15535
               schema:
@@ -10322,6 +9858,10 @@ issue:
           name: New Feature
           handle: ""
           subtask: false
+        - id: "22000"
+          name: Non Programming
+          handle: ""
+          subtask: false
         - id: "3"
           name: Task
           handle: ""
@@ -10341,6 +9881,6 @@ project:
 server: https://jirasw.nvidia.com
 timezone: America/Los_Angeles
 version:
-    major: 8
-    minor: 20
-    patch: 27
+    major: 9
+    minor: 12
+    patch: 21

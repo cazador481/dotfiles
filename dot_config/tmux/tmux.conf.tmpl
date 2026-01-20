@@ -11,6 +11,7 @@ set -g mouse on
 #set -g -a terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q'
 set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
 set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
+set -as terminal-features ",*:hyperlinks"
 # {{`{{{`}} Mouse mode toggle
 bind m\
          set -g mouse on\;\
@@ -55,14 +56,13 @@ bind-key -Tcopy-mode-vi 'v' send -X begin-selection
 bind-key -Tcopy-mode-vi 'y' send -X copy-selection
 bind-key -Tcopy-mode-vi 'r' send -X rectangle-toggle
 #bind Escape copy-mode
-bind p paste-buffer
+bind-key p paste-buffer
 # }}}
 
 set-option -g xterm-keys on # to make ctrl-arrow, etc work
 
 # {{`{{{`}} sets default shell and cmd
 {{ if (eq .chezmoi.osRelease.id "centos") }}
-# set -g default-shell '/home/utils/zsh-5.7.1/bin/zsh'
 set -g default-shell '/home/utils/fish-3.6.1/bin/fish
 {{ end }}
 #}}}
@@ -101,8 +101,22 @@ bind c new-window -c "#{pane_current_path}"
 #enable focus events
 set -g focus-event on
 
-set-option update-environment "SSH_AUTH_SOCK SSH_AGENT_PID SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT DISPLAY XAUTHORITY"
-set-option -ga update-environment "SSH_AUTH_SOCK SSH_AGENT_PID SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT DISPLAY XAUTHORITY"
+set-option -ga update-environment "\
+  SSH_AUTH_SOCK \
+  SSH_AGENT_PID \
+  SSH_AUTH_SOCK \
+  SSH_CONNECTION \
+  SSH_CLIENT \
+  DISPLAY \
+  XAUTHORITY \
+  VSCODE_GIT_IPC_HANDLE \
+  VSCODE_GIT_ASKPASS_MAIN \
+  VSCODE_GIT_ASKPASS_NODE \
+  VSCODE_IPC_HOOK_CLI"
+
+
+# Enables osc52 passthrough (i.e copy and pasting)
+set-window-option -g allow-passthrough on 
 
 # tmux starts a new session if one doesn't exist on attach
 
@@ -127,7 +141,7 @@ set -g @plugin 'tmux-plugins/tmux-yank'
 # if-shell 'test -z "$DISPLAY"' \
 if-shell '[[ ${DISPLAY} ]]' \
      'set -g @override_copy_command "doitclient wclip";'
-if-shell 'test -z "$DISPLAY"' \
+if-shell '[[ ${DISPLAY} ]]' \
      'bind-key "p" run-shell "doitclient wclip -r|tmux load-buffer - ;tmux paste-buffer"'
 set -g @override_copy_command "doitclient wclip";
 bind-key "p" run-shell "doitclient wclip -r|tmux load-buffer - ;tmux paste-buffer"
@@ -140,7 +154,12 @@ set -g @resurrect-capture-pane-contents 'on'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
 if "test ! -d ~/.tmux/plugins/tpm" \
+{{ if (eq .chezmoi.osRelease.id "centos") }}
+  run '/home/utils/git-2.45.2/bin/git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'
+set -g default-shell '/home/utils/fish-3.6.1/bin/fish
+{{ else }}
   run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'
+{{ end }}
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
