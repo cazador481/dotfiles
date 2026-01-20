@@ -1,8 +1,11 @@
 [color]
-
 	ui = true
 [push]
 	default = simple
+    followTags = true
+    autoSetupRemote = True
+[pull]
+    rebase = true
 [github]
 	user = cazador481
 [git-p4]
@@ -11,10 +14,8 @@
 	skipSubmitEdit = 1
 	detectCopies = true
 	detectRenames = true
-	port = p4proxy-sc.nvidia.com:4101
 	importLabels = true
 	keepemptycommits = true
-	useclientspec = false
 [http]
 	sslVerify = false
 [core]
@@ -116,8 +117,22 @@
 	release = "!cd_hwinf && make release"
 
 # worktree
-    wt-new = "!f() { git worktree add -b $1 `git root`/../$1 p4/master;}; f"
-    
+    wt-new = "!f() { git worktree  add -q -b $1 `git root`/../$1 p4/master && echo `git root`/../$1;}; f"
+    wt = "!f() { \
+    branch=\"$1\"; \
+    if [ -z \"$branch\" ]; then \
+        echo \"usage: git wt <branch>\" >&2; \
+        return 1; \
+    fi; \
+    path=\"$(git root)/../$branch\"; \
+    if git show-ref --quiet --verify \"refs/heads/$branch\"; then \
+        git worktree add -q \"$path\" \"$branch\" || return 1; \
+    else \
+        git worktree add -q -b \"$branch\" \"$path\" p4/master || return 1; \
+    fi; \
+    exec \"${SHELL:-/bin/sh}\" -lc \"cd '$path' && exec \\\"${SHELL:-/bin/sh}\\\"\"; \
+    }; f"
+
     sb = "!git branches |fzf --ansi|cut -f1 -d' '| xargs -t -I {} pueue add git nv nvci-submit --branch {}"
 [user]
 	name = Edward Ash
@@ -146,6 +161,8 @@
   insteadOf = https://github.com/RustSec/advisory-db
 [diff]
 	algorithm = histogram
+    renames = copies
+    interHunkContext = 10
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52

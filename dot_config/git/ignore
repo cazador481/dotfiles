@@ -26,6 +26,14 @@ TEMP/
 .workspace/
 nvci.*.log
 
+# vscode
+.vscode
+*.code-workspace
+
+# cursor
+# .cursorrules
+global/
+
 # Database for the doit runner
 .doit.db
 
@@ -56,3 +64,18 @@ package-lock.json
 
 # vim swap file
 *.swp
+
+#aider
+.aider.*
+
+# ripgrep
+.rgignore
+
+# CI Teams testing infra stuff
+test_run/
+test_logs/
+.prove
+_Inline
+
+# NVIDIA Stuff
+carpenter_mcp.log
