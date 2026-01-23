@@ -55,12 +55,12 @@ vim.g.clipboard={
     copy = {
 --      ['+'] = require('vim.ui.clipboard.osc52').copy,
 --      ['*'] = require('vim.ui.clipboard.osc52').copy,
-        ['+'] = 'timeout 2 doitclient wclip',
-        ['*'] = 'timeout 2 doitclient wclip',
+        ['+'] = 'timeout 2 /home/eash/bin/doitclient wclip',
+        ['*'] = 'timeout 2 /home/eash/bin/doitclient wclip'
     },
     paste = {
-        ['+'] = 'timeout 2 doitclient wclip -r',
-        ['*'] = 'timeout 2 doitclient wclip -r',
+        ['+'] = 'timeout 2 /home/eash/bin/doitclient wclip -r',
+        ['*'] = 'timeout 2 /home/eash/bin/doitclient wclip -r'
     },
 }
 {{ end }}
