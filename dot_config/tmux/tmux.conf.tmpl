@@ -7,8 +7,13 @@ set -g detach-on-destroy off
 set -g mouse on
 # bind -n WheelUpPane copy-mode
 
-#set-option -ga terminal-overrides ",xterm-256color:Tc"
-#set -g -a terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q'
+#set correct TERM, to make 256 colors work
+set -g default-terminal "tmux-256color"
+set-option -sa terminal-overrides ',*-256color:RGB'
+
+# Enable true color support
+set -as terminal-overrides ",*:Tc"
+
 set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
 set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
 set -as terminal-features ",*:hyperlinks"
@@ -45,7 +50,9 @@ set-option -g renumber-windows on
 #}}}
 
 # faster command sequence, address vim mode switching delay
-set -s escape-time 0
+# Any less than 30 terminal escape garbage gets sent to terminal, so we set it to 30
+# https://github.com/microsoft/vscode/issues/207545
+set -s escape-time 30
 
 # aggresive resize
 setw -g aggressive-resize on
@@ -61,11 +68,10 @@ bind-key p paste-buffer
 
 set-option -g xterm-keys on # to make ctrl-arrow, etc work
 
-# {{`{{{`}} sets default shell and cmd
+# sets default shell and cmd
 {{ if (eq .chezmoi.osRelease.id "centos") }}
-set -g default-shell '/home/utils/fish-3.6.1/bin/fish
-{{ end }}
-#}}}
+set -g default-shell '/home/utils/fish-3.6.1/bin/fish'
+{{end}}
 
 #{{`{{{`}} status window
 
@@ -83,9 +89,6 @@ set -g status-left-length 20
 
 #use UTF8
 
-#set correct TERM, to make 256 colors work
-set -g default-terminal "tmux-256color"
-set-option -sa terminal-overrides ',*-256color:RGB'
 
 
 #on screen time for display-panes in ms
@@ -156,7 +159,6 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 if "test ! -d ~/.tmux/plugins/tpm" \
 {{ if (eq .chezmoi.osRelease.id "centos") }}
   run '/home/utils/git-2.45.2/bin/git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'
-set -g default-shell '/home/utils/fish-3.6.1/bin/fish
 {{ else }}
   run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'
 {{ end }}
