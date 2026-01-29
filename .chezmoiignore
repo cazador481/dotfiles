@@ -1,6 +1,10 @@
 # Don't install on non windows machines
 {{- if ne .chezmoi.os "windows" }}
 Documents/
+scripts/**
+.p4aliases
+.p4ignore
+.ssh/nvmetric_key
 {{- end }}
 
 # Don't install on windows
@@ -8,3 +12,5 @@ Documents/
 .config/**
 .config/
 {{- end }}
+
+README.md # Repo readme file
