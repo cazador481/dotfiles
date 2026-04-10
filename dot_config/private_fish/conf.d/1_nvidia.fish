@@ -17,6 +17,7 @@ set -xg LSF_SERVERDIR /usr/local/lsf/etc
 source /home/nv/utils/ci/nvci_setup/nvci-setup.fish
 
 fish_add_path --path --prepend --move \
+    /home/tools_ai/anthropic-ai/claude/latest \
     /home/utils/fzf-0.29.0/bin \
     /home/autosubmit/bin \
     /home/nv/utils/crucible/1.0/bin \
@@ -26,7 +27,7 @@ fish_add_path --path --prepend --move \
     /home/utils/direnv-2.30.3/bin \
     /home/utils/gcc-11.2.0/bin \
     /home/utils/git-2.45.2/bin \
-    /home/utils/go-1.18/bin/ \
+    /home/utils/go-1.26.0/bin \
     /home/utils/htop-1.0/bin/ \
     /home/utils/jq-1.6/bin \
     /home/utils/llvm-20.1.0/bin \
@@ -56,3 +57,5 @@ alias clean_workspace="workspace_manager list |grep f_hwinf_ci | grep -v test_ru
 # Abbreviations
 abbr qs4 qsub -Is -n4 -app affinity -app c75docker -q o_cpu_16G_1H -R '"span[hosts=1]"' -m rel7x
 abbr qs qsub -Is -n2 -app affinity -app c75docker -q o_cpu_16G_1H -R '"span[hosts=1]"' -m rel7x
+abbr root 'cd (/home/eash/scripts/get_root.pl)'
+abbr pa 'pueue add'

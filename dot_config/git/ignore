@@ -79,3 +79,8 @@ _Inline
 
 # NVIDIA Stuff
 carpenter_mcp.log
+
+**/.claude/settings.local.json
+.claude/
+# Also ignore the symlink
+.claude

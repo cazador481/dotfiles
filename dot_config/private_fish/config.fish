@@ -17,7 +17,7 @@ if status is-interactive
     # set fish_v_force_cursor 1
 
     # only run if host contains eash.sc.vxp 
-    if string match --quiet --regex "eash.sc.vxp" $HOST
+    if string match --quiet --regex "dc7-container-xterm-12" $HOST
         /home/eash/.atuin/bin/atuin init --disable-up-arrow fish | source
     end
 end
@@ -53,6 +53,9 @@ if status is-interactive
     enable_transience
 end
 
+abbr c clear
 
 # This is needed because cursor mcp sends a q to exit the terminal sometimes
 abbr q exit 0
+
+set -xg CLAUSE_CODE_DISABLE_AUTOMEMORY 0
