@@ -157,11 +157,11 @@ set -g @resurrect-capture-pane-contents 'on'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
 if "test ! -d ~/.tmux/plugins/tpm" \
-{{ if (eq .chezmoi.osRelease.id "centos") }}
-  run '/home/utils/git-2.45.2/bin/git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'
-{{ else }}
-  run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'
-{{ end }}
+{{- if (eq .chezmoi.osRelease.id "centos") }}
+  "run '/home/utils/git-2.45.2/bin/git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'"
+{{- else }}
+  "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'"
+{{- end }}
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
