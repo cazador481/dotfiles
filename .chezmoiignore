@@ -1,9 +1,17 @@
+# Don't install on non windows machines
 {{- if ne .chezmoi.os "windows" }}
 Documents/
+.ssh/nvmetric_key
 {{- end }}
+
+# Don't install on windows
 {{- if eq .chezmoi.os "windows" }}
 scripts/**
 dot_config/**
 dot_config/
 private_dot_netrc.tmpl
+.p4aliases
+.p4ignore
 {{- end }}
+
+README.md # Repo readme file

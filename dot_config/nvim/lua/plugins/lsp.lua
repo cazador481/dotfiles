@@ -18,6 +18,16 @@ return {
                     }
                 },
             },
+            perlnavigator = {
+                settings = {
+                    perlnavigator = {
+                        perlPath =  '/home/utils/perl5/perlbrew/perls/5.32.1-20241209/bin/perl',
+                        enableWarnings = true,
+                        perlcriticEnabled = true,
+                        includePaths = {"../bucket/lib", "../bucket/t/lib","../app/lib","../app/t/lib"},
+                    }
+                }
+            },
             pyright = {
                 enabled = not vim.g.using_nvidia_farm,
                 settings = {

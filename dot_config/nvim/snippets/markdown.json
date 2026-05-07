@@ -1,0 +1,14 @@
+{
+    "Snippet name":{
+        "prefix": "scope",
+        "body":[
+            "# Change Scope",
+            "Urgency: Standard",
+            "Risk: Standard",
+            "Complexity: Standard",
+            "",
+            "# Review info",
+            "Review: https://cr#review:id="
+        ]
+    }
+}

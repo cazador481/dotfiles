@@ -84,3 +84,6 @@ isort
 explicit
 CancelInfo
 deserialize
+pyproject
+toml
+artifactory

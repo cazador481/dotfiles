@@ -71,3 +71,6 @@ host spoolman-gun
 host homeassistant
     User root
     hostname 192.168.1.151
+
+host dc2-autosubmit-6.nvidia.com
+    user autosubmit

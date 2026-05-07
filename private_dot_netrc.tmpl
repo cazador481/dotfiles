@@ -2,12 +2,21 @@ machine jirasw.nvidia.com
 login {{ onepasswordRead "op://Work/JIRA token work/username" }}
 password {{ onepasswordRead "op://Work/JIRA token work/credential" }}
 
-login {{ onepasswordRead "op://Work/JIRA token work/username" }}
-password {{ onepasswordRead "op://Work/JIRA token work/credential" }}
-
-machine confluence.nvidia.com
-login {{ onepasswordRead "op://Work/confluence.nvidia.com/username" }}
-password {{ onepasswordRead "op://Work/confluence.nvidia.com/credential" }}
-
 machine notify-slack-service
 password {{ onepasswordRead "op://Work/notify-slack-service/credential" }}
+
+machine hwinf-ci-senthils-sc2.sc2-paas.nvidia.com
+login {{ onepasswordRead "op://Work/hwinf-ci-senthils/username" }}
+password {{ onepasswordRead "op://Work/hwinf-ci-senthils/credential" }}
+
+machine hwinf-ci-jenkins-sc2.sc2-paas.nvidia.com
+login {{ onepasswordRead "op://Work/hwinf-ci-jenkins/username" }}
+password {{ onepasswordRead "op://Work/hwinf-ci-jenkins/credential" }}
+
+machine gitlab-master.nvidia.com
+login eash
+password {{ onepasswordRead "op://Work/nvidia gitlab/credential" }}
+
+machine nvidia.atlassian.net
+login eash@nvidia.com
+password {{ onepasswordRead "op://Work/confluence.nvidia.com/credential" }}
