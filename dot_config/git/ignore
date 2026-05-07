@@ -56,3 +56,5 @@ package-lock.json
 
 # vim swap file
 *.swp
+
+**/.claude\settings.local.json

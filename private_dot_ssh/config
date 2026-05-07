@@ -17,8 +17,32 @@ host io-xterm-*
     UserKnownHostsFile /dev/null
     ForwardAgent yes
 
+host sc-vnc
+    hostname dc7-container-xterm-12.nvidia.com   
+    Port 4448
+    UserKnownHostsFile /dev/null
+    StrictHostKeyChecking no
+    ForwardAgent yes
+    User eash
 
-host eash.sc.vpx.nvidia.com
+host pdx-rel8
+    hostname pdx-container-xterm-039.prd.it.nvidia.com 
+    Port 2937
+    UserKnownHostsFile /dev/null
+    StrictHostKeyChecking no
+    ForwardAgent yes
+    User eash
+
+host pdx-rel7
+    hostname pdx-container-xterm-039.prd.it.nvidia.com
+    Port 2937
+    UserKnownHostsFile /dev/null
+    StrictHostKeyChecking no
+    ForwardAgent yes
+    User eash
+
+host vpx
+    hostname eash.sc.vpx.nvidia.com
     UserKnownHostsFile /dev/null
     StrictHostKeyChecking no
     ForwardAgent yes
@@ -29,7 +53,7 @@ Host gitlab-master.nvidia.com
     Port 12051
     IdentityFile ~/.ssh/id_ed25519_work_gitlab
 
-Host *.nvidia.com
+host *.nvidia.com
     ForwardAgent yes
 
 host 192.168.1.244
@@ -38,3 +62,12 @@ host 192.168.1.244
 
 host localhost
     StrictHostKeyChecking no
+
+host spoolman-gun
+    ForwardAgent yes
+    User root
+    hostname 192.168.1.71
+
+host homeassistant
+    User root
+    hostname 192.168.1.151

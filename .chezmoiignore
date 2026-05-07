@@ -2,6 +2,7 @@
 Documents/
 {{- end }}
 {{- if eq .chezmoi.os "windows" }}
+scripts/**
 dot_config/**
 dot_config/
 private_dot_netrc.tmpl
