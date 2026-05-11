@@ -2,6 +2,7 @@
 {{- if ne .chezmoi.os "windows" }}
 Documents/
 .ssh/nvmetric_key
+AppData/**
 {{- end }}
 
 # Don't install on windows

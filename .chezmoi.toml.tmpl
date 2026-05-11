@@ -7,9 +7,18 @@
     work = {{ $work }}
     nvidia_farm_machine = {{ $nvidia_farm }}
 
+{{- if eq .chezmoi.os "windows" }}
+[merge]
+    command = "bash"
+    args = [
+        "-c",
+        {{`"cp {{ .Target | quote }} {{ printf \"%s.base\" .Target | quote }} && cursor --new-window --wait --merge {{ .Destination | quote }} {{ .Target | quote }} {{ printf \"%s.base\" .Target | quote }} {{ .Source | quote }}"`}},
+    ]
+{{- else }}
 [merge]
     command = "nvim"
     {{`args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]`}}
+{{- end }}
 
 [template]
     options = ["missingkey=zero"]
